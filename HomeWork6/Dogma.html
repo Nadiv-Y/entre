@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Align Items and Content</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh;
+      width: 100vw;
+      background-color: #f0f0f0;
+
+      /* align-items מיישר את התוכן בתוך כל תיבה */
+      align-items: center; /* ממקם כל תיבה במרכז בגובה שלה */
+
+      /* align-content מיישר את השורות/עמודות בקונטיינר */
+      align-content: space-evenly; /* נותן רווח שווה בין השורות */
+      justify-content: center;
+
+    }
+
+    .box {
+      height: 80px;
+      width: 80px;
+      background-color: yellow;
+      margin: 10px;
+      display: flex;
+      align-items: center; /* ממקם את התוכן במרכז תיבת ה־box */
+      justify-content: flex-start;
+      font-weight: bold;
+      border: 1px solid black;
+    }
+
+    .box:nth-child(odd) {
+      background-color: #fac569; /* צבע שונה לתיבות אי זוגיות */
+      height: 100px;
+    }
+
+    .box:nth-child(even) {
+      background-color: #b2eebb; /* צבע שונה לתיבות זוגיות */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+  </div>
+</body>
+</html>

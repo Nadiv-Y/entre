@@ -1,0 +1,62 @@
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{            
+            width: 20vw;
+            height: 20vh;
+            display: flex;
+            
+        }
+        .box1{
+            background-color: #eeb2b2;
+            flex: 2;
+        }
+       .box2{
+            background-color: #b6b2ee;
+        }
+        .box3{
+            background-color: #b2d2ee;
+        }
+
+        .second{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+
+        }
+        .box4{
+            background-color: #fac569;
+            flex: 1;
+        }
+       .box5{
+            background-color: #b2eebb;
+                flex: 2;
+        }
+        .box6{
+            background-color: #dff4f5;
+                flex: 1;
+        }
+
+        .third{
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100vw;
+            height: 100vh;
+
+        }
+        .box7{
+            background-color: #573b0a;
+            flex: 1;
+        }
+       .box8{
+            background-color: #074610;
+                flex-shrink: 2;
+        }
+        .box9{
+            background-color: #063638;
+                flex: 1;
+        }

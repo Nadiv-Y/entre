@@ -1,0 +1,25 @@
+body{
+    margin:0;
+    gap: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}
+box{
+    height: 80px;
+    width: 80px;
+    background-color: yellow;   
+    margin: 5px;
+    text-align: center;
+    align-content: center;
+
+      
+}

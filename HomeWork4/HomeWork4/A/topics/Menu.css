@@ -1,0 +1,16 @@
+li:nth-child(even) {
+    color: blue;
+}
+DD:nth-child(even) {
+    color: blue;
+}
+
+li:nth-child(3){
+    color: gold;
+}
+dd:nth-child(3){
+    color: gold;
+}
+dd:first-of-type{
+    font-size: 45px;
+}

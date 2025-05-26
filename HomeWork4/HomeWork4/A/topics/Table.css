@@ -1,0 +1,15 @@
+tr, th, td{
+    border: 2px dotted greenyellow;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.head{
+    font-family: 'Courier New', Courier, monospace;
+    
+}

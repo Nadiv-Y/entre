@@ -1,0 +1,15 @@
+.menu{
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: sans-serif;
+}
+
+@media only screen and (max-width: 768px){
+    .menu{
+    flex-direction: column;
+    align-items: center;
+
+    }
+}
