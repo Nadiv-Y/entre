@@ -1,0 +1,42 @@
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    border: 4px green solid;
+    display: flex;
+    flex-direction: column-reverse ; 
+    /* row , column*/
+    justify-content:center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.box{
+    font-size: 2rem;
+    height: 10%;
+    width:10%;
+    background-color: chartreuse;
+    border: 1px solid green;
+
+} 
+.one{
+    flex-grow: 2;
+    
+}
+/* .tow{
+    flex-grow: 2;
+    
+}
+.three{
+    flex-grow: 1;
+} */
+ .tow{
+    flex-grow: 2;
+    
+}
+.three{
+    flex-grow: 1;
+    
+}

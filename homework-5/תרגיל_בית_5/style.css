@@ -1,0 +1,23 @@
+.conteiner{
+    height: 600px;
+    width: 600px;
+    border: 2px solid black;
+}
+.blue{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}
+.green{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+
+}
+.red{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    
+
+}
