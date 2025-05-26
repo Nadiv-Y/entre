@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 10px;
+  /* grid-auto-flow: dense; */
+  padding: 20px;
+  /* max-width: 800px; */
+  /* margin: auto; */
+}
+
+img {
+  width: 100%;
+  height: 150px;
+  /* display: block; */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+img.wide {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  height: 100%;
+}

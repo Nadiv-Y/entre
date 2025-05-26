@@ -1,0 +1,23 @@
+.father_div{
+  width: 600px;
+  height: 600px;
+  background-color: black;
+  border: 3px solid aquamarine;
+}
+.first_div{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.second_div{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  margin-left: 15PX;
+  margin-TOP: 15PX;
+}
+.third_div{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

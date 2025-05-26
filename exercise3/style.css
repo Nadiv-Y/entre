@@ -1,0 +1,25 @@
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+body{
+  background-color:rgb(126, 193, 202);
+  font-size: 125%;
+}
+.box p{
+  border: dotted 3px black;
+  margin: 0px;
+  padding: 10px;
+}
+.box{
+  border: groove rgb(173, 173, 173) 5px;
+  display: inline-block;
+  
+}
+.bottomSection{
+  border-top: solid rgb(255, 255, 255,20%) 3px;
+}
+a{
+  display: block;
+}

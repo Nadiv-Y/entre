@@ -1,0 +1,21 @@
+.navigation {
+  background-color: black;
+  font-family: sans-serif;
+  display: flex;
+  position: fixed;
+  width: 100vw;
+}
+.subNav {
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+  }
+}

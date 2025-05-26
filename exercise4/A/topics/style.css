@@ -1,0 +1,16 @@
+ul li:nth-child(even),dl>dd:nth-child(even) {
+  color: blue;
+}
+ul li:nth-child(3n),dl dd:nth-child(3n) {
+  color: gold;
+}
+.firstdiv dd{
+  font-size: 45px;
+}
+table,th,td{
+  border: solid black 2px;
+}
+table{
+  border-collapse: collapse;
+  width: 600px;
+}
