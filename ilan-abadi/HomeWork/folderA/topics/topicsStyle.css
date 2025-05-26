@@ -1,0 +1,23 @@
+ul {
+    list-style: square;
+}
+ul>li:nth-child(even){
+    color: blue;
+}
+dl dd:nth-child(odd){
+    color: blue;
+}
+ul ol li:nth-child(even){
+    color: blue;
+}
+ul li:nth-child(3n){
+    color:gold;
+}
+dl dd:nth-child(4n){
+    color: gold;
+}
+dt:first-of-type+dd,
+dt:first-of-type+dd+dd,
+dt:first-of-type+dd+dd+dd{
+    font-size: 45px;
+}

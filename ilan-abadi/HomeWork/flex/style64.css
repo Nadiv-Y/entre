@@ -1,0 +1,27 @@
+.container{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 88vh;
+}
+
+.box{
+    width: 22vw;
+    height: 22vh;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+    flex-grow: 1;
+}
+
+.blue{
+    background-color: blue;
+}

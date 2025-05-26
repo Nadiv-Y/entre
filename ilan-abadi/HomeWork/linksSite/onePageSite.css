@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(245, 151, 10);
+}
+img{
+    display: block;
+}
+h1{
+    font-size: 300%;
+    color: brown;
+}
+h2{
+    font-size: 200%;
+    color: brown;
+}
+a{
+    font-size: 150%;
+}

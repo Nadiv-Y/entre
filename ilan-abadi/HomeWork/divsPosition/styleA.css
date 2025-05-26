@@ -1,0 +1,19 @@
+div{
+    width: 100px;
+    height: 100px;
+}
+#father{
+    width: 600px;
+    height: 600px;
+    border: 1px black solid;
+}
+#son1{
+    background-color: red;
+}
+#son2{
+    background-color: green;
+    margin: 15px 0 0 15px;
+}
+#son3{
+    background-color: blue;
+}

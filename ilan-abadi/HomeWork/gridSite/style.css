@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.mainContainer {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-areas:
+    'topLeft topRight'
+    'bottomLeft bottomRight';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
+
+.mainContainer > div {
+    flex-basis: auto;
+    background-color: lightblue;
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.topLeft {
+    grid-area: topLeft;
+}
+.floatPict {
+    float: left;
+    margin-right: 5px;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+.floatContainer p {
+    text-align: justify;
+    margin: 0 5px;
+}
+
+.topRight {
+    grid-area: topRight;
+}
+.topFlexContainer {
+    display: flex;
+    width: auto;
+    height: 10rem;
+    justify-content: space-between;
+    border: 1px black solid;
+}
+.flexPict {
+    width: 10rem;
+    height: 10rem;
+    margin-right: 5px;
+    flex-grow: 1;
+}
+.topFlexContainer p {
+    margin: 0;
+    text-align: justify;
+    overflow: hidden;
+    flex-grow: 2;
+}
+
+.bottomLeft {
+    grid-area: bottomLeft;
+}
+.leftFlexContainer {
+    height: 21vw;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.box {
+    width: 7vw;
+    height: 7vw;
+    border: 1px black solid;
+}
+.red {
+    background-color: red;
+    align-self: start;
+}
+.green {
+    background-color: green;
+    align-self: center;
+}
+.blue {
+    background-color: blue;
+    align-self: end;
+}
+
+.bottomRight {
+    grid-area: bottomRight;
+    align-content: end;
+}
+.rightFlexContainer {
+    height: 28vw;
+    padding-bottom: 7vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-shrink: 1;
+}

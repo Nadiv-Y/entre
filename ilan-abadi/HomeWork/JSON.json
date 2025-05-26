@@ -1,0 +1,24 @@
+{
+ "faculty":{
+     "course":{
+         "name": "HTML",
+         "teacher": "Moshiko Cohen",
+         "students":{
+             "student1": "Jerry Lee",
+             "student2": "Yuri Attias",
+             "student3": "Alice Hill",
+             "student4": "Negosa Fanta"
+            }
+        },
+     "course":{
+         "name":"CSS",
+         "teacher": "Atalya Amram",
+         "students":{
+             "student1": "Jerry Lee",
+             "student2": "Yuri Attias",
+             "student3": "Alice Hill",
+             "student4": "Negosa Fanta"
+            } 
+        }
+   }
+}

@@ -1,0 +1,28 @@
+body{
+    background-color: lightblue;
+}
+.coffeeCupImg{
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.textDiv{
+    height: 100px;
+    border-style: groove;
+    border-color: white;
+    border-width: 3px 0px 0px;
+}
+span{
+    display: inline-block;
+    border: 5px rgba(0, 0, 0, .3) solid;
+    height: 66px;
+}
+p{
+    display:inline-block;
+    font-size: 15px;
+    border: 3px black dotted;
+    height: 60px;
+    text-align: center;
+    /* margin: 0; */
+}

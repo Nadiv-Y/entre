@@ -1,0 +1,45 @@
+.container{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+}
+
+.box{
+    width: 18vw;
+    height: 54vh;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.blue{
+    background-color: blue;
+    flex-shrink: 2;
+}
+/* .box{
+    width: 18vw;
+    height: 18vh;
+}
+
+.red{
+    background-color: red;
+    flex-grow: 1;
+}
+
+.green{
+    background-color: green;
+    flex-grow: 1;
+}
+
+.blue{
+    background-color: blue;
+} */

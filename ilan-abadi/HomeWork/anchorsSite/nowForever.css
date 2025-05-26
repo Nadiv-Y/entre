@@ -1,0 +1,29 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+h1{
+    font-size: 400%;
+    color: darkred;
+}
+h2{
+    font-size: 250%;
+}
+#navDiv{
+    width: 30%;
+    display: inline-block;
+    border: 3px white groove; 
+    background-color: darkred;
+    text-align: center;
+}
+a{
+    color: lightgoldenrodyellow;
+    font-size: 150%;
+
+}
+img{
+    width: 91%;
+    border: 3px orangered groove;
+}
+.redLink{
+    color: darkred;
+}

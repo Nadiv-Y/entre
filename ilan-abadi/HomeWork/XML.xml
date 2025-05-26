@@ -1,0 +1,18 @@
+<faculty>
+    <courses>
+       <course name="HTML">
+          <teacher>Moshiko Cohen</teacher>
+          <student>Jerry Lee</student>
+          <student>Yuri Attias</student>
+          <student>Alice Hill</student>
+          <student>Negosa Fanta</student>
+       </course>
+       <course name="CSS">
+          <teacher>Atalya Amram</teacher>
+          <student>Jerry Lee</student>
+          <student>Yuri Attias</student>
+          <student>Alice Hill</student>
+          <student>Negosa Fanta</student>
+       </course> 
+    </courses>
+</faculty>

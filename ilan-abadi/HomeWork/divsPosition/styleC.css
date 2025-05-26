@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+div{
+    width: 100px;
+    height: 100px;
+}
+#father{
+    width: 600px;
+    height: 600px;
+    border: 1px black solid;
+}
+#son1{
+    background-color: red;
+}
+#son2{
+    background-color: green;
+    position: fixed;
+    top: 200px;
+    left: 200px;
+}
+#son3{
+    background-color: blue;
+}
