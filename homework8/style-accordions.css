@@ -1,0 +1,10 @@
+html[dir="rtl"] .accordion-button::after {
+  order: -1;              /* משנה את סדר התצוגה – החץ קודם */
+  margin-left: 0.5rem;    /* רווח אחרי החץ */
+  margin-right: 0;        /* ביטול רווח מיותר */
+  transform: rotate(-180deg); /* כשהכפתור פתוח */
+}
+
+html[dir="rtl"] .accordion-button.collapsed::after {
+  transform: rotate(0deg); /* כשהכפתור סגור */
+}
