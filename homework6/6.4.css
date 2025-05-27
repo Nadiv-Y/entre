@@ -1,0 +1,25 @@
+.task4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  gap: 1rem;
+}
+
+.big {
+  flex-grow: 8;
+  background-color: lightpink;
+  min-height: 80px;
+}
+
+.medium {
+  flex-grow: 4;
+  background-color: lightgreen;
+  min-height: 80px;
+}
+
+.small {
+  flex-grow: 2;
+  background-color: lightblue;
+  min-height: 80px;
+}

@@ -1,0 +1,39 @@
+/* Сброс отступов и высота страницы */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Контейнер с flex */
+.container {
+  display: flex;
+  flex-direction: row;         /* Элементы в строку */
+  justify-content: center;     /* Горизонтальное центрирование */
+  align-items: center;         /* Вертикальное центрирование */
+  height: 100vh;               /* Занимает всю высоту окна */
+  gap: 1rem;                   /* Расстояние между блоками */
+}
+
+/* Общие стили для блоков */
+.box {
+  flex-grow: 1;                /* Все растут одинаково */
+  min-height: 100px;
+  background-color: lightgray;
+}
+
+/* Первый блок — в 3 раза шире */
+.box.first {
+  flex-grow: 3;
+  background-color: lightcoral;
+}
+
+/* Второй блок */
+.box.second {
+  background-color: lightseagreen;
+}
+
+/* Третий блок */
+.box.third {
+  background-color: lightskyblue;
+}

@@ -1,0 +1,22 @@
+
+.box2 { /* For task C */
+  position: fixed;
+  top: 200px;
+  /* To ensure it stays there, we might also want to fix its horizontal position */
+  /* For example, to keep it centered horizontally: */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Or to keep it on the right */
+  /* right: 20px; */
+}
+
+/* To simulate scrolling, you might need more content in the body */
+body {
+    height: 200vh; /* Make the body very tall to enable scrolling */
+    margin: 0; /* Remove default body margin */
+}
+
+/* Hide other boxes for this specific task */
+/* .box:not(.box2) {
+    display: none;
+} */

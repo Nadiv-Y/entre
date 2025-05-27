@@ -1,0 +1,46 @@
+/* Ссылка "Home Page" */
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Четные элементы li и dd — синие */
+li:nth-of-type(even),
+dd:nth-of-type(even) {
+  color: blue;
+}
+
+/* Третий элемент li и dd — золотой */
+li:nth-of-type(3),
+dd:nth-of-type(3) {
+  color: goldenrod;
+}
+
+/* Все dd кроме первого — увеличиваем шрифт */
+dd:not(:first-of-type) {
+  font-size: 45px;
+}
+
+/* Стилизация секции full stack */
+.stack p:nth-of-type(1) {
+  font-size: 45px;
+  color: black;
+}
+.stack p:nth-of-type(2) {
+  font-size: 45px;
+  color: blue;
+}
+.stack p:nth-of-type(3) {
+  font-size: 45px;
+  color: goldenrod;
+}
+
+/* Стилизация секции back end */
+.stack2 p:nth-of-type(2) {
+  /* font-size: 45px; */
+  color: blue;
+}
+.stack2 p:nth-of-type(3) {
+  /* font-size: 45px; */
+  color: goldenrod;
+}

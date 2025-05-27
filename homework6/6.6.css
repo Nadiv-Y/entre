@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 400px; /* ограничиваем высоту — тогда wrap работает по колонкам */
+  width: 600px;
+  border: 3px solid yellow;
+  justify-content: flex-start;
+  align-content: space-between; /* расстояние между двумя колонками */
+  gap: 10px; /* расстояние между элементами */
+  padding: 10px;
+}
+
+.item {
+  background-color: gold;
+  padding: 10px 20px;
+  margin: 5px;
+  text-align: center;
+  width: 80px;
+  font-family: sans-serif;
+}
