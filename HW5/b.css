@@ -1,0 +1,8 @@
+.fatherdiv{
+    position: relative;
+}
+.fatherdiv :nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,30 @@
+/* CSS Document */
+
+body {
+    background-color: aquamarine;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+span {
+    display: inline-block;
+    border: 8px solid rgba(128,128,128,0.5);
+    margin: -8px;
+    margin-top: 3px;
+}
+
+p{
+    border: 5px dotted black;
+    display: inherit;
+    margin: 0px;
+    padding: 10px 0px;
+}
+div {
+    border: 3px groove grey;
+    margin-bottom: 5px;
+}
+img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}

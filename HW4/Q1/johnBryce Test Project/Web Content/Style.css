@@ -1,0 +1,46 @@
+li{
+    list-style-type: square;
+    color: black;
+}
+
+dt:first-of-type ~ dd {
+    font-size: 45px;
+  }
+  
+li:nth-of-type(even){
+    color: blue;
+}
+
+dd:nth-of-type(even){
+    color: blue;
+}
+
+li:nth-of-type(3){
+    color: gold;
+}
+
+dd:nth-of-type(3){
+    color: gold;
+}
+
+table{
+    width:400px;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+caption{
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+th,td{
+    border: 2px solid black;
+    padding:5px;
+}
+
+td, tr:last-of-type>th{
+    text-align: left;
+}
+
+

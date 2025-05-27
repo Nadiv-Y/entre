@@ -1,0 +1,79 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding:10px;
+}
+
+.box{
+    border: 1px solid black;
+    padding:10px;
+    background-color: lightblue;
+    height: 40vh;;
+}
+
+img{
+    float:left;
+    width: 150px;
+    height: 150px;
+    margin: 0 10px 0 0;
+    object-fit:fill;
+}
+
+p{
+    text-align: justify;
+    margin: 0;
+    text-wrap: wrap;
+}
+
+.innerbox{
+    border: 1px solid black;
+    display: flex;
+}
+
+.third{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    place-content: flex-start;
+}
+
+.block{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+    align-self: center;
+}
+.blue{
+    background-color: blue; 
+    align-self: flex-end;
+}
+
+.fourth{
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: space-between;
+}
+
+.fourth .red{
+    order: 3;
+    align-self: flex-end;
+}
+
+.fourth .blue{
+    order: 1;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.fourth .green{
+    order: 2;
+    align-self: center;
+}

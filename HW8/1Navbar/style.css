@@ -1,0 +1,17 @@
+.custom-hover:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:768px){
+    .custom-hover:hover{
+        background-color: var(--bs-white);
+        color: var(--bs-secondary);
+        border-left: 5px solid var(--bs-secondary);
+        margin-top: 10px;
+        padding-left: 3px;
+    }
+}

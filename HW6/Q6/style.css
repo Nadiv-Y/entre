@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    width: 50vw;
+    height: 50vh;
+    border: 5px solid gold;
+    gap:5px;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
