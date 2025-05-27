@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+    </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    .container {
+      width: 90vw;
+      height: 90vh;
+    }
+
+    .form-group {
+      margin-top: 1rem;
+    }
+
+    .btn-form {
+      margin-bottom: 6rem;
+    }
+
+    .register {
+      width: 50%;
+      height: 50%;
+      margin: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <h2 class="fw-bold mt-3">Get in Touch</h2>
+      <p class=" mb-0">Questions to ask? Fill out the form to contact me directly...</p>
+    </div>
+
+    <form>
+
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <div class="input-group mt-1">
+          <span class="input-group-text text-secondary"><i class="bi bi-envelope-fill"></i></span>
+          <input type="email" class="form-control" id="email" placeholder="e.g. mario@example.com">
+          <span class="input-group-text text-secondary"><i class="bi bi-question-circle"></i></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <div class="input-group mt-1">
+          <span class="input-group-text text-secondary"><i class="bi bi-person-fill"></i></span>
+          <input type="name" class="form-control" id="name" placeholder="e.g. Mario">
+          <span class="input-group-text text-secondary"><i class="bi bi-question-circle"></i></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="choice">What is your question about?</label>
+        <div class="input-group mt-1">
+          <span class="input-group-text text-secondary"><i class="bi bi-chat-right-dots-fill"></i></span>
+          <select class="form-select" id="choice">
+            <option>Pricing query</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+
+        <textarea class="form-control mt-5" id="exampleFormControlTextarea1" rows="3"
+          placeholder="Your query..."></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-secondary mt-3 btn-form">Submit</button>
+      </div>
+    </form>
+    <div class="section bg-light text-center">
+      <div class="register">
+        <h2 class="fw-bold pt-5">Stay in The Loop</h2>
+        <h5 class="mb-4">Get the latest updates as they happen...</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe distinctio cum, dolor ex odio dignissimos at
+          delectus ipsam, earum sunt iure tempora nostrum praesentium, voluptates dolore! Sed cum nihil veritatis ea
+          similique excepturi voluptatum sit beatae amet officia omnis velit adipisci possimus alias dolor, explicabo
+          aperiam soluta tempora, reprehenderit iste.</p>
+
+        <button type="register" class="btn btn-primary mt-3 btn-form" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Register for Updates</button>
+
+      </div>
+
+
+
+    </div>
+    <div class="modal" id="exampleModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Get the Latest Updates</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos assumenda quod ut quis. Tempora corrupti
+              quae, laudantium minus molestias at, impedit saepe quibusdam beatae dolorum dolorem soluta est id illo
+              totam omnis. Error asperiores in ipsa, unde cumque fugiat necessitatibus.</p>
+
+            <div class="form-group">
+              <label for="email">Your email address:</label>
+              <input type="email" class="form-control mt-1" id="email" placeholder="e.g. mario@example.com">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

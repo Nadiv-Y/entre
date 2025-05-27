@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: 90vh;
+  gap: 2rem;
+  border: solid 5px gold;
+  /* align-content: center; */
+  margin: 2rem;
+}
+
+.item {
+  background-color: gold;
+  width: 10%;
+  height: 10%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
