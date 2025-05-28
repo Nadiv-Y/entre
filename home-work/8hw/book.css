@@ -1,0 +1,72 @@
+body::before {
+
+  content: "";
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(pluto-png.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; 
+  z-index: -1; 
+}
+
+body {
+    background-color: rgb(219, 219, 219);
+}
+
+
+.container-fluid i {
+    color: gray;
+    font-style: normal;
+    font-weight: bold;
+
+ }
+
+.nav-item a {
+    color: gray;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.nav-item a:hover {
+    color: white !important;
+    background-color: grey;
+    border-radius: 5px
+    
+
+}
+
+.pluto {
+    display: block;
+    width: 100px;
+    height: 50%;
+    background-color: blue;
+}
+
+
+.me-auto {
+    color: gray;
+    font-weight: bold;
+}
+.me-auto:hover {
+    color: gray;
+    cursor:default;
+    /* font-weight: bold; */
+}
+
+@media (max-width: 768px) {
+
+.nav-item a:hover {
+    color: grey !important;
+    background-color: transparent;
+    border-radius: 0px;
+    border-left: 5px gray solid;
+    padding-left: 5px;
+    /* margin-left: 10px; */
+}
+
+}

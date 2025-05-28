@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
+    gap: 5px;
+    margin: 5px;
+    height: 80vh;
+    width: 90vw;
+
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#pic1 {
+    grid-row: 1;
+    grid-column: 9;
+}
+#pic2 {
+    grid-row: 2;
+    grid-column: 9;
+}
+#pic3 {
+    grid-row: 3;
+    grid-column: 9;
+}
+#pic4 {
+    grid-row: 4;
+    grid-column: 9;
+}
+#pic5 {
+    grid-row: 5;
+    grid-column: 9;
+}
+#pic6 {
+    grid-row: 6;
+    grid-column: 9;
+}
+#pic7 {
+    grid-row: 7;
+    grid-column: 9;
+}
+#pic8 {
+    grid-row: 8;
+    grid-column: 9;
+}
+#pic9 {
+    grid-row: 9;
+    grid-column: 9;
+}
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+
+    
+.container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    margin: 5px;
+    height: 70vh;
+    width: 50vw;
+    margin-left: auto;
+    
+}
+
+.container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+#pic1 {
+    grid-row: 1;
+    grid-column: 3;
+}
+#pic2 {
+    grid-row: 1;
+    grid-column: 4;
+}
+#pic3 {
+    grid-row: 2;
+    grid-column: 3;
+}
+#pic4 {
+    grid-row: 2;
+    grid-column: 4;
+}
+#pic5 {
+    grid-row: 3;
+    grid-column: 3;
+}
+#pic6 {
+    grid-row: 3;
+    grid-column: 4;
+}
+#pic7 {
+    grid-row: 4;
+    grid-column: 3;
+}
+#pic8 {
+    grid-row: 4;
+    grid-column: 4;
+}
+#pic9 {
+    grid-row: 5;
+    grid-column: 3; 
+}
+}
+
+@media (min-width: 1024px) {
+
+    .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 5px;
+    height: 70vh;
+    width: 50vw;
+    margin-left: auto;
+}
+
+.container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+#pic3 {
+    grid-row: 1/3;
+    grid-column: 2/4;
+}
+}

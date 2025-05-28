@@ -1,0 +1,22 @@
+.dad {
+    width: 600px;
+    height: 600px;
+    border: 2px black solid;
+}
+
+#div1 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+   
+}
+#div2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+#div3 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}

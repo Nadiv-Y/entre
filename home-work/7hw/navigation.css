@@ -1,0 +1,46 @@
+
+body {
+    margin: 0;
+    background-color: rgb(39, 39, 39);
+
+}
+
+.navcontainer {
+    background-color: black;
+    position: sticky;
+    top: 0px;
+    width: 100vw;
+    text-align: right;
+
+}
+
+.navcontainer a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+
+}
+
+@media (min-width: 768px) {
+    .navcontainer {
+    background-color: black;
+    position: sticky;
+    top: 0px;
+    width: 100vw;
+    text-align: right;
+
+}
+}
+@media (max-width: 767px) {
+    .navcontainer {
+    background-color: black;
+    position: sticky;
+    /* left: 50%; */
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+}

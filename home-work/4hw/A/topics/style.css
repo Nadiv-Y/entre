@@ -1,0 +1,28 @@
+
+.squares {
+    list-style: square;
+}
+
+li:nth-child(even) {
+    color:blue
+}
+
+li:nth-child(3n) {
+    color: gold;
+}
+
+dd:nth-child(even) {
+    color: blue;
+}
+dd:nth-child(3n) {
+    color: gold;
+}
+
+
+/* dt.bigFont~dd {
+    font-size: 45px;
+} */
+
+dd:nth-of-type(-n+3) {
+    font-size: 45px;
+}

@@ -1,0 +1,10 @@
+.dad {
+    position: relative;
+    
+  }
+
+  #div2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }

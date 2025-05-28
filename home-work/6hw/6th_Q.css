@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 90vh;
+    flex-wrap: wrap;
+    align-content: center;      /*מירכוז של התוכן באמצע*/
+    gap: 1rem;
+    /* padding: 1rem; */
+    border: 2px solid gold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    width: 15%;
+    height: 15%;
+    /* border: 1px solid rgb(0, 0, 0) */
+}

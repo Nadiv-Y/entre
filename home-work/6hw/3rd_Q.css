@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    height: 20%;
+    flex: 1;
+    border: 1px solid rgb(0, 0, 0)
+}
+
+.first {
+    flex: 2;
+    /* width: 50%;
+    height: 50%; */
+    background-color: red;
+}
+
+.second {
+    /* width: 20%;
+    height: 20%; */
+    background-color: green;
+}
+
+.third {
+    /* width: 20%;
+    height: 20%; */
+    background-color: blue;
+}

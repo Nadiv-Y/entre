@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    /* height: 100vh; */
+    /* width: 100vw; */
+}
+
+body::before {
+
+  content: "";
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(pluto-png.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.return {
+    height: 25px;
+    width: 60px;
+    color: rgb(82, 82, 82);
+    background-color: rgb(216, 215, 215);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+    /* font-size: 0.7rem; */
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 5px 2px;
+    
+}
+
+.fluid-container {
+    width: 80%;
+    height: 80%;
+    justify-self: center;
+    /* border: 1px rgb(189, 189, 189, 0.5) solid; */
+}
+
+
+ul {
+    list-style-type: none;
+    /* border: 10px grays solid; */
+}
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+.review {
+    border-bottom: 2px rgb(190, 190, 190, 0.7) solid;
+    height: 30%;
+}
+.reviewshead {
+    height: 10%;
+    background-color: rgb(236, 236, 236);
+    text-align: center;
+}
+
+.reviewshead i {
+    font-size: 1.5rem;
+}
+
+.stars {
+    margin-bottom: 1%;
+
+}
+
+.onepiece {
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+}
+
+.text {
+    font-size: 0.8rem;
+    
+
+}
+.user {
+        font-size: 0.7rem;
+        position: relative;
+    bottom: -10px;
+        /* margin-bottom: auto; */
+
+}
