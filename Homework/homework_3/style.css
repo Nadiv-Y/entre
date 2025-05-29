@@ -1,0 +1,20 @@
+body{background-color: aqua;
+
+}
+
+a{
+    display: block;
+}
+
+P{
+    display: inline-block;
+    border: dotted rgb(44, 44, 100) 2px    
+}
+
+.text1{
+    border: solid rgba(37, 37, 94, 0.3) 5px
+}
+
+.text2{
+    border: solid rgba(37, 37, 94, 0.3) 5px
+}

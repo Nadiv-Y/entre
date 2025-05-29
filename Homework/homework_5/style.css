@@ -1,0 +1,47 @@
+/* סגנון ל-div האבא */
+.father {
+    position: relative; /* מאפשר לבנים להיות absolute */
+    width: 600px;
+    height: 600px;
+    border: 5px dashed red; /* גבול לצבע וסגנון */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* סגנון לשלושת הבנים */
+.child {
+    width: 100px;
+    height: 100px;
+    margin: 10px; /* מרווח בין הבנים */
+}
+.one {
+    background-color: yellowgreen;
+}
+.two {
+    background-color: skyblue;
+}
+.three {
+    background-color: orange;
+}
+
+/* תשובות לסעיפים: */
+
+/* סעיף א': הזז את הבן השני 15 פיקסלים משמאל לימין ומלמעלה למטה */
+.two {
+    transform: translateX(15px) translateY(15px);
+}
+
+/* סעיף ב': קבע את הבן השני בפינה הימנית העליונה של האבא */
+.two {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* סעיף ג': קבע את הבן השני 200 פיקסלים מראש ומשמאל לעמוד האינטרנט */
+.two {
+    position: fixed;
+    top: 200px;
+    left: 200px;
+}

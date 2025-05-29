@@ -1,0 +1,45 @@
+/* Основной стиль навигации */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    
+}
+
+/* Навигация на больших экранах (מעל 768 פיקסלים) */
+@media screen and (min-width: 768px) {
+    .menu li {
+        float: left;
+    }
+    
+    .menu a {
+        padding: 14px 16px;
+    }
+}
+
+/* Адаптация под мобильную версию (מתחת ל 768 פיקסלים) */
+@media screen and (max-width: 768px) {
+    .menu li {
+        clear: both;
+        float: none;
+        width: 100%;
+    }
+    
+    .menu a {
+        display: block;
+        text-align: center;
+        padding: 14px 0px;
+    }
+}
+
+

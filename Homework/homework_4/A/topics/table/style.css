@@ -1,0 +1,20 @@
+table, 
+th, 
+td {
+    border: solid black 1px;
+}
+
+table {
+    width: 600px;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
+td {
+    text-align: left;
+}
+tfoot th {
+    text-align: left;
+}

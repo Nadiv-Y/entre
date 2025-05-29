@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Sections</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: sans-serif; direction: ltr;} /* Left-to-right writing mode */
+
+        .container {
+            width: 80%; /* Set width to 80% of viewport */
+            margin: 0px auto; /* Center horizontally */
+            border-style:solid;
+            border-width: 1px;
+            border-color: rgb(212, 211, 211);
+            border-radius: 5px;
+
+        }
+
+        .section {
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+
+        }
+
+        .title {
+            /* font-weight: bold; */
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+
+        }
+
+        .arrow-up::before {
+            content: "";
+            border-style: solid;
+            border-width: 5px 5px 0 5px;
+            border-color: black transparent transparent transparent;
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: white;
+
+        }
+
+        .text {
+            padding: 15px;
+            border-top: 1px solid #ccc;
+            line-height: 1.5;
+        }
+
+        .section:hover {
+            background-color: lightblue;
+        }
+
+        .section:hover .title {
+            color: darkblue;
+        }
+
+        .active .arrow-up::before {
+            transform: rotate(180deg); /* Rotate up arrow down when active */
+        }
+
+        .active .content {
+            max-height: 500px; /* Adjust this based on your content height */
+        }
+    </style>
+</head>
+<body>
+<!-- ראשון -->
+<div class="container">
+    <?php for($i=1; $i<=5; $i++) : ?>
+        <div class="section" onclick="toggleSection(this)" style="margin-bottom: 10px;">
+            <div class="header">
+                <span class="title">Chapter 1 - Your First Web Page <?= $i ?></span>
+                <span class="arrow-up"></span>
+            </div>
+            <div class="content">
+                <div class="text">
+                    It contains exactly fifty words which appear after the title and above the separating line inside the respective collapsible section.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis ipsam hic laudantium sint est aliquid voluptatum porro, nisi impedit iste provident. Eveniet, incidunt consectetur! Fugiat harum autem in aperiam! Magnam, eveniet quae expedita aliquam distinctio minima, veritatis quas ratione eligendi, ipsum sapiente iste! Doloribus est omnis corporis incidunt voluptate?
+                </div>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<!-- שני -->
+<div class="container">
+    <?php for($i=1; $i<=5; $i++) : ?>
+        <div class="section" onclick="toggleSection(this)" style="margin-bottom: 10px;">
+            <div class="header">
+                <span class="title">Chapter 2 - Mastering CSS <?= $i ?></span>
+                <span class="arrow-up"></span>
+            </div>
+            <div class="content">
+                <div class="text">
+                    It contains exactly fifty words which appear after the title and above the separating line inside the respective collapsible section.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis ipsam hic laudantium sint est aliquid voluptatum porro, nisi impedit iste provident. Eveniet, incidunt consectetur! Fugiat harum autem in aperiam! Magnam, eveniet quae expedita aliquam distinctio minima, veritatis quas ratione eligendi, ipsum sapiente iste! Doloribus est omnis corporis incidunt voluptate?
+                </div>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<!-- שלישי -->
+ <div class="container">
+    <?php for($i=1; $i<=5; $i++) : ?>
+        <div class="section" onclick="toggleSection(this)" style="margin-bottom: 10px;">
+            <div class="header">
+                <span class="title">Chapter 3 - The Power of JavaScript <?= $i ?></span>
+                <span class="arrow-up"></span>
+            </div>
+            <div class="content">
+                <div class="text">
+                    It contains exactly fifty words which appear after the title and above the separating line inside the respective collapsible section.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis ipsam hic laudantium sint est aliquid voluptatum porro, nisi impedit iste provident. Eveniet, incidunt consectetur! Fugiat harum autem in aperiam! Magnam, eveniet quae expedita aliquam distinctio minima, veritatis quas ratione eligendi, ipsum sapiente iste! Doloribus est omnis corporis incidunt voluptate?
+                </div>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<!-- רביעי -->
+ <div class="container">
+    <?php for($i=1; $i<=5; $i++) : ?>
+        <div class="section" onclick="toggleSection(this)" style="margin-bottom: 10px;">
+            <div class="header">
+                <span class="title">Chapter 4 - Storing Data (Firebase Databases) <?= $i ?></span>
+                <span class="arrow-up"></span>
+            </div>
+            <div class="content">
+                <div class="text">
+                    It contains exactly fifty words which appear after the title and above the separating line inside the respective collapsible section.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis ipsam hic laudantium sint est aliquid voluptatum porro, nisi impedit iste provident. Eveniet, incidunt consectetur! Fugiat harum autem in aperiam! Magnam, eveniet quae expedita aliquam distinctio minima, veritatis quas ratione eligendi, ipsum sapiente iste! Doloribus est omnis corporis incidunt voluptate?
+                </div>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<!-- חמישי -->
+ <div class="container">
+    <?php for($i=1; $i<=5; $i++) : ?>
+        <div class="section" onclick="toggleSection(this)" style="margin-bottom: 10px;">
+            <div class="header">
+                <span class="title">Chapter 5 - User Authentication <?= $i ?></span>
+                <span class="arrow-up"></span>
+            </div>
+            <div class="content">
+                <div class="text">
+                    It contains exactly fifty words which appear after the title and above the separating line inside the respective collapsible section.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis ipsam hic laudantium sint est aliquid voluptatum porro, nisi impedit iste provident. Eveniet, incidunt consectetur! Fugiat harum autem in aperiam! Magnam, eveniet quae expedita aliquam distinctio minima, veritatis quas ratione eligendi, ipsum sapiente iste! Doloribus est omnis corporis incidunt voluptate?
+                </div>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<script>
+    function toggleSection(section) {
+        section.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* אנחנו מגדירים את הגופן ואת הגובה המינימלי של ה-p */
+* {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* מגדירים את ה-container */
+  .container {
+    border: 2px solid blue; /* קו הגבול של ה-div */
+    min-height: 100px; /* גובה מינימלי */
+    padding: 10px; /* מרווח פנימי כדי למנוע מרווחים מקוטעים */
+  }
+  
+  /* מגדירים את ה-p */
+  p {
+    margin: 20px; /* מרווח חיצוני של ה-p */
+  }
+  

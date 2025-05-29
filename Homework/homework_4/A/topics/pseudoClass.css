@@ -1,0 +1,32 @@
+
+ul ol li:nth-child(1) {
+    color: gold;
+    }
+ul ol li:nth-child(2) {
+    color:blue;
+    }
+ul ol li:nth-child(3) {
+    color:black;
+    }  
+
+ul li:nth-child(even) {
+    color:blue;
+    }
+ul li:nth-child(3) {
+    color:gold;
+    }
+
+ul li:nth-child(even) {
+    color:blue;
+    }
+dl dd:nth-child(even) {
+    color: blue;
+    }
+
+dl dd:nth-child(3n) {
+    color: gold;
+    }
+
+.container:first-of-type{
+    font-size: 45px;
+}  

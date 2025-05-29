@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column-reverse; /* הפוך את הסדר של ה-elements */
+    gap: 1rem; /* מרווח בין ה-elements */
+}
+
+.flex-item {
+    background-color: green;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+.first-child,
+.second-child {
+    flex: 2; /* הגודלים הראשון והשני יהיו גדולים יותר */
+}
+
+.third-child {
+    flex: 1; /* הגודל השלישי יהיה קטן פי שניים */
+}
