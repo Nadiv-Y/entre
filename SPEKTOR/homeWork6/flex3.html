@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 3</title>
+    <style>
+        .container {
+            display: flex;
+            /* flex layout (row by default) */
+            gap: 1rem;
+            padding: 2rem;
+            flex-direction: row;
+            /* (default parrent property)the main-axis is left-to-right */
+            justify-content: center;
+            /* horizontal centering */
+            align-items: center;
+            /* vertical centering, works only when the viewport height is defined */
+            height: 90vh;
+        }
+
+        .box {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+
+        .box:first-child {
+            flex: 2;
+            /* a grow of 2, a shrink of 1 and a basis of 0 */
+            /*In this case, the first item gets two parts, the second one part, and the third one part. This means that the first item is twice the size of the second and third items.*/
+            background-color: lightcoral;
+        }
+
+        .box:nth-child(2) {
+            flex: 1;
+            /* a grow of 1, a shrink of 1 and a basis of 0 (creates equally-sized items) */
+            background-color: lightblue;
+        }
+
+        .box:nth-child(3) {
+            flex: 1;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+    </div>
+</body>
+
+</html>

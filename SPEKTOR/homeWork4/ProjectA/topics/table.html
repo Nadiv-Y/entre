@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table,
+        th,
+        td {
+            border: solid 1px black;
+            padding: 4px;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        tfoot {
+            text-align: left;
+        }
+        h2 {
+            margin-bottom: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="../homePage.html">
+        <h2 id="table">Home Page</h2>
+    </a>
+
+    <!-- Tag Purpose
+     
+    <table> Creates the table
+    <thead> Optional: Header section
+     <tr> Table row
+     <th> Table header cell (bold & centered)
+    <td> Table data cell
+    <tbody> Optional: Groups table body rows 
+    <tfoot> Optional: Footer section (e.g., totals, summaries)-->
+
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">
+                    John Bryce
+                </th>
+                <!-- <th colspan="2"> 
+                This table header cell will stretch across 2 columns. -->
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Course</th>
+                <th>Lecturer</th>
+            </tr>
+            <tr>
+                <td>back end</td>
+                <td>Yossi Arye</td>
+            </tr>
+            <tr>
+                <td>front end</td>
+                <td>Israel Israeli</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>2 courses</th>
+                <th>2 lecturers</th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 5 COMMENTS</title>
+    <style>
+        /* Container for all boxes */
+        .container {
+            display: flex;
+            /* Enable Flexbox layout */
+            gap: 1rem;
+            /* Space between boxes */
+            padding: 2rem;
+            /* Inner spacing inside the container */
+            flex-direction: column-reverse;
+            /* Stack items vertically, from bottom to top */
+            align-items: center;
+            /* Center items horizontally */
+            height: 90vh;
+            /* Container height: 90% of the viewport */
+        }
+
+        /* Style for each individual box */
+        .box {
+            display: flex;
+            /* Make each box a flex container itself */
+            flex-grow: 1;
+            /* Box can grow to fill available space */
+            flex-shrink: 1;
+            /* Box can shrink when space is limited */
+            flex-basis: 200px;
+            /* Sets a consistent starting height. 
+            Ensures flex-shrink ratios (like 1, 2, etc.) are applied fairly by giving all items the same initial size to shrink from. */
+            text-align: center;
+            /* Center text horizontally */
+            align-items: center;
+            /* Center text vertically BUT — it only works if the element itself is display: flex. */
+            padding: 30px;
+            /* Inner spacing */
+            font-size: 1.2rem;
+            /* Font size relative to root font */
+            border-radius: 8px;
+            /* Rounded corners */
+        }
+
+        /* First box (bottom one due to column-reverse) */
+        .box:first-child {
+            flex-shrink: 1;
+            /* Normal shrink rate. */
+            min-height: 3rem;
+            /* Cannot shrink below 3rem */
+            background-color: lightcoral;
+            /* Red-ish background */
+        }
+
+        /* Second box (middle one) */
+        .box:nth-child(2) {
+            flex-shrink: 1;
+            /* Normal shrink rate. Only works when there's overflow*/
+            min-height: 3rem;
+            /* Minimum height */
+            background-color: lightblue;
+            /* Light blue background */
+        }
+
+        /* Third box (top one) */
+        .box:nth-child(3) {
+            flex-shrink: 2;
+            /* Shrinks faster than others when needed */
+            min-height: 1rem;
+            /* Can shrink smaller than others */
+            background-color: lightgreen;
+            /* Green background */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+    </div>
+</body>
+
+</html>

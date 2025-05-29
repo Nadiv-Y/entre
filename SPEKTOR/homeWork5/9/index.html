@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            margin: 20px;
+            /* Margin is not part of the element itself
+            Vertical margins are overlapping, and this behavior is known as margin collapsing */
+            padding: 30px;
+            border: 10px solid black;
+            font-size: 16px;
+            line-height: 1em;
+            /*1em = 100% of the current font size
+            /*font-size: 16px; → The base font size of the <p> is 16 pixels.
+             line-height: 1em; → 1 × 16px = 16px line height
+             So the height of each line of text inside the paragraph will be exactly equal to the font size (no extra spacing above or below the text).*/
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>item </p>
+        <p>item </p>
+    </div>
+</body>
+
+</html>

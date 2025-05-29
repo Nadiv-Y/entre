@@ -1,0 +1,8 @@
+📐 Relative Units (scale based on other elements)
+
+Unit	Meaning	Example
+%	    Percentage of parent	width: 80%;
+em	    Relative to parent font size	font-size: 2em;
+rem	    Relative to root <html> font	font-size: 1.5rem;
+vw	    1% of the viewport width	width: 50vw;
+vh	    1 % of the viewport height	height: 100vh;

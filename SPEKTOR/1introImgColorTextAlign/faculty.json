@@ -1,0 +1,44 @@
+{
+    "faculty": {
+        "name": "Programming",
+        "collage": "John Bryce Academy",
+        "courses": [
+            {
+                "index": "4578.117",
+                "name": "Full Stack Web Development"
+            },
+            {
+                "index": "7732.118",
+                "name": "Python Full Stack Development"
+            }
+        ],
+        "lecturers": [
+            {
+                "name": "Yossi Arye",
+                "office": 302
+            },
+            {
+                "name": "Liran Ben Haim",
+                "office": 244
+            }
+        ],
+        "students": [
+            {
+                "name": "Ariel Segal",
+                "phone": "0501234567"
+            },
+            {
+                "name": "Shon Lappo",
+                "phone": "0502345678"
+            },
+            {
+                "name": "Maxim Pikunovl",
+                "phone": "0503456789"
+            },
+            {
+                "name": "Yarden Blum",
+                "phone": "0504567890"
+            }
+        ]
+    }
+}

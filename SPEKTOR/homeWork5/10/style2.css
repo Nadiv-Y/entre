@@ -1,0 +1,14 @@
+/* # 10.2 */
+body {
+    width: 600px;
+}
+
+div {
+    width: 50%;
+    /*The <div> will be 50% of its parent, which is <body>.*/
+    height: 50%;
+    /*Here’s the trick: percentage-based height requires the parent to have a defined height.
+ In the code, the <body> does not have a defined height, so: 👉 height: 50% has no effect — the div will have height 0*/
+    background-color: gold;
+    border: 1px solid black;
+}

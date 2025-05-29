@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 6</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+/* This is the missing piece! aligns the whole set of wrapped rows vertically*/
+            border: 5px solid #FFD700;
+
+        }
+
+        .box {
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: #FFD700;
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 4</div>
+        <div class="box">Item 5</div>
+        <div class="box">Item 6</div>
+        <div class="box">Item 7</div>
+        <div class="box">Item 8</div>
+        <div class="box">Item 9</div>
+        <div class="box">Item 10</div>
+    </div>
+</body>
+
+</html>
+
+/* align-content: center; */
+/* This is the missing piece! aligns the whole set of wrapped rows vertically*/

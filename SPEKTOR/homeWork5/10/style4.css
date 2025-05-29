@@ -1,0 +1,18 @@
+/* 10.4*/
+body {
+    width: 600px;
+    /*The body { width: 600px; } does not limit the <div>.*/
+}
+
+div {
+    font-size: 10px;
+    /*em is a relative unit in CSS. It’s used to size elements (like font-size, padding, margin, width, etc.) based on the current font size.
+       
+    1em = 100% of the current font size
+    If the font size is 16px, then 1em = 16px
+    2em = 32px, 0.5em = 8px, etc.*/
+    width: 50em;
+    height: 50em;
+    background-color: gold;
+    border: 1px solid black;
+}

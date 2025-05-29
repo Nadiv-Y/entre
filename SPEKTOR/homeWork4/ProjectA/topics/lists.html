@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+
+    <style>
+        /* 🔵 Selects even-numbered <li> items in <ul>, and even <dd> elements inside <dl> */
+        ul li:nth-of-type(even),
+        dl>dd:nth-of-type(even) {
+            color: blue;
+        }
+
+        /* 🟡 Selects every 3rd <li> in <ul>, and every 3rd <dd> in <dl> (i.e., 3rd, 6th...) */
+        ul li:nth-of-type(3n),
+        dl>dd:nth-of-type(3n) {
+            color: gold;
+        }
+
+        /* Relational Selector: Makes only the first <dd> after any <dt> bigger (45px font size) */
+        dt+dd {
+            font-size: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🏠 A link to go back to indexC.html. The <h1> is the clickable part -->
+    <a href="../homePage.html">
+        <h1 id="homePage">Home Page</h1>
+    </a>
+
+    <!-- 📋 Unordered list of topics; note: <ol> inside <ul> may confuse CSS :nth-of-type logic -->
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+
+        <!-- 🔢 Ordered list inside the unordered list -->
+        <ol>
+            <li>Inline</li>
+            <li>Internal</li>
+            <li>External</li>
+        </ol>
+
+        <li>JS</li>
+    </ul>
+
+    <!-- 📚 Description list: "Full Stack" with three items -->
+    <dl>
+        <dt>Full Stack</dt> <!-- 💡 First <dt> -->
+        <dd>Front end</dd> <!--  Will be large font (because of dt + dd) + blue if even -->
+        <dd>Back end</dd>
+        <dd>Data Base</dd>
+    </dl>
+
+    <!-- 📚 Another description list -->
+    <dl>
+        <dt>Back End</dt> <!-- 💡 New <dt>, so first <dd> after this gets large font too -->
+        <dd>Nodejs</dd>
+        <dd>PHP</dd>
+        <dd>Python</dd>
+    </dl>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <title>Home Page</title>
+    <style>
+        ul li:nth-of-type(even),
+        dl>dd:nth-of-type(even) {
+            color: blue;
+        }
+
+        ul li:nth-of-type(3n),
+        dl>dd:nth-of-type(3n) {
+            color: gold;
+        }
+        dt + dd {
+            font-size: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../indexC.html">
+        <h1 id="homePage">Home Page</h1>
+    </a>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <ol>
+            <li>Inline</li>
+            <li>Internal</li>
+            <li>External</li>
+        </ol>
+        <li>JS</li>
+    </ul>
+
+    <dl>
+        <dt>Full Stack </dt>
+        <dd>Front end</dd>
+        <dd>Back end</dd>
+        <dd>Data Base</dd>
+    </dl>
+    <dl>
+        <dt>Back End</dt>
+        <dd>Nodejs</dd>
+        <dd>PHP</dd>
+        <dd>Python</dd>
+    </dl>
+</body>
+
+</html> -->

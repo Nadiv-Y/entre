@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* קובע את סוג הגופן לכל הדף */
+            max-width: 800px;
+            /* מגביל את הרוחב של התוכן ל־800 פיקסלים */
+            margin: 40px auto;
+            /* מוסיף מרווח של 40 פיקסלים מלמעלה ומלמטה, ומרכז את התוכן */
+            padding: 0 20px;
+            /* מוסיף רווח פנימי (padding) של 20 פיקסלים מימין ומשמאל */
+            background-color: #f9f9f9;
+            /* צבע רקע בהיר לכל הדף */
+            color: #333;
+            /* צבע טקסט אפור כהה */
+        }
+
+        a {
+            margin-right: 15px;
+            /* מרווח בין הקישורים */
+            text-decoration: none;
+            /* מבטל קו תחתון מהקישורים */
+            color: #0066cc;
+            /* צבע כחול לקישורים */
+            font-weight: bold;
+            /* הופך את הקישורים לכתב מודגש */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* כשעוברים עם העכבר – הקישור מקבל קו תחתון */
+        }
+
+        section {
+            margin-top: 40px;
+            /* רווח בין מקטעים (sections) */
+            padding: 20px;
+            /* רווח פנימי בתוך כל מקטע */
+            background-color: #ffffff;
+            /* צבע רקע לבן לכל מקטע */
+            border-left: 4px solid #0066cc;
+            /* פס כחול בצד שמאל של המקטע */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            /* צל עדין מאחורי המקטע */
+        }
+
+        h2 {
+            color: #222;
+            /* צבע כהה לכותרות */
+            margin-top: 0;
+            /* מבטל רווח עליון כדי לקרב את הכותרת לתוכן */
+        }
+
+        p {
+            line-height: 1.6;
+            /* גובה שורה – מרווח בין שורות הטקסט לפשטות הקריאה */
+        }
+
+        /* עיצוב לקישורי "Back to top" */
+        a[href="#"] {
+            display: inline-block;
+            /* מאפשר להגדיר מרווחים לקישור */
+            margin-top: 10px;
+            /* רווח בין הקישור לפסקה שמעליו */
+            font-size: 0.9em;
+            /* טקסט מעט קטן יותר מהרגיל */
+            color: #444;
+            /* צבע אפור כהה */
+        }
+
+        a[href="#"]:hover {
+            color: #000;
+            /* כשהעכבר עובר על הקישור – הצבע הופך לשחור */
+        }
+
+        a[href="#"]:focus {
+            color: #000;
+            /* כש-טאב עובר על הקישור – הצבע הופך לשחור */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <a href="#service">Service</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+
+    <section id="service">
+        <h2>Service</h2>
+        <p>We specialize in building beautiful, responsive websites for individuals, small businesses, and startups.
+            Whether you
+            need a personal portfolio, an online store, or a company homepage — we’ve got you covered.</p>
+
+    </section>
+    <a href="#">Back to top &uarr;</a>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>We’re a small, passionate team that believes in the power of great design and clean code. With years of
+            experience in
+            web development, we take pride in delivering work that is not only functional, but delightful to use.</p>
+    </section>
+    <a href="#">Back to top &uarr;</a>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Have a project in mind or just want to say hi? Reach out to us anytime at
+            <a href="mailto:hello@demo-site.com">hello@demo-site.com</a>. We’d love to hear from you!
+        </p>
+    </section>
+    <a href="#">Back to top &uarr;</a>
+</body>
+
+</html>

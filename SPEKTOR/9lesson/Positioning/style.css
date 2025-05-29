@@ -1,0 +1,50 @@
+.container {
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid gold;
+    /* position: relative; */
+}
+
+.box {
+    width: 15%;
+    height: 15%;
+    border: 1px solid gold;
+}
+
+.first {
+    background-color: red;
+}
+
+.second {
+    background-color: green;
+    /* position: fixed;  */
+    /* horizontal nav bar*/
+    /* top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 5%;
+    width: auto; */
+
+    /* vertical nav bar */
+    /* right: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 5%; */
+
+    /* position: relative;
+    top: -5px;
+    left: 10px; */
+
+
+    /* position: absolute;
+    bottom: 15px;
+    right: 20px; */
+
+    position: sticky;
+    top: 0;
+}
+
+.third {
+    background-color: blue;
+}

@@ -1,0 +1,120 @@
+body {
+    margin: 7rem;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    /* Vertical centering */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.box {
+    box-sizing: border-box;
+    background-color: #f2f9ff;
+    border: 1px solid black;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+p {
+    text-align: justify;
+    margin-top: 0;
+    font-size: 17px;
+}
+
+/* 1. Float */
+.float-box img.float-img {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+/* 2. Flex */
+.flex-box {
+    display: flex;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+.flex-box img {
+    width: 100px;
+    height: 100px;
+}
+
+/* 3. Grid bottom-left alignment */
+.grid-box-right {
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.grid-box-right .red {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.grid-box-right .green {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+}
+
+.grid-box-right .blue {
+    grid-row: 3 / 4;
+    grid-column: 5 / 6;
+}
+
+.grid-box-left {
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-color: #f0f8ff;
+}
+
+/* BLUE square at bottom-left */
+.grid-box-left .blue {
+    grid-column: -6 / -5;
+    /* starts at line -6, ends before line -5 */
+    grid-row: -2 / -1;
+    /* last row */
+}
+
+/* GREEN square center-bottom */
+.grid-box-left .green {
+    grid-column: -4 / -3;
+    grid-row: -3 / -2;
+}
+
+/* RED square bottom-right */
+.grid-box-left .red {
+    grid-column: -2 / -1;
+    grid-row: -4 / -3;
+}
+
+/* Colored squares */
+.square {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}

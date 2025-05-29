@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 4</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 1rem;
+            padding: 2rem;
+            flex-direction: column;
+            height: 90vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            flex: 1;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+
+        .box:first-child {
+            background-color: lightcoral;
+        }
+
+        .box:nth-child(2) {
+            flex-grow: 2;
+            background-color: lightblue;
+        }
+
+        .box:nth-child(3) {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+    </div>
+</body>
+
+</html>

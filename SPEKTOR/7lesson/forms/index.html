@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/homeWork3/coffeeSite/lib/style/normalize.css
+    ">
+    <style>
+        body {
+            margin: 19px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://formspree.io/f/xanowdbd" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="yossi.arye@gmail.com" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" id="pass">
+        </div>
+
+        <div class="form-group">
+            <label for="exp">Years Of Experience</label>
+            <input type="number" id="exp" min="0" max="40">
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date Of Birth</label>
+            <input type="date" id="date">
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Phone No.</label>
+            <input type="tel" id="mobile" placeholder="054-353-33-25" pattern="[0-9A-Z]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea type="" id="notes" rows="1" readonly disabled>sdfsde</textarea>
+            </div>
+            <div class="form-group">
+                <label for="prof-input">Profession</label>
+                <input id="prof-input" rows="1" list="prof" placeholder="choose...">
+                <datalist id="prof">
+                    <option>front end</option>
+                    <option>backend end</option>
+                    <option>full stack</option>
+                </datalist>
+            </div>
+
+
+            <div class="form-group">
+                <!-- <input type="submit"> -->
+                 <button type="submit">Register</button>
+                 <button type="reset">Clear</button>
+            </div>
+
+    </form>
+
+
+</body>
+
+</html>
