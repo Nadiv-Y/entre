@@ -1,0 +1,14 @@
+table,
+th,
+td {
+    border: solid black 1px;
+}
+
+table {
+    width: 600px;
+    border-collapse: collapse;
+}
+
+tfoot {
+    text-align: left;
+}

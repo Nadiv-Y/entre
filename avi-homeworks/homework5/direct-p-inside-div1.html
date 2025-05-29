@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div p test</title>
+    <style>
+        div p {
+            width: 300px;
+            height: 300px;
+            color: blue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div></div>
+
+    <h1>div p test</h1>
+
+    <div id="div1" class="container">
+        <p class="direct-p-inside-div1">item 1 - inside div directly</p>
+
+        <div class="inner-div">
+            <p class="nested-p-inside-inner-div">item 2 - inside another div inside div1</p>
+        </div>
+
+        <span class="inner-span">
+        <p class="p-inside-span-inside-div">item 3 - inside span inside div1</p>
+    </span>
+    </div>
+
+    <section id="section1">
+        <p class="p-inside-section">item 4 - inside section (not inside div)</p>
+    </section>
+
+    <div id="div2">
+        <p class="direct-p-inside-div2">item 5 - inside div2</p>
+    </div>
+
+</body>
+
+</html>

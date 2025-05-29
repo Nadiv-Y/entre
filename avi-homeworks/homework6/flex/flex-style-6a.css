@@ -1,0 +1,26 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80vw;
+        height: 100vh;
+        border: 3px solid gold;
+    }
+    
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: gold;
+        margin: 5px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 10px;
+    }

@@ -1,0 +1,23 @@
+.container {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.first {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.second {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.third {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}

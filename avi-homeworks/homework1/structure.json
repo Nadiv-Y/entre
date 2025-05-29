@@ -1,0 +1,35 @@
+{
+    "faculty": {
+        "teachers": [{
+                "name": "Yossi Arye",
+                "age": 34
+            },
+            {
+                "name": "Israel Israeli",
+                "age": 27
+            }
+        ],
+        "students": [{
+                "name": "Yaer Kalphone"
+            },
+            {
+                "name": "Arye Steinberg"
+            },
+            {
+                "name": "Avi Moyal"
+            },
+            {
+                "name": "Lior Cohen"
+            }
+        ],
+        "courses": [{
+                "title": "Intro to Programming",
+                "teacher": "Yossi Arye"
+            },
+            {
+                "title": "Web Development",
+                "teacher": "Israel Israeli"
+            }
+        ]
+    }
+}
