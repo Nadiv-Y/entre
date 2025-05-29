@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: sans-serif; /* Шрифт: sans-serif */
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #000; /* Цвет фона навигационной панели: Черный */
+    padding: 0;
+}
+
+.main-nav .nav-list {
+    list-style: none; /* Убираем маркеры списка */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-list li a {
+    display: block; /* Делаем ссылки блочными для удобства клика */
+    padding: 15px 20px; /* Отступы для каждого пункта меню */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: white; /* Цвет текста ссылок */
+    text-align: center; /* Центрируем текст ссылок (для мобильного режима) */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+.main-nav .nav-list li a:hover {
+    background-color: #333; /* Изменение цвета при наведении */
+}
+
+
+/* Стили для МОБИЛЬНОГО режима (по умолчанию, для экранов меньше 768px) */
+
+.main-nav .nav-list {
+    display: flex; /* Используем Flexbox для элементов списка */
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center;   /* Выравниваем элементы по центру горизонтали */
+}
+
+
+
+@media (min-width: 768px) { /* Медиа-запрос для экранов от 768px и шире */
+    .main-nav .nav-list {
+        flex-direction: row;     /* Элементы располагаются горизонтально */
+        justify-content: flex-end; /* Выравниваем элементы по правому краю */
+        align-items: center; /* Убедимся, что они выровнены по центру по вертикали */
+        height: 60px; /* Фиксированная высота для десктопной навигации */
+    }
+
+    .main-nav .nav-list li a {
+        padding: 0 15px; /* Уменьшаем вертикальный padding, т.к. есть высота у родителя */
+        line-height: 60px; /* Выравниваем текст по центру вертикали */
+    }
+}

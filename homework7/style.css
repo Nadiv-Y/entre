@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* Цвет фона страницы: #f5f5f5 */
+    background-color: #f5f5f5;
+    /* Центрирование формы по вертикали и горизонтали */
+    display: flex; /* Используем Flexbox для центрирования содержимого body */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center;     /* Центрируем по вертикали */
+    min-height: 100vh;       /* Занимаем всю высоту viewport */
+    /* Шрифт: sans-serif */
+    font-family: sans-serif;
+}
+
+.form-container {
+    /* Цвет фона формы: #d6efd0 */
+    background-color: #d6efd0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Фиксированная ширина для формы */
+    text-align: center; /* Центрируем заголовок и кнопку */
+}
+
+h2 {
+    margin-top: 0;
+    /* margin-bottom: 25px; */
+    /* color: #333; */
+}
+
+.input-group {
+    margin-bottom: 15px; /*разделение между Email и Password */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px); /* 100% ширины минус padding и border */
+    padding: 10px;
+    border: 1px solid;
+    /* Цвет рамки в обычном состоянии: #ced4da */
+    border-color: #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Важно, чтобы padding и border не увеличивали ширину */
+}
+
+/* Цвет рамки в состоянии фокуса: #86b7fe */
+/* Тень в состоянии фокуса: #b9d3fa */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #86b7fe; /*Синий цвет рамки при фокусе*/
+  
+}
+
+.checkbox-group {
+    align-items: center;
+    justify-content: flex-start; /* Выравниваем по левому краю */
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+
+
+.sign-in-button {
+    width: 100%;
+    padding: 11px;
+    background-color: #007bff; /* Синяя кнопка */
+    color: white;
+    border: none;/* Убирают границу на кнопке*/
+    border-radius: 5.5px;/* Углы элемента скругленными*/
+    font-size: 1.15em;
+    cursor: pointer;/* Когда наводишь на кнопку оно делает курсор */
+    transition: background-color 0.2s ease;/*Создает плавный эффект изменения цвета при наведении.*/
+}
+
+.sign-in-button:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+}
+
+.copyrights {
+    margin-top: 25px;
+    font-size: 0.8em;
+    color: #777;
+}

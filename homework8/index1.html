@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга: RUSSIA VS UKRAINE</title>
+    <!-- Підключаємо Bootstrap для стилів -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Навбар з назвою книги -->
+<nav class="navbar bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">📖 RUSSIA VS UKRAINE</a>
+  </div>
+</nav>
+
+<!-- Розділ з варіантами покупки -->
+<div class="container my-4">
+  <div class="row">
+    <!-- Starter Edition -->
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5>Starter Edition</h5>
+          <p class="text-muted">eBook only</p>
+          <p>$12.99</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complete Edition -->
+    <div class="col-md-4">
+      <div class="card text-center border-primary">
+        <div class="card-body">
+          <span class="badge bg-primary">Most Popular</span>
+          <h5>Complete Edition</h5>
+          <p class="text-muted">eBook + Updates</p>
+          <p>$18.99</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ultimate Edition -->
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5>Ultimate Edition</h5>
+          <p class="text-muted">All features</p>
+          <p>$24.99</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Акордеон з главами книги -->
+<div class="container">
+  <h2>Book chapter</h2>
+  <div class="accordion" id="chapters">
+    
+    <!-- Глава 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#chapter1">
+          Chapter 1 – Your First Web Page
+        </button>
+      </h2>
+      <div id="chapter1" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <!-- Опис глави 1 -->
+          Description of the first chapter...
+        </div>
+      </div>
+    </div>
+
+    <!-- Глава 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chapter2">
+          Chapter 2 – Mastering CSS
+        </button>
+      </h2>
+      <div id="chapter2" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <!-- Опис глави 2 -->
+          Description of the second chapter...
+        </div>
+      </div>
+    </div>
+
+    <!-- Глава 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chapter3">
+          Chapter 3 – The Power of JavaScript
+        </button>
+      </h2>
+      <div id="chapter3" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Description of the third chapter...
+        </div>
+      </div>
+    </div>
+
+    <!-- Глава 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chapter4">
+          Chapter 4 – Storing Data (Firebase)
+        </button>
+      </h2>
+      <div id="chapter4" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Description of the fourth chapter...
+        </div>
+      </div>
+    </div>
+
+    <!-- Глава 5 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chapter5">
+          Chapter 5 – User Authentication
+        </button>
+      </h2>
+      <div id="chapter5" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Description of the fifth chapter...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Відгук -->
+<div class="container my-5">
+  <h2 class="text-center">⭐️ Book Reviews</h2>
+  <!-- Одна картка з відгуком -->
+  <div class="card p-3">
+    <p>Text of the review...</p>
+    <p class="text-muted"><small>Review by Mario</small></p>
+  </div>
+</div>
+
+<!-- Контактна форма -->
+<div class="container my-5">
+  <h2 class="text-center">Get in Touch</h2>
+  <p class="text-center">Questions to ask? Fill out the form...</p>
+  <form>
+    <!-- Поле email -->
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="Your email">
+    </div>
+    <!-- Поле запиту -->
+    <div class="mb-3">
+      <select class="form-select">
+        <option selected>What is your question about?</option>
+        <option value="pricing">Pricing</option>
+        <option value="content">Content</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <!-- Повідомлення -->
+    <div class="mb-3">
+      <textarea class="form-control" rows="4" placeholder="Your message..."></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- Кнопка для модального вікна -->
+<div class="container text-center my-5 bg-light p-4 rounded">
+  <h2>Stay In The Loop</h2>
+  <p>Get the latest updates...</p>
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updatesModal">
+    Register for Updates
+  </button>
+</div>
+
+<!-- Модальне вікно -->
+<div class="modal fade" id="updatesModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Get the Latest Updates</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Поле для email -->
+        <input type="email" class="form-control" placeholder="Your email">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Підключення Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+ body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+
+    /* Заголовки */
+    .title {
+      font-size: 18px;
+      margin: 5px;
+      text-align: center;
+    }
+
+    /* Сітка для зображень */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Дві колонки */
+      gap: 10px; /* Проміжки між зображеннями */
+      max-width: 500px;
+    }
+
+    /* Стиль для всіх зображень */
+    .grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Останнє зображення займає обидві колонки */
+    .wide {
+      grid-column: span 2;
+    }
