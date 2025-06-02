@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100svh;
+}
+
+.flex-container{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.flex-container-column{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.flex-container-column.five > .flex-item{
+    flex-basis: 150px;
+}
+
+.flex-item:nth-child(1){
+    background-color: aquamarine;
+    flex-grow: 4;
+}
+
+.flex-item:nth-child(2){
+    background-color: rgb(127, 187, 255);
+    flex-grow: 1;
+}
+
+.flex-item:nth-child(3){
+    background-color: rgb(140, 255, 127);
+    flex-grow: 1;
+}
+
+.flex-container-column > .flex-item:nth-child(1){
+    background-color: aquamarine;
+    flex-grow: 1;
+}
+
+.flex-container-column > .flex-item:nth-child(2){
+    background-color: rgb(127, 187, 255);
+    flex-grow: 2;
+}
+
+.flex-container-column > .flex-item:nth-child(3){
+    background-color: rgb(140, 255, 127);
+    flex-grow: 1;
+}
+
+.flex-container-column.five{
+    flex-direction: column-reverse;
+}
+
+.flex-container-column.five > .flex-item:nth-child(1){
+    background-color: aquamarine;
+    flex-shrink: 1;
+}
+
+.flex-container-column.five > .flex-item:nth-child(2){
+    background-color: rgb(113, 179, 255);
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.flex-container-column.five > .flex-item:nth-child(3){
+    background-color: rgb(140, 255, 127);
+    flex-shrink: 2;
+}

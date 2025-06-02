@@ -1,0 +1,17 @@
+div{
+    width: 600px;
+    height: 1600px;
+    background-color: blue;
+}
+
+div > div {
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+}
+
+div:nth-of-type(2n){
+    background-color: yellowgreen;
+    position: fixed;
+    top: 200px;
+}

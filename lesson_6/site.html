@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+
+        body{
+            padding: 100px;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .main{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            height: 100%;
+            gap: 20px;
+        }
+
+        .container{
+            background-color: rgb(229, 246, 251);
+            height: 100%;
+            border: 3px solid black;
+            padding: 20px;
+        }
+
+        .container.grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(12fr, 1fr); 
+        }
+
+        .frame{
+            border: 2px solid black;
+            display: flex;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+        }
+
+        .box:nth-child(1){
+            background-color: red;
+        }
+
+        .box:nth-child(2){
+            background-color: green;
+            grid-area: 2 / 2 /  3 / 3 ;
+            place-self: center;
+        }
+
+        .box:nth-child(3){
+            background-color: blue;
+            grid-area: 3 / 3 /  4 / 4 ;
+            place-self: end;
+        }
+
+        .box.two:nth-child(1){
+            background-color: red;
+            grid-area: 9 / 3 / 10 / 4;
+            place-self: end;
+        }
+
+        .box.two:nth-child(2){
+            background-color: green;
+            grid-area: 10 / 2 / 11 / 3;
+            place-self: center;
+        }
+
+        .box.two:nth-child(3){
+            background-color: blue;
+            grid-area: 11 / 1 / 12 / 2;
+            place-self: start;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            float: left;
+            margin-right: 20px;
+            
+        }
+
+        p{
+            margin: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <img src="/lesson_6/garden.webp" alt="Garden">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, temporibus doloribus? Quibusdam quia sint iusto iure eligendi eum fuga ullam!</p>
+        </div>
+        <div class="container">
+            <div class="frame">
+                <img src="/lesson_6/Coffee.jpg" alt="Garden">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, temporibus doloribus? </p>
+            </div> 
+        </div>
+        <div class="container grid">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="container grid">
+            <div class="box two"></div>
+            <div class="box two"></div>
+            <div class="box two"></div>
+        </div>
+    </div>
+</body>
+</html>
