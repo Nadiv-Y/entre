@@ -1,0 +1,29 @@
+@media (max-width: 767px) {
+    .card {
+        height: 33vh;
+        overflow: hidden;
+    }
+    .card-body {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-title {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+    .card-body p,
+    .card-body h2 {
+        font-size: 0.85rem;
+        margin-bottom: 0.2rem;
+    }
+    .card-header {
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+    .btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
