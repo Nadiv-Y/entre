@@ -1,10 +1,8 @@
-let a = 1
-b = a
-a = 4
-console.log(b, a);
+switch (key) {
+  case value1:
+    
+    break;
 
-let c = 1
-let d = c
-c = 4
-console.log(b, a);
-
+  default:
+    break;
+}

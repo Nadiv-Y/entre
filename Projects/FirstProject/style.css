@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  border: solid;
+}
+h2 {
+  font-family: "Courier New", Courier, monospace;
+}
+.notebook{
+  width: 70%;
+  height: 30%;
+  background-image: url('/Projects/FirstProject/hand-drawn-blue-lined-paper-background_23-2151105453.avif');
+  background-size: cover;
+  border: 1px solid red;
+}
