@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("=firstQ=");
+      const val1 = -9;
+      const printTheValue = testvalue(val1);
+      function testvalue(params) {
+        if (val1 > 0) {
+          return val1 + " is positive";
+        } else if (val1 === 0) {
+          return val1 + " is zero";
+        } else {
+          return val1 + " is negative";
+        }
+      }
+      console.log(printTheValue);
+
+      console.log("=secondQ=");
+      const value1 = 4;
+      const value2 = 3;
+      const value3 = 4;
+      const increasing = testIncrease(value1, value2, value3);
+      function testIncrease(params) {
+        if (value1 < value2 && value2 < value3) {
+          return "Increasing";
+        } else {
+          return "not increasing";
+        }
+      }
+      console.log(increasing);
+
+      console.log("=thirdQ=");
+      const valueC1 = 8;
+      const valueC2 = 8;
+      const valueC3 = 9;
+      const testWhoIsTheLargest = testLarge(valueC1, value2, valueC3);
+      function testLarge(params) {
+        if (
+          (valueC1 > valueC2 && valueC1 > valueC3) ||
+          (valueC1 === valueC2 && valueC1 === valueC3)
+        ) {
+          return valueC1 + " is the largest";
+        } else if (
+          (valueC2 > valueC1 && valueC2 > valueC3) ||
+          (valueC2 === valueC1 && valueC2 === valueC3)
+        ) {
+          return valueC2 + " is the largest";
+        } else {
+          return valueC3 + " is the largest";
+        }
+      }
+      console.log(testWhoIsTheLargest);
+
+      console.log("=forthQ=");
+      const enterNumber = 631;
+      const numberCounting = countTest(enterNumber);
+      function countTest(params) {
+        if (enterNumber <= 9) {
+          return 1;
+        } else if (enterNumber <= 99) {
+          return 2;
+        } else if (enterNumber <= 999) {
+          return 3;
+        } else {
+          return 4;
+        }
+      }
+      console.log(numberCounting);
+
+      console.log("=fifthQ=");
+      const inCome = 250000;
+      const person = 'Nadiv'
+      const stageOne = inCome * 0.1;
+      const stageTwo = (inCome - 23000) * 0.2 + 2300;
+      const stageThree = (inCome - 46000) * 0.3 + 6900;
+      const stageFour = (inCome - 120000) * 0.4 + 20700;
+      const stageFive = (inCome - 220000) * 0.5 + 68700;
+
+      function taxCalculayion(params) {
+        if (inCome <= 23000) {
+          return stageOne;
+        } else if (inCome > 23000 && inCome <= 46000) {
+          return stageTwo;
+        } else if (inCome > 46000 && inCome <= 120000) {
+          return stageThree;
+        } else if(inCome > 120000 && inCome <= 220000) {
+          return stageFour;
+        }else {
+          return stageFive
+        }
+      }
+
+      const tax = taxCalculayion(inCome);
+      console.log(person + ' need to pay '+ tax + ' Tax');
+    </script>
+  </body>
+</html>

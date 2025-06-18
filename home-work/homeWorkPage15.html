@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("===firstQ===");
+
+      function averge(num1, num2, num3) {
+        const res1 = (num1 + num2 + num3) / 3;
+        return res1;
+      }
+
+      let res1 = averge(5, 5, 5);
+      console.log(res1);
+      console.log("===secondQ===");
+
+      function surface(width, length) {
+        const res2 = width * length;
+        return res2;
+      }
+      function perimeter(width, length) {
+        const res3 = width * 2 + length * 2;
+        return res3;
+      }
+      let res2 = surface(5, 10);
+      console.log("the surface is: " + res2);
+      let res3 = perimeter(5, 10);
+      console.log("the perimeter is: " + res3);
+
+      console.log("===thirdQ===");
+
+      function V(pi, radius, high) {
+        const res4 = pi * (radius ^ 2) * high;
+        return res4;
+      }
+
+      let res4 = V(3.14, 0.8, 0.9);
+
+      console.log("the volume is: " + res4);
+
+      console.log("===forthQ===");
+
+      function minitus(minitus) {
+        const res5 = minitus % 60;
+        return res5;
+      }
+      function hour(hour) {
+        const res6 = hour / 60;
+        return res6;
+      }
+
+      let movieTime = 142;
+      let res5 = minitus(movieTime);
+      let res6 = hour(movieTime - res5);
+
+      console.log("the mivie is: " + res6 + " hour and " + res5 + " minitus");
+
+      console.log("===fifthQ===");
+      function theRightNumber(small) {
+        const res7 = fourNumber % 10;
+        return res7;
+      }
+      let fourNumber = 4545;
+      let res7 = theRightNumber(fourNumber);
+      console.log(res7);
+
+      console.log("===sixQ===");
+      function theSecondRightNumber(small) {
+        const res8 = ((fourNumber1 % 100) - (fourNumber1 % 10)) / 10;
+        return res8;
+      }
+      let fourNumber1 = 8728;
+      let res8 = theSecondRightNumber(fourNumber1);
+      console.log(res8);
+
+      console.log("===sevenQ===");
+
+      function theTltNumber(params) {
+        const res9 = (thirdNumber - (thirdNumber % 100)) / 100;
+        return res9;
+      }
+      let thirdNumber = 631;
+      let res9 = theTltNumber(thirdNumber);
+      console.log(res9);
+
+      console.log("===eightQ===");
+      let two = 46;
+      let res11 = twoNumber(two);
+
+      function twoNumber(params) {
+        const res11 = (two - (two % 10)) / 10 + (two % 10);
+        return res11;
+      }
+      console.log(res11);
+
+      console.log("===nineQ===");
+      let oposit = 23;
+      let res12 = opositNumber(oposit);
+      let res13 = opositNumber2(oposit);
+
+      function opositNumber(params) {
+        const res12 = (oposit - (oposit % 10)) / 10;
+        return res12;
+      }
+      function opositNumber2(params) {
+        const res13 = oposit % 10;
+        return res13;
+      }
+      console.log(res13, res12);
+
+      console.log("===tenQ===");
+    </script>
+  </body>
+</html>

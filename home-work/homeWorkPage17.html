@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+                  console.log("=firstQ=");
+
+                  const growing1 = 3;
+                  const growing2 = 5;
+
+                  function growChecking(params) {
+                    if (growing1 < growing2) {
+                      return growing2;
+                    }
+                  }
+                  const biggestNumber = growChecking(growing1, growing2);
+                  console.log(biggestNumber);
+
+                  console.log("=secondQ=");
+                  const big1 = 58;
+                  const big2 = 56;
+                  const biger = whoIsBiger(big1, big2);
+
+                  function whoIsBiger(params) {
+                    if (big1 >= big2) {
+                      return big1;
+                    } else big2 > big1;
+                    {
+                      return big2;
+                    }
+                  }
+                  console.log(biger);
+
+                  console.log("=thirdQ=");
+                  const num1 = 12;
+                  function checking(params) {
+                    const res1 = num1 % 2;
+                    if (res1 == 0) {
+                      return "even";
+                    } else {
+                      return "odd";
+                    }
+                  }
+                  const res1 = checking(num1);
+                  console.log(res1);
+
+                  console.log("=forthQ=");
+
+                  const NUM1 = 30
+                  const NUM2 = 30
+                  const divWhole = div(NUM1,NUM2)
+
+                  function div(params) {
+                    const res4 = (NUM1 / NUM2) % 1
+                    if (res4 !== 0) {
+                        return 'the number devided with remainder'
+                    } else {
+                        return 'the nembers diveided without remainder'
+                    }
+                  }
+                  console.log(divWhole);
+
+                   console.log("=fifthQ=");
+                  const firstNumber = 6
+                  const secondNumber = 10
+                  const checkWhoIsBigger = test(firstNumber,secondNumber)
+                  function test(params) {
+                if (firstNumber < secondNumber) {
+                    return 'this is the small number: ' + firstNumber + ' and this is the big number: ' + secondNumber
+                } else if (firstNumber === secondNumber){return 'the number: ' + firstNumber + ' is equel to : ' + secondNumber} else {
+                    return 'this is the small number ' + secondNumber + ' and this is the big number ' + firstNumber
+                }
+            }
+            console.log(checkWhoIsBigger);
+
+             console.log("=sixQ=");
+             const salary = 10**4
+             const nadivSalary = salary*6.5
+             const increaseCeiling = 6000
+             const salaryIncrease = nadivSalary * 0.1
+             const checkIfIncreaseOk = notOver6K(salaryIncrease)
+
+             function notOver6K(params) {
+                if (salaryIncrease>increaseCeiling) {
+                return nadivSalary * 0.05 + nadivSalary
+                } else {
+                    return salaryIncrease + nadivSalary
+                }
+             }
+
+             console.log(checkIfIncreaseOk);
+             
+
+    </script>
+  </body>
+</html>
