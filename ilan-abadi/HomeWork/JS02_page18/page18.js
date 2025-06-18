@@ -104,19 +104,19 @@ function payForIRS(SelfEmployedName, income) {
             break;
     
         case income <= 46000:
-            tax = income * 0.2
+            tax = (income - 23000) * 0.2 + 2300
             break;
     
         case income <= 120000:
-            tax = income * 0.3
+            tax = (income - 46000) * 0.3 + 6900
             break;
     
         case income <= 220000:
-            tax = income * 0.4
+            tax = (income - 120000) * 0.4 + 29100
             break;
     
         default:
-            tax = income * 0.5
+            tax = (income - 220000) * 0.5 + 169100
             break;
     }
     console.log(SelfEmployedName + " has to pay the I.R.S " + tax + " NIS.");
