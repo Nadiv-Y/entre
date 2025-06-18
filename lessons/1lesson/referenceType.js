@@ -7,7 +7,10 @@ const person = {
 console.log(person);
 
 person.id = '206392698'
+sos = '563563'
 // use .--- for strings / number's
+
+person[person.id] = '20'
 
 console.log(person);
 
@@ -33,4 +36,9 @@ person[m] = 'yes'
 
 console.log(person1);
 
+person.high = 1.70
+
+person[person.high] = 1.60
+
+console.log(person1);
 
