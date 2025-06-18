@@ -78,39 +78,50 @@ function taxRate(name, salary) {
   const thirdGap = 100000;
 
   let tax = 0;
+  let value = baseLine;
+  let salaryGap = salary;
 
-  if (salary <= baseLine) {
-    tax = salary * 0.1;
+  if (salary < value) {
+    tax += salaryGap * 0.1;
+  } else {
+    tax += baseLine * 0.1;
   }
 
-  if (salary > firstGap) {
-    let firstSalaryGap = salary - baseLine;
-    console.log(firstSalaryGap)
-    tax = baseLine * 0.1 + firstSalaryGap * 0.2;
-    console.log(tax)
+  value += firstGap;
+  salaryGap -= baseLine;
 
-    if (salary > baseLine + firstGap) {
-      let secondSalaryGap = salary - baseLine - firstGap;
-      tax = tax + secondSalaryGap * 0.3;
-        console.log(tax)
+  if (salary < value) {
+    tax += salaryGap * 0.2;
+  } else {
+    tax += firstGap * 0.2;
+  }
 
-      if (salary > baseLine + firstGap + secondGap) {
-        let thirdSalaryGap = salary - baseLine - firstGap - secondGap;
-        tax = tax + thirdSalaryGap * 0.4;
-            console.log(tax)
+  value += secondGap;
+  salaryGap -= firstGap;
 
+  if (salary < value) {
+    tax += salaryGap * 0.3;
+  } else {
+    tax += secondGap * 0.3;
+  }
 
-        if (salary > baseLine + firstGap + secondGap + thirdGap) {
-          let forthSalaryGap = salary - baseLine - firstGap - secondGap - thirdGap;
-          tax = tax + forthSalaryGap * 0.5;
-                console.log(tax)
+  value += thirdGap;
+  salaryGap -= secondGap;
 
-        }
-      }
-    }
+  if (salary <= value) {
+    tax += salaryGap * 0.4;
+  } else {
+    tax += thirdGap * 0.4;
+  }
+
+  salaryGap -= thirdGap;
+
+  if (salary > value) {
+    tax += salaryGap * 0.5;
   }
 
   return `${name} need to pay ${tax} tax`;
+
 }
 
-console.log(taxRate(`Dolev`, 47000));
+console.log(taxRate(`Dolev`, 221000));
