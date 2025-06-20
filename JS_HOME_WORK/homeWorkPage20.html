@@ -69,7 +69,7 @@
       console.log(equationSolution);
       
       console.log("=forthQ=");
-      const year = 2004
+      const year = 2002
       function checkIfLeapYear(params) {
         if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0) {
             return year + ' is a leap year'
@@ -81,6 +81,23 @@
       console.log(yearType)
 
       console.log("=fifthQ=");
+      const monthNumber = 2
+      function countDaysNumber(params) {
+        if (monthNumber === (4 && 6) ||monthNumber === (9 && 11) ) {
+            return yearType + ' the days number is: ' + 30
+        } else if (monthNumber === 2) {
+            if (yearType == year + ' is a leap year' ) {
+                return yearType + ' the days number is: ' + 29
+            }else {
+                return yearType + ' the days number is: ' + 28
+            }
+        } else {
+           return yearType + ' the days number is: ' + 31
+        }
+      }
+      const daysNumber = countDaysNumber(monthNumber, yearType)
+      console.log(daysNumber);
+      
     </script>
   </body>
 </html>
