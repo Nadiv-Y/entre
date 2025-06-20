@@ -7,7 +7,7 @@
   </head>
   <body>
     <script>
-      console.log("=firstQ");
+      console.log("=firstQ=");
       const val1 = 10;
       const val2 = 11;
       const val3 = 13;
@@ -29,7 +29,7 @@
       const tellMeWhoIsBigger = checkWhoIsBigger(val1, val2, val3);
       console.log(tellMeWhoIsBigger);
 
-      console.log("=secondQ");
+      console.log("=secondQ=");
       const studentGrade = 96
       function giveMeAgrade(params) {
          if (studentGrade < 55) {
@@ -49,6 +49,38 @@
       let finelGrade = giveMeAgrade(studentGrade)
       console.log(finelGrade);
       
+      console.log("=thirdQ=");
+      const A =1
+      const B =5
+      const C =3
+      const D =2
+      const E =5
+      const F =5
+      const X = ((C*E)-(B*F)) / ((A*E)-(B*D))
+      const Y = ((A*F)-(C*D)) / ((A*E)-(B*D))
+      function returnXY(params) {
+        if ((A*E)-(B*D) === 0) {
+            return 'equation has no solution'
+        } else {
+            return 'X = ' + X + ' and Y= ' + Y
+        }
+      }
+      const equationSolution = returnXY(X,Y)
+      console.log(equationSolution);
+      
+      console.log("=forthQ=");
+      const year = 2004
+      function checkIfLeapYear(params) {
+        if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0) {
+            return year + ' is a leap year'
+        } else {
+            return year + ' is a regiuler year'
+        }
+      }
+      const yearType = checkIfLeapYear(year)
+      console.log(yearType)
+
+      console.log("=fifthQ=");
     </script>
   </body>
 </html>
