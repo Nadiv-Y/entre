@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // while loop = repeat some code WHIKE some condition is true
+
+      let userName = "nadiv";
+      while (userName === "" || userName === null) {
+        // console.log('you didnt enter your name'); // if the condition is true this line of code will enter us to endless loop (if userName = '')
+
+        userName = window.prompt("enter your name");
+      }
+      console.log("welcome " + userName);
+
+      let lastName;
+
+      do {
+        // the do means that if we want to decluer let / const for example and leave it empty, becuase we want that the user will fill it so we will use -do- now the command is to promp first and after it to check if the condition if true or false.
+        // lastName = window.prompt('enter your last name')
+      } while (lastName === "" || lastName === null);
+      console.log(lastName);
+
+      let loggedIn = false;
+      let userName1;
+      let password;
+
+      while (!loggedIn) {
+        userName1 = window.prompt("enter your user name");
+        password = window.prompt("enter your password");
+
+        if (userName1 == 'nadiv' && password == 'nadiv') {
+         loggedIn = true;
+          console.log("welcome !!");
+        } else {
+          console.log("the user name & password is invalid, please try again");
+        }
+      }
+    </script>
+  </body>
+</html>
