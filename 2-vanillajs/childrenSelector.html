@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* ::selection {
+            background-color: lightcoral;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="list">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+
+
+    <script>
+
+        let list = document.querySelector('#list')
+
+        console.log(list.childNodes);
+        console.log(list.children);
+
+        list.children[0].innerText = 'I\'m Dolev and I\'m using my brain'
+
+        console.log(list.firstChild);
+        console.log(list.firstElementChild);
+        console.log(list.lastElementChild);
+
+    </script>
+</body>
+
+</html>

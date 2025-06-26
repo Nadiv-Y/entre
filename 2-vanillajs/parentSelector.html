@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="list">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+
+
+    <script>
+        let list = document.querySelector('#list')
+        console.log(list.parentNode);
+
+        list.parentNode.style.backgroundColor = 'rgb(100, 100, 100)'
+
+        console.log(list.parentElement);
+
+        let html = document.querySelector('html')
+        console.log(html.parentNode);
+        console.log(html.parentElement);
+
+
+    </script>
+</body>
+
+</html>

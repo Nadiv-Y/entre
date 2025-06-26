@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="list-item">Water</li>
+        <li class="list-item">Tea</li>
+        <li class="list-item">Love</li>
+    </ul>
+
+
+    <script>
+        let listItems = document.getElementsByClassName('list-item')
+        console.log(listItems);
+
+        listItems[1].innerHTML = "<a href='https://google.com' target='_blank'>Google</a>"
+
+        for (const item of listItems) {
+            item.style.color = 'blue'
+        }
+
+        for (const key in listItems) {
+            listItems[key].style.backgroundColor = 'lightgray'
+        }
+
+
+    </script>
+</body>
+
+</html>

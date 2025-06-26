@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="list">
+            <li id="item-1">item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+
+
+    <script>
+
+        let newLi = document.createElement('li')
+
+        newLi.className = 'li-group'
+        newLi.id = 'item-1'
+
+
+        let newAnchor = document.createElement('a')
+
+        newAnchor.setAttribute('href', 'https://google.com')
+        newAnchor.setAttribute('id', 'new-anchor')
+        newAnchor.innerText = 'google'
+
+        newLi.appendChild(newAnchor)
+
+
+
+
+
+
+        let list = document.querySelector('#list')
+
+        // list.prepend(newLi)
+
+        let firstLi = document.querySelector('#item-1')
+
+        list.insertBefore(newLi, firstLi)
+
+        list.removeChild(list.lastElementChild)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="main-header">Fuze Tea<span style='background-color: yellow;'>!!!</span></h1>
+    <h2 id="sub-header"></h2>
+    <script>
+        let mainHeader = document.getElementById('main-header')
+        console.log(mainHeader);
+        let subHeader = document.getElementById('sub-header')
+        subHeader.innerHTML = 'Heydad you bought ' + mainHeader.innerHTML
+        console.log(subHeader);
+        subHeader.style.backgroundColor = 'blue'
+        subHeader.style.border = '11px solid black'
+
+
+
+
+    </script>
+</body>
+
+</html>

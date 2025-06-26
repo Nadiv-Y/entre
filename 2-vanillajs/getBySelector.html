@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <script>
+        let div = document.querySelector('div')
+        console.log(div);
+
+        let firstBox = document.querySelector('.box')
+        console.log(firstBox.innerText);
+
+        let secondBox = document.querySelector('.box:nth-child(2)')
+        console.log(secondBox.innerText);
+
+
+        const boxes = document.querySelectorAll('.box:nth-child(odd)')
+        console.log(boxes);
+
+        for (const box of boxes) {
+            console.log(box.innerText);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
