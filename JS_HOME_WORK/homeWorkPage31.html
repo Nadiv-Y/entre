@@ -9,20 +9,46 @@
     <script>
       console.log("=secondQ=");
 
-      let a = 12
-      let b = 0
+      let a = 12;
+      let b = 0;
 
-    if (a < b) {
-        for (let i = a ; i <= b; i++) {
-            console.log(i); 
+      if (a < b) {
+        for (let i = a; i <= b; i++) {
+          console.log(i);
         }
-    } else {
-        for(let i = a; i>=b; i--){
-            console.log(i);
+      } else {
+        for (let i = a; i >= b; i--) {
+          console.log(i);
+        }
+      }
+
+      console.log("=thirdQ=");
+      const n = 7
+      let sum = 1
+      for (let i = 1; i <=n ; i++) {
+          sum = sum * i
+      }
+      console.log('The result is ' + sum);
+    
+      console.log("=forthQ=");
+      const n1 = 10
+      let sum1 = 0
+      for(let i = 1; i<=n1 ; i++){
+        if (i % 3 === 0) {
+            sum1 = sum1 + i
         }
     }
+    console.log(sum1);
 
-    console.log("=thirdQ=");
+    console.log("=fifthQ=");
+    const n2 = 99
+    let sum2 = 0
+    for(let i = 1 ; i <= n2 ; i++){
+        if (i % 3 === 0) {
+            sum2 = sum2 + i
+        }
+    }
+    console.log(sum2);
     
     </script>
   </body>
