@@ -1,8 +1,3 @@
-switch (key) {
-  case value1:
-    
-    break;
-
-  default:
-    break;
-}
+for(let i = 0; i<100; i+=3)
+  console.log(i);
+  
