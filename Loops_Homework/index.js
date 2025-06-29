@@ -191,7 +191,7 @@ console.log(currentNum)
 
 // Exercise no 8 -- Try Again
 
-const polindrom = [1,2,2,2,2,2,2,2,2,1]
+const polindrom = [1, 2, 2, 2, 2, 2, 2, 2, 2, 1]
 
 
 
@@ -216,12 +216,71 @@ function checkIfPolindrom(arr) {
 
 console.log(checkIfPolindrom(polindrom))
 
+// Page 49 
 
 // Exercise no 1
 
+let matriza = []
+let countMatriza = 0
+let countNum = 0
+
+for (let i = 0; i < 10; i++) {
+    matriza[i] = []
+}
+
+for (let j = 0; j <= 99; j++) {
+    if (countNum < 10) {
+        matriza[countMatriza][countNum] = j
+        countNum += 1
+    }
+    if (countNum === 10) {
+        countNum = 0
+        countMatriza += 1
+    }
+}
+console.log(matriza)
+
+
+// Exercise no 2
+
+let zeroMatriza = []
+
+for (let i = 0; i < 10; i++) {
+    zeroMatriza[i] = []
+    for (let j = 0; j < 10; j++) {
+        if (i === j) {
+            zeroMatriza[i][j] = 1
+        } else {
+            zeroMatriza[i][j] = 0
+        }
+    }
+}
+
+console.log(zeroMatriza)
+
+
+// Exercise no 3
+
+let matrizaArr = []
+let rowSum = []
+
+for (let i = 0; i < 10; i++) {
+    matrizaArr[i] = []
+    let sum = 0
+    for (let j = 0; j < 10; j++) {
+        matrizaArr[i][j] = Math.floor(Math.random() * 10) + 1
+        sum += matrizaArr[i][j]
+    }
+    rowSum[i] = sum
+}
 
 
 
 
 
 
+console.log(rowSum)
+console.log(matrizaArr)
+
+
+// 
