@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="list">
+            <li id="item-1">item 1</li>
+            <li id="item-2">item 2</li>
+            <li id="item-3">item 3</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+
+    const liToInsertBefore = document.createElement('li')
+    const liToInsertAfter = document.createElement('li')
+
+    liToInsertBefore.innerText = 'To insert before'
+    liToInsertAfter.innerText = 'To insert after'
+
+    let refElem = document.querySelector('#item-2')
+
+    console.log(refElem);
+
+    refElem.parentElement.insertBefore(liToInsertBefore, refElem)
+    refElem.parentElement.insertBefore(liToInsertAfter, refElem.nextSibling)
+
+
+
+</script>
+
+</html>
