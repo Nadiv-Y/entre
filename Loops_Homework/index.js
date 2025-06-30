@@ -263,6 +263,8 @@ console.log(zeroMatriza)
 
 let matrizaArr = []
 let rowSum = []
+let maxNum = 0
+let maxRowNum
 
 for (let i = 0; i < 10; i++) {
     matrizaArr[i] = []
@@ -274,13 +276,32 @@ for (let i = 0; i < 10; i++) {
     rowSum[i] = sum
 }
 
+for (let i = 0; i < 10; i++) {
+    if (rowSum[i] > maxNum) {
+        maxNum = rowSum[i]
+        maxRowNum = i
+    }
+}
+
+console.log(`The row with the biggest sum is row ${maxRowNum} that containes the following numbers ${matrizaArr[maxRowNum]} with the sum of ${maxNum}`)
 
 
+// Exercise no 4
+
+let anotherMatriza = []
+
+for (let i = 0; i < 10; i++) {
+    anotherMatriza[i] = []
+    for (let j = 0; j < 10; j++) {
+        let value = j;
+        if (value % 5 === 0 || value % 7 === 0) {
+            value = 0;
+        }
+        anotherMatriza[i][j] = value;
+    }
+}
+
+console.log(anotherMatriza)
 
 
-
-console.log(rowSum)
-console.log(matrizaArr)
-
-
-// 
+// Exercise no 8
