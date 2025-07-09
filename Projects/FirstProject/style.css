@@ -12,7 +12,6 @@ h2 {
 .notebook{
   width: 70%;
   height: 30%;
-  background-image: url('/Projects/FirstProject/hand-drawn-blue-lined-paper-background_23-2151105453.avif');
+  background-image: url('/Projects/FirstProject/en-wide-ruled-paper-margin-letter.png');
   background-size: cover;
-  border: 1px solid red;
 }
