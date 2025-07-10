@@ -10,7 +10,23 @@
   <body>
     <div class="container">
       <h2>My Task Board</h2>
-      <div class="notebook"></div>
+      <form action="" method="get" class="notebook form-example">
+        <div class="form-example">
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form-example">
+          <label for="email">Enter your email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="form-example">
+          <input type="submit" value="Subscribe!" />
+        </div>
+        <div ></div>
+      </form>
+    </div>
+    <div class="container">
+      <div class="task-container"></div>
     </div>
   </body>
 </html>
