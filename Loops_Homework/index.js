@@ -305,3 +305,27 @@ console.log(anotherMatriza)
 
 
 // Exercise no 8
+
+let coolMatriza = []
+let round = 1
+let countNumbers = 0
+
+
+for (let i = 0; i < 10; i++) {
+    coolMatriza[i] = []
+    for (let j = 0; j < 10; j++) {
+        coolMatriza[i][j] = round
+    }
+    round++
+
+    console.log(coolMatriza[i][countNumbers])
+    if(coolMatriza[i][countNumbers] < round){
+        coolMatriza[i] = round
+    }
+    
+}
+
+
+
+
+console.log(coolMatriza)

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+</head>
+
+<body>
+    <section id="header">
+        <h1 class="text" id="main-title">Hello Dolev</h1>
+        <p class="text" id="sub-title">Welcome back - it's time to explore the world!</p>
+    </section>
+    <section id="vactions-gallery">
+        <!-- <div class="vactaion-card" id="vacation-card">
+            <div class="img-and-like-wrapper">
+                <img class="card-img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQXDWhSiUnNg78goNbUmxzgLwo7Z_Fxd5hOw&s"
+                    alt="">
+                <button class="like-btn" id="like-btn">
+                    <i class="ph ph-heart"></i>
+                </button>
+            </div>
+            <div class="details-wrapper">
+                <div class="title-and-tag">
+                    <p class="card-title">Vacation name</p>
+                    <div class="tag">
+                        tag name
+                    </div>
+                </div>
+                <div class="star-rating-wrapper">
+                    <button class="rating-star">
+                        <i class="ph ph-star"></i>
+                    </button>
+                    <button class="rating-star">
+                        <i class="ph ph-star"></i>
+                    </button>
+                    <button class="rating-star">
+                        <i class="ph ph-star"></i>
+                    </button>
+                    <button class="rating-star">
+                        <i class="ph ph-star"></i>
+                    </button>
+                    <button class="rating-star">
+                        <i class="ph ph-star"></i>
+                    </button>
+                </div>
+                <div class="price-and-delete-btn">
+                    <p class="price">$price</p>
+                    <button class="delete-btn">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div> -->
+    </section>
+    <section id="vacation-form-section">
+        <form id="vacation-form">
+            <div id="title-and-subtitle">
+                <p id="form-title">Add new vacation</p>
+                <p id="form-subtitle">Enter the required information below to add a new vacation to the list</p>
+            </div>
+            <div class="inputs-container">
+                <div class="input-wrapper">
+                    <label for="vacation-name">Vacation name</label>
+                    <input type="text" required name="vacationName" id="vacation-name">
+                </div>
+                <div class="input-wrapper">
+                    <label for="vacationTag">Vacation Tag</label>
+                    <input type="text" required name="vacationTag" id="vacation-tag">
+                </div>
+            </div>
+            <div class="inputs-container">
+                <div class="input-wrapper">
+                    <label for="vacationPrice">Vacation Price</label>
+                    <input type="number" required name="vacationPrice" min="0" id="vacation-price">
+                </div>
+                <div class="input-wrapper">
+                    <label for="vacationRating">Vacation Rating</label>
+                    <select name="vacationRating" required id="vacation-rating">
+                        <option value="">Please choose an option</option>
+                        <option value="bad">Bad</option>
+                        <option value="regular">Regular</option>
+                        <option value="good">Good</option>
+                        <option value="excellent">Excellent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="vacationImg">Vacation Image</label>
+                <input type="text" required name="vacationImg" id="vacation-img">
+            </div>
+
+            <button type="submit" id="submit-form-btn">Add Vacation</button>
+
+        </form>
+
+    </section>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
