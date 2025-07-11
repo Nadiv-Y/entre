@@ -13,7 +13,7 @@
     --primary-background-hover: #25895c;
     --primary-light-background: #E8F8F1;
     --primary-transparent-background: #0000002c;
-    --rating-star: rgb(253, 209, 13); 
+    --rating-star: rgb(253, 209, 13);
 
     /* Font-size */
 
@@ -182,10 +182,18 @@ label {
     object-fit: cover;
 }
 
-.like-btn {
+.like-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
     position: absolute;
     right: var(--space-3);
     top: var(--space-3);
+}
+
+.like-btn {
+    
     padding: var(--space-2);
     border-radius: 999px;
     background-color: var(--primary-transparent-background);
@@ -203,12 +211,10 @@ label {
     color: var(--primary-text);
 }
 
-.likes-amount{
+.likes-amount {
     font-size: var(--font-xs);
     color: var(--text-white);
     font-weight: 600;
-    position: absolute;
-    top: 135%;
 }
 
 .details-wrapper {
@@ -242,11 +248,11 @@ label {
     gap: var(--space-05);
 }
 
-.ph-star{
+.ph-star {
     color: var(--primary-transparent-background);
 }
 
-.yellow-star{
+.yellow-star {
     color: var(--rating-star);
 }
 

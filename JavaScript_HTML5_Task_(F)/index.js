@@ -41,6 +41,9 @@ function createVacationCard(vacation) {
     cardImg.className = 'card-img'
     cardImg.src = vacation.vacationImg
 
+    const likeButtonWrapper = document.createElement('div')
+    likeButtonWrapper.className = 'like-btn-wrapper'
+
     const likeButton = document.createElement('button')
     likeButton.className = 'like-btn'
     likeButton.id = 'like-btn'
@@ -86,15 +89,16 @@ function createVacationCard(vacation) {
 
     const price = document.createElement('p')
     price.className = 'price'
-    price.innerText = vacation.vacationPrice
+    price.innerText = vacation.vacationPrice + '₪'
 
     const deleteButton = document.createElement('button')
     deleteButton.className = 'delete-btn'
     deleteButton.innerText = 'Delete'
 
     card.append(imgAndLikeWrapper, detailsWrapper, ratingWrapper)
-    imgAndLikeWrapper.append(cardImg, likeButton)
-    likeButton.append(heartIcon, likesAmount)
+    imgAndLikeWrapper.append(cardImg, likeButtonWrapper)
+    likeButtonWrapper.append(likeButton, likesAmount)
+    likeButton.append(heartIcon)
     detailsWrapper.append(titleAndTag, ratingWrapper, priceAndDeleteButtonWrapper)
     titleAndTag.append(cardTitle, tag)
     priceAndDeleteButtonWrapper.append(price, deleteButton)
@@ -135,7 +139,15 @@ function renderInGallery() {
             const cardGallery = document.querySelector('#vactions-gallery')
             cardGallery.append(card)
         }
+
+        if (isExisitingCard) {
+            const likeAmount = isExisitingCard.querySelector('.likes-amount')
+            if (likeAmount) {
+                likeAmount.innerText = vacation.vacationLikes;
+            }
+        }
     }
+
     const cards = document.querySelectorAll('.vactaion-card')
 
     cards.forEach(card => {
@@ -203,7 +215,8 @@ function likesCounter(e) {
 
 
         localStorage.setItem('vacations', JSON.stringify(vacations));
-        
+        renderInGallery()
+
     }
 }
 
