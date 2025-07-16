@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+</head>
+
+<body>
+    <div class="board-shadow">
+        <div class="board">
+            <div id="content-area">
+                <h1 id="header">My Task Board</h1>
+                <div id="notes-area">
+                    <!-- <div class="note-wrapper">
+                        <img src="lib/Pushpin red.png" alt="" class="pin">
+                        <div class="note-shadow"></div>
+                        <div class="note">
+                            <p class="task">dsfsdfsdfs dfsdfdsfsdfכsdfsdfsdfdsfsdf sdfsdfsdfds fsdfsdfsdfsdfdsfsdfs
+                                dfsdfsdfdsfs dfsdfsdfsdfd
+                                sfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdfdsfsdfsdfsdfsdf
+                            </p>
+                            <div class="date-and-time-wrapper">
+                                <p class="date">20/10/2025</p>
+                                <p class="time">16:00</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <button id="open-modal-btn">Add Note</button>
+            </div>
+            <div class="frame" id="bottom-frame"></div>
+            <div class="frame" id="top-frame"></div>
+            <div class="frame" id="right-frame"></div>
+            <div class="frame" id="left-frame"></div>
+
+
+        </div>
+    </div>
+    <dialog id="add-note-dialog">
+        <form id="dialog-form">
+            <div id="form-content">
+                <h2>Add a new note to the board:</h2>
+                <label for="task-input">Task:</label>
+                <textarea id="task-input" required></textarea>
+                <label for="date-input">Date:</label>
+                <input id="date-input" type="date" required>
+                <label for="time-input">Time:</label>
+                <input id="time-input" type="time" required>
+            </div>
+            <div id="form-footer">
+                <button id="reset-form-btn" type="button">Reset</button>
+                <button class="secondary" id="add-note-btn" type="submit">Submit</button>
+
+            </div>
+        </form>
+        <button id="close-modal" type="button"><i class="ph ph-x"></i></button>
+    </dialog>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
