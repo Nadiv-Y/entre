@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(132, 199, 205);
+}
+
+a { 
+  display: block;
+}
+
+p {
+  display: inline-block;
+  border: dotted rgb(45, 45, 94) 2px;
+}
+
+.span1 {
+  border: solid rgb(45, 45, 94, 0.3) 5px;
+}
+
+.span2 {
+  border: solid rgb(45, 45, 94, 0.3) 5px;
+}

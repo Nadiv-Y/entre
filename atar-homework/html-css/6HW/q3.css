@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+  border: 1px black solid;
+}
+
+.box {
+  flex-basis: 20%;
+  height: 20%;
+}
+
+.box-1 {
+  flex-basis: 40%;
+  background-color: pink;
+}
+
+.box-2 {
+  background-color: turquoise;
+}
+
+.box-3 {
+
+  background-color: grey;
+}

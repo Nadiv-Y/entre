@@ -1,0 +1,67 @@
+/* .container > p {
+  width: 300px;
+  height: 300px;
+  color: blue;
+  border: 1px black solid;
+} */
+/* 
+p {
+  margin: 20px;
+  padding: 30px;
+  border: 10px solid black;
+  font-size: 16px;
+  line-height: 1em;
+  width: 300px;
+} */
+
+/* div {
+  width: 300px;
+  height: 300px;
+  background-color: gold;
+
+} */
+/* 
+body {
+  width: 600px;
+}
+div {
+  width: 50%;
+  height: 50%;
+  background-color: gold;
+  border: 1px solid black;
+} */
+/* 
+body {
+  width: 600px;
+}
+div {
+  font-size: 10px;
+  width: 50rem;
+  height: 50rem;
+  background-color: gold;
+  border: 1px solid black; 
+} */
+
+.father {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.son {
+  width: 100px;
+  height: 100px;
+}
+
+.son-1 {
+  background-color: aquamarine;
+}
+ 
+.son-2 {
+  background-color: pink;
+}
+
+.son-3 {
+  background-color: grey;
+}
