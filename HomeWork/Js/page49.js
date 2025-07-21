@@ -80,4 +80,4 @@ function eighthQuestion(matrixLength) {
   }
   return matrix
 }
-console.log(eighthQuestion(20));
+console.log(eighthQuestion(10));
