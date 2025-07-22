@@ -12,23 +12,25 @@
   <body>
     <div class="container">
       <h2>My Task Board</h2>
-      <form action="" method="get" id="taskForm" class="notebook form-example">
-        <div class="form-example">
+      <form action="" method="get" id="taskForm" class="notebook">
+        <div class="input-form">
           <label for="task">Enter Your Task: </label>
-          <input type="text" name="task" id="formTask" required />
+          <input type="text" name="task" id="formTask" required placeholder="i want to make a pizza!" />
         </div>
-        <div class="form-example">
+        <div class="input-form">
           <label for="date">Deadline Task: </label>
-          <input type="date" name="date" id="FormDate" required />
-          <label for="time">Deadline Task: </label>
-          <input type="time" name="time" id="formTime" required />
-        </div>
-        <div class="form-example">
+          <input type="date" name="date" id="FormDate" required placeholder="dd/mm/yyyy" />
+        </div> 
+          <div class="input-form">
+            <label for="time">Deadline Task: </label>
+            <input type="time" name="time" id="formTime" required />
+          </div> 
+        <div class="input-form">
           <input type="submit" id="save" value="Save" />
           <input type="reset" value="Reset" />
         </div>
       </form>
     </div>
-    <div class="container" id="task-container"></div>
+    <div id="task-container"></div>
   </body>
 </html>

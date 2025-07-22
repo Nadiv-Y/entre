@@ -13,7 +13,7 @@ function loadTasks() {
     const xButton = lastTask.getElementsByClassName(CONSTANTS.CLASSES.xButton)[0];
     xButton.addEventListener("click", deleteTask);
   }
-}
+} 
 
 function addTaskToLocalStorage(task, counter) {
   const localStorageVariable = JSON.parse(localStorage.getItem(CONSTANTS.LOCALSTORAGE.tasks)) || {}
@@ -35,14 +35,13 @@ function deleteTask(event) {
   task.parentElement.removeChild(task)
 
   delete localStorageVariable[counter]
-  console.log(localStorageVariable)
 
   localStorage.setItem(CONSTANTS.LOCALSTORAGE.tasks, JSON.stringify(localStorageVariable))
 }
 
 function createTask(event) {
   let task = document.createElement("div")
-  task.setAttribute("class", CONSTANTS.CLASSES.task)
+  task.setAttribute("class", `${CONSTANTS.CLASSES.task} ${CONSTANTS.TRANSITIONS.fadeIn}`)
 
   let xButton = document.createElement("i")
   xButton.setAttribute("class", CONSTANTS.CLASSES.xButton)
@@ -67,7 +66,7 @@ function createTask(event) {
   task.appendChild(xButton)
   task.appendChild(text)
   task.appendChild(container)
-
+  
   let counter = returnAndUpdateCounter()
   task.setAttribute(CONSTANTS.LOCALSTORAGE.counter, counter)
 

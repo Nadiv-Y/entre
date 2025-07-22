@@ -19,4 +19,7 @@ export const CONSTANTS = {
     time: "time",
     xButton: "bi bi-x-square",
   },
+  TRANSITIONS: {
+    fadeIn: "fade-in",
+  }
 }
