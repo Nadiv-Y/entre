@@ -1,0 +1,10 @@
+במצב הזה ה selector specificity קובע את החוק שיחיל את העיצוב שלו
+הראשון משמאל מייצג את ה ID selector - #ID
+האמצעי מייצג את ה Class, attribute, pseudo-Class - .class, [attr], :hover, :nth-child
+מייצג את ה Type selectors וה pseudo-elemens - div, h1, ::before, ::after
+
+ולכן (1,1,0) משמעו ש:
+
+# - ID selector מופעל
+. - class או pseudo-class מופעל
+<p> or <div> - element-selector כבוי

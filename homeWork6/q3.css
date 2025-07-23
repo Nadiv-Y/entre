@@ -1,0 +1,27 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+  border: 1px black solid;
+}
+
+.box {
+  flex-basis: 20%;
+  height: 20%;
+}
+
+.div1 {
+  background-color: red;
+  flex-basis: 40%;
+}
+
+.div2 {
+  background-color: green;
+}
+
+.div3 {
+  background-color: blue;
+}
