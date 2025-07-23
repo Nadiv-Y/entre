@@ -1,0 +1,74 @@
+html {
+  /* 10px */
+  font-size: 62.5%;
+  font-family: "Assistant", sans-serif;
+}
+
+body {
+  direction: rtl;
+  /* 16px */
+  font-size: 1.6rem;
+  margin: 0;
+  background-image: url(https://corkhouse.co.il/wp-content/uploads/2023/05/10786-%D7%9C%D7%95%D7%97-%D7%A9%D7%A2%D7%9D-3-%D7%9E%D7%9E-%D7%93%D7%92%D7%9D-WHITE-scaled.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-size: 1rem;
+}
+
+.taskInput {
+  background-image: url(https://media.licdn.com/dms/image/v2/C4D16AQGIPN9BVTmLHg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1583769321111?e=2147483647&v=beta&t=17vQcwRIKRLRo2VhVunBxu9zdwEM_G1dJhrwmj5IAR8);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 1rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.taskInput::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+.taskInput form {
+  position: relative;
+  z-index: 1;
+}
+
+.note {
+  text-align: right;
+  background-image: url(https://i.pinimg.com/originals/c9/e5/c4/c9e5c4e9bfbab493decf62b858fdebc1.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 3 / 4;
+  position: relative;
+  max-width: 12rem;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-break: break-word;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.note-content {
+  overflow-y: auto;
+  max-height: 10rem;
+  padding: 0.5rem;
+}
+
+.note:hover {
+  opacity: 0.8;
+}
