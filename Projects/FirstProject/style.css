@@ -3,7 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 .container {
   font-size: 1rem;
@@ -11,8 +11,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  /* height: 50vh; */
-    min-height: fit-content
+  min-height: fit-content;
 }
 h2 {
   font-family: "Courier New", Courier, monospace;
@@ -25,18 +24,17 @@ h2 {
 }
 .input-form {
   width: 100%;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 10px;
 }
-.input-form:last-of-type,
-.input-form:first-of-type {
-  margin-top: 1.45rem;
-}
-
+/* .input-form:last-of-type,
+  .input-form:first-of-type {
+    margin-top: 1rem;
+  } */
 .time-container {
   height: 30%;
   display: flex;
@@ -48,16 +46,35 @@ h2 {
   margin-top: 3%;
   display: flex;
   flex-direction: row;
-  /* gap: 10px; */
   overflow-x: auto;
 }
+
+
 .task {
-  border: 1px solid black;
+  margin: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
   width: 200px;
   height: 200px;
-  margin: 20px;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 12px;
   flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.input-form input[type="text"],
+.input-form input[type="date"],
+.input-form input[type="time"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+.input-form input[type="submit"],
+.input-form input[type="reset"] {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
 }
 .task:hover .bi-x-square {
   display: inline;
@@ -99,6 +116,15 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .input-form {
+    margin-top: 1rem;
+  }
+
+  .input-form input[type="text"],
+  .input-form input[type="date"],
+  .input-form input[type="time"] {
+    padding: 0.3rem;
+  }
   .container {
     font-size: 0.85rem;
   }
@@ -106,18 +132,9 @@ h2 {
     width: 175px;
     height: 175px;
   }
-  .input-form:last-of-type,
-  .input-form:first-of-type {
-    margin-top: 1.6rem;
-  }
 }
-@media (max-width: 480px) {
+@media (max-width: 490px) {
   .input-form {
     font-size: 0.8rem;
-  }
-
-  .input-form:first-of-type,
-  .input-form:last-of-type {
-    margin-top: 1.65rem;
   }
 }
