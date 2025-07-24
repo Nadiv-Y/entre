@@ -1,0 +1,170 @@
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  
+}
+body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color:  rgb(6, 88, 125) !important;
+    overflow-x: hidden;
+    font-size: 1.6rem;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    width: 100%;
+    height: 100%;
+    /* flex-basis: 7; */
+   
+}
+.titel{
+text-align: center;
+color: white;
+margin-top: 10px;
+/* flex-grow: 1; */
+
+  
+}
+/* .img-landscape{
+  width: auto;
+  height: 100%;
+  position:relative;
+  left: 15%;
+ 
+} */
+.form{
+    border: 1px solid rgb(6, 88, 125);
+    border-radius: 10px;
+    display: grid;
+    width: 40%;
+    background-color: rgb(233, 238, 241) !important;
+    color: rgb(6, 88, 125);
+    font-size: 1.6rem;
+    padding: 7px;
+    position: relative;
+    left: 30%;
+    right: 30%;
+
+    /* flex-grow: 3; */
+}
+.price{
+    width: 40% !important;
+    
+}
+.label-save{
+    justify-self: center; 
+}
+.btn-save{
+    color: white !important;
+    background-color: rgb(6, 88, 125) !important;
+}
+
+.cardsVacation{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    width: 100%;
+ 
+}
+.card{
+    width: 20%;
+    height: 300px !important; 
+    display: grid !important;
+    grid-template-areas: "name name" 
+    "img img"
+    "price price"
+    "rating like" !important;
+    padding: 3px;
+    gap: 3px;
+    grid-template-rows:auto 60% auto auto;
+}
+.divimgVacation{
+    grid-area: img !important;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    object-fit: cover  
+  
+    
+}
+.imgVacation{
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+.titleCard{
+ grid-area: name;
+ text-align: center;
+ color: rgb(6, 88, 125);
+ font-size: 1.8rem;
+
+}
+.priceCard{
+ grid-area: price;
+ font-size: 2rem;
+ color: rgb(6, 88, 125);
+ text-align: center;
+
+}
+.rating{
+grid-area:  rating;
+ color: rgb(6, 88, 125);
+}
+.like{
+  grid-area: like;
+  justify-self: end;
+  width: 50%;
+  height: 100%;
+  color: rgb(6, 88, 125);
+  border: 1px solid rgb(6, 88, 125) ;
+  border-radius: 30px;
+  padding: 5px;
+  font-size: 1.6rem;
+  display: flex;
+
+ 
+}
+.like .divCounter,
+.like svg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.divCounter {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.like svg {
+  height: 20px;
+  width: 20px;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+@media (max-width: 952px) {
+
+.card{
+    width: 40%;
+}
+
+
+}
+
+
