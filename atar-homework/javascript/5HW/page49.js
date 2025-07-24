@@ -89,27 +89,52 @@ console.log(fiveSeven(arrayBig));
 // question 8
 
 
-function oneTwoFrame(){
-    let arr = new Array(10);
-    for(let i = 0; i < 10; i++){
-        arr[i] = new Array(10)
-        for(let j = 0; j < 10; j++){
-            arr[i][j] = 1;
+function frameMat(size){
+    let matrix = [];
+    let i, j;
+
+    for (i = 0; i < size; i++) {
+        matrix[i] = [];
+        for (j = 0; j < size; j++) {
+            matrix[i][j] = 0;
         }
     }
 
-    for(let a = 1, b = 8; a < b; a + 2, b - 2){
-        for(let c = a; c <= b; c++){
-            arr[a][c] = 2;
-            arr[b][c] = 2;
-        }
-        for(let c = a; c <= b; c++){
-            arr[a][c] = 2;
-            arr[b][c] = 2;
-        }
-
-
+    let layers;
+    if (size % 2 === 0) {
+        layers = size / 2;
+    } else {
+        layers = (size - 1) / 2 + 1;
     }
-    return arr;
+
+    for (let layer = 0; layer < layers; layer++) {
+        let value = layer + 1;
+        let start = layer;
+        let end = size - layer - 1;
+
+        for (i = start; i <= end; i++) {
+            matrix[start][i] = value;
+            matrix[end][i] = value;
+        }
+
+        for (i = start + 1; i < end; i++) {
+            matrix[i][start] = value;
+            matrix[i][end] = value;
+        }
+    }
+    return matrix;
 }
+
+// function printMatrix(matrix) {
+//     for (let i = 0; i < matrix.length; i++) {
+//         let row = "";
+//         for (let j = 0; j < matrix[i].length; j++) {
+//             row += matrix[i][j] + " ";
+//         }
+//         console.log(row);
+//     }
+// }
+
+// let matrix = frameMat(10);
+// printMatrix(matrix);
 
