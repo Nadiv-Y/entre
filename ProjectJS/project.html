@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Playwrite+HR+Lijeva:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <h1> My Task board </h1>
+    <div class="form" id="formDiv">
+        <form action="" class="">
+            <div>
+                <label for="formInfo">  </label>
+                <textarea type="text" id = "formInfo" placeholder="Task inforamtion"></textarea>
+                <!-- Task inforamtion -->
+            </div>
+            <div>
+                <label for="dueDate">  </label>
+                <input type="date" id = "dueDate">
+                <!-- Due Date -->
+            </div>
+            <div>
+                <label for="time">  </label>
+                <input type="time" id = "time">
+                <!-- Time -->
+            </div>
+            <div>
+                <input type="submit" id = "save" value="save">
+            </div>
+            <div>
+                <input type="button" id = "delete" value="Delete All">
+            </div>
+        </form>
+    </div>
+    <div class="notes"></div>
+    <script src="project.js"></script>
+</body>
+</html>

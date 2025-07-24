@@ -1,0 +1,149 @@
+*{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+  
+}
+
+body {
+  background-image: url("https://corkhouse.co.il/wp-content/uploads/2023/05/10786-%D7%9C%D7%95%D7%97-%D7%A9%D7%A2%D7%9D-3-%D7%9E%D7%9E-%D7%93%D7%92%D7%9D-WHITE-scaled.jpg");
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    background-color:  rgb(17, 59, 4);;
+    width: 30%;
+
+    margin: 5vh auto;
+    color: white;
+    /* color: rgba(178, 178, 178, 0.598); */
+}
+
+.form{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('https://m.media-amazon.com/images/I/51Lwuq-pLqL._AC_UF350,350_QL80_.jpg');
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: 20% 100%;
+    height: 80vh;
+    color: rgb(20, 100, 20);
+    font-size: 20px;
+
+    
+
+  }
+
+button{
+    font-size: 16px;
+}
+
+#save { 
+    display: inline-block;
+    color: white;
+    background-color: blue;
+    /* margin: 6px; */
+    width: 100%;
+    
+}
+
+
+#delete{
+    display: inline-block;
+    /* margin: 6px; */
+    width: 100%;
+
+}
+
+textarea,
+input[type="date"],
+input[type="time"]{
+    width: 100%;
+    height: 25vh;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+
+}
+
+
+
+
+#dueDate, #time{
+    height: 20px;
+}
+
+
+
+
+
+.notes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.newDiv{
+    width : 250px;
+    height : 250px;
+    margin : 5px;
+    background-image: url('note.png');
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    position : relative;
+    display : flex;
+    flex-wrap: wrap;  
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+.newDiv.fade-in {
+  opacity: 1;
+}
+
+.newDiv.fade-out {
+  opacity: 0;
+}
+
+
+.infoDiv{
+    width : 200px;
+    height : 100px;
+    overflow : auto;
+    color : rgb(133, 41, 213);
+    font-size: 18px;
+    position: absolute;
+    top: 40px;
+    left: 25px;
+    
+    }
+
+.taskDate{
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+}
+
+.taskTime{
+    position: absolute;
+  bottom: 10px;
+  left: 25px;
+}
+
+    .trash{
+    display : none;
+    }
+    
