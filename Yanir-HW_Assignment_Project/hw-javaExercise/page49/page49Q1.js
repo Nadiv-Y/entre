@@ -7,7 +7,6 @@ for (let i = 0; i < 10; i++) {
 
 for (let j = 0; j < 10; j++) {
     matric[i][j] = [j + i*10];  
-    // console.log(matric[i]); 
 }
 }
 console.log(matric);
