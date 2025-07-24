@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>My Task Board</h1>
+    <div class="formContainer">
+        <div class="createTask">
+            <form action="">
+                <div>
+                    <textarea name="taskDescription" id="taskDescription" placeholder="Enter your task description here"
+                        rows="5"></textarea>
+                </div>
+                <div class="due">
+                    <div>
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" name="dueDate" id="dueDate">
+                    </div>
+                    <div>
+                        <label for="dueTime">Due Time:</label>
+                        <input type="text" name="dueTime" id="dueTime">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" id="saveBut" class="formBut">Save</button>
+                    <button type="button" id="resetbut" class="formBut">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="notes-container">
+        
+    </div>
+    <script src="./project01.js"></script>
+</body>
+
+</html>

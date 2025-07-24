@@ -1,0 +1,216 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+    background-image: url(./img/corkTexture.png);
+}
+
+h1 {
+    font-family: cursive;
+    text-shadow: 0 0 10px burlywood;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.createTask {
+    width: 80vw;
+    background-image: url(./img/shurot4.png);
+    background-size: cover;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.createTask h3{
+    font-family: cursive;
+    color: blue;
+}
+
+.due {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+input {
+    width: 29vw;
+    margin-top: 1px;
+    padding: .5rem .2rem;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+label {
+    color: blue;
+    background-color: white;
+    font-family: cursive;
+    font-size: 1.4rem;
+}
+
+#taskDescription {
+    width: 70vw;
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+    border: 2px solid blue;
+    resize: none;
+}
+
+
+#taskDescription:focus {
+    outline: 3px solid blue;
+
+}
+
+.formBut {
+    width: 15vw;
+    margin: 1rem 7.5vw 1rem;
+    font-family: cursive;
+    font-size: 1.6rem;
+    border: none;
+    background-color: blue;
+    color: white;
+}
+
+.formBut:hover{
+    cursor: pointer;
+}
+
+.formBut:active{
+    background-color: darkblue;
+    width: 13vw;
+    margin: 0 8.5vw 1rem;
+    font-size: 1.4rem;
+}
+
+.notes-container {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+    justify-items: center;
+    gap: .5vw;
+    margin-top: 1rem;
+    padding: 1vw;
+    padding-right: 0;
+    width: 98vw;
+    height: 40vh;
+}
+
+.note {
+    width: 90%;
+    height: 40vw;
+    padding: 1vw;
+    background-image: url(./img/note_fefb9a.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    animation-name: note-appear;
+    animation-duration: 1s;
+}
+
+@keyframes note-appear {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.noteHeader {
+    text-align: right;
+    width: 94%;
+    padding-top: 2vw;
+    padding-bottom: .2vw;
+}
+
+.note .del-note-but {
+    margin-right: 1vw;
+    opacity: 0;
+}
+
+.note:hover .del-note-but {
+    opacity: 1;
+}
+
+.noteBody {
+    font-family: cursive;
+    font-size: 1.3rem;
+    height: 26%;
+    width: 90%;
+    margin-bottom: 0.1vw;
+}
+
+.noteText {
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.noteFooter {
+    align-self: start;
+    justify-self: end;
+    margin-top: 2vw;
+}
+
+.noteDue {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 0.5rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .notes-container {
+        grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    }
+
+    .note {
+        width: 68%;
+    }
+
+    .noteHeader {
+        padding-top: 3vw;
+        padding-bottom: 2vw;
+    }
+
+    .note .del-note-but {
+        opacity: 1;
+    }
+
+    .noteBody {
+        height: 44%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .notes-container {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .note {
+        width: 50%;
+        height: 48vw;
+    }
+
+    .noteHeader {
+        width: 91%;
+        padding-top: 4vw;
+        padding-bottom: 3vw;
+    }
+
+    .note .del-note-but{
+        opacity: 1;
+    }
+
+    .noteBody {
+        height: 48%;
+    }
+}
