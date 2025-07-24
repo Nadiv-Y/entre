@@ -1,0 +1,258 @@
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url("./lib-project/10786-לוח-שעם-3-ממ-דגם-WHITE-scaled.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.container1 {
+  width: 100%;
+  height: 100%;
+  align-items: start;
+  gap: 10px;
+  padding: 0;
+  position: relative;
+}
+
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 15%;
+  margin-top: 10px;
+}
+
+.line-notebook-form {
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.img-line-notebook {
+  height: 65%;
+  width: 65%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+}
+textarea {
+  width: 50% !important;
+  height: 40% !important;
+  font-size: 1.2rem !important;
+  position: absolute;
+  top: 5px;
+  right: 28%;
+}
+.note-date {
+  width: 20% !important;
+
+  position: absolute !important;
+  top: 55% !important;
+  left: 22% !important;
+}
+.note-time {
+  width: 20% !important;
+
+  position: absolute !important;
+  top: 55% !important;
+  left: 48% !important;
+}
+.note-creat {
+  display: block !important;
+  position: absolute !important;
+  top:55% !important;
+  left: 73% !important;
+}
+.note-reset{
+  position: absolute;
+  left: 73%;
+  top: 15%;
+  border: 1px solid black !important;
+
+}
+.reminderNotes {
+  height: 70% !important;
+  width: 100% !important;
+  padding: 5px;
+}
+
+.containNote {
+  position: relative;
+  width:15%;
+  align-self: flex-start;
+
+}
+.containNote.fade-in{
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+
+.containNote.fade-out{
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.containNote .btnClose{
+  display: none;
+}
+.containNote:hover .btnClose{
+  display: block;
+}
+.imgNote {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+.gridOverNote {
+  display: grid;
+  grid-template-areas:
+    "valText valText  close"
+    "valDate . . "
+    "valTime . . ";
+  grid-template-rows: 8fr 1fr;
+  height: 100%;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 15%;
+  padding-left: 10px;
+  padding-bottom: 10%;
+  gap: 3px;
+}
+
+.divContainValText {
+  grid-area: valText;
+  padding-right: 2%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.btnClose {
+  grid-area: close;
+  justify-self: end;
+  
+ 
+}
+
+.divContainValTime {
+  grid-area: valTime;
+  
+}
+.divContainValDate {
+  grid-area: valDate;
+}
+
+@media (min-width: 952px) {
+  .title {
+    width: 27%;
+    height: 14%;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+  }
+  .line-notebook-form {
+    height: 35%;
+  }
+
+  .img-line-notebook {
+    width: 60%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  textarea {
+    width: 57.5% !important;
+    height: 70% !important;
+    left: 22%;
+  }
+  .note-date {
+    width: 10% !important;
+
+    position: absolute !important;
+    top: 80% !important;
+    left: 22% !important;
+  }
+  .note-time {
+    width: 10% !important;
+    top: 80% !important;
+    left: 33% !important;
+  }
+  .note-creat {
+    height: 20%;
+    width: 6.8%;
+    position: absolute !important;
+    top: 77% !important;
+    left: 72.8% !important;
+    font-size: 116% !important;
+    box-sizing: border-box;
+  }
+  .note-reset{
+  position: absolute;
+  left: 65%;
+  top: 77%;
+  height: 20%;
+  width: 6.8%;
+}
+}
+
+@media (max-width: 751px) {
+  .title {
+    width: 95%;
+  }
+
+  .line-notebook-form {
+  height: 15%;
+
+}
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+ 
+  }
+  to {
+    opacity: 0;
+ 
+  }
+}
