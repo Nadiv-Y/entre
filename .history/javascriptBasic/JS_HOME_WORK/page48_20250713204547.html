@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 48</title>
+  </head>
+  <body>
+    <script>
+            console.log("=firstQ=");
+            function createMatrix (rows, cols){
+              const matrix = [];
+              let value = 1;
+              for(let i = 0; i < rows; i++){
+                  const rows = [];
+                  for(let j = 0; j < cols; j++){
+                      rows.push(value++)
+                  }
+                  matrix.push(rows)
+              }
+              return matrix
+            }
+            const myArray = createMatrix(10,10)
+
+            console.table(myArray);
+
+            function myMatrix (rows, cols){
+                const matrix = [];
+                let value = 1;
+                for(let i = 0; i < rows; i++){
+                    const rows = [];
+                    for(let j = 0; j < cols; j++){
+                        rows.push(value++)
+                      }
+                      matrix.push(rows)
+                  }
+                  return matrix
+              }
+
+              const ten = myMatrix(10,10)
+
+              console.log(ten)
+
+              console.log('=egithQ=');
+      const arr = [];
+      let value = 0
+      for(let i = 0; i < 10; i++){
+      arr.push(value++)
+
+      }
+      console.log('the array is: ' + arr);
+
+      function isPolindron (){
+        for(let i = 0; i < arr.length / 2; i++){
+            if (arr[i] !== arr[arr.length-1-i]){
+                return false
+            } 
+            return true
+        }
+      }
+      const check = isPolindron(arr)
+      console.log(check);
+      
+      
+    </script>
+  </body>
+</html>

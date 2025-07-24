@@ -1,0 +1,22 @@
+.container{
+    width: 50vw;
+    height: 80vh;
+    border: 1px solid blue;
+}
+
+.box{
+    width: 30%;
+    height: 10%;
+    border: 1px solid black;
+}
+
+.first{
+    background-color: red;
+}
+.second{
+    background-color: rgb(109, 227, 133);
+    overflow: auto auto;
+}
+.third{
+    background-color: rgb(98, 61, 232);
+}

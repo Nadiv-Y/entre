@@ -1,0 +1,12 @@
+div.container :first-child{
+    font-size: 45px;
+}
+
+.container p:first-of-type{
+    color: blue;
+}
+
+.container :first-of-type{
+    background-color: aliceblue;
+}
+

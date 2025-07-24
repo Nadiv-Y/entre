@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Over Image</title>
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .overlay-input {
+      position: absolute;
+      bottom: 20px;   /* Distance from bottom of image */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="./lib/paper texture.png" alt="Background Image">
+    <input type="text" class="overlay-input" placeholder="Type here...">
+  </div>
+
+</body>
+</html>

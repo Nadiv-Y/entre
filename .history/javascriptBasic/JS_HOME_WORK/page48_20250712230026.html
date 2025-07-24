@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createMatrix(rows, cols, defaultValue = 0) {
+        const matrix = [];
+        for (let i = 0; i < rows; i++) {
+          const row = new Array(cols).fill(defaultValue);
+          matrix.push(row);
+        }
+        return matrix;
+      }
+
+      const myMatrix = createMatrix(3, 4, 0); // 3 rows, 4 columns, all zeros
+      console.table(myMatrix);
+
+      console.log("=firstQ=");
+
+      function createMatrixof50(rows, cols, defaultValue = 0) {
+        const matrix = [];
+        for (let i = 0; i < rows; i++) {
+          const row = new Array(cols).fill(defaultValue);
+          matrix.push(row);
+        }
+        return matrix;
+      }
+      const myMatrixof50 = createMatrixof50(50, 50, 0);
+      console.log(myMatrixof50);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+body{
+    background-color: lightblue
+}
+
+p{
+    display: inline-block;
+    border: 5px black dotted;
+    padding: 20px;
+    margin: gray solid 5px;
+}
+

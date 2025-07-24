@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    padding: 2rem;
+}
+
+.header {
+    width: 90%;
+    height: 5%;
+    background-color: black;
+    color: azure;
+    padding: 2rem;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.content {
+    width: 90%;
+    height: 65%;
+    background-color: white;
+    margin: 1rem auto;
+    border-radius: 5px;
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+
+.box {
+    width: 50%;
+    height: 50%;
+    background-color: lightblue;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.footer{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}

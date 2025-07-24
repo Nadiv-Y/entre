@@ -1,0 +1,6 @@
+px - borders, icons etc...
+view port VP - view height (vh) & view widht (vw)- main container
+% - sub container 
+em/rem - margin, padding font etc..
+
+

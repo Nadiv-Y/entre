@@ -1,0 +1,14 @@
+a:hover {
+    font-size: 120px;
+    cursor: grab;
+}
+
+p:first-of-type {
+    font-size: 150%;
+    background-color: aquamarine;
+}
+
+p:hover{
+    font-size: 180%;
+    color: blueviolet;
+}

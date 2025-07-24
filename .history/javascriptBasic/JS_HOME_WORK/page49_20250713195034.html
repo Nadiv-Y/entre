@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 49</title>
+  </head>
+  <body>
+    <script>
+      console.log("=firstQ=");
+      function matrixUntil_100(rows, cols) {
+        const matrix = [];
+        let value = 0;
+        for (let i = 0; i < rows; i++) {
+          const rows = [];
+          for (let j = 0; j < cols; j++) {
+            rows.push(value++);
+          }
+          matrix.push(rows);
+        }
+        return matrix;
+      }
+      console.table(matrixUntil_100(10, 10));
+
+      console.log("=secondQ");
+      function matrixUntil_100(rows, cols) {
+        const matrix = [];
+        let value = 0;
+
+        for (let i = 0; i < rows; i++) {
+          const rows = [];
+          for (let j = 0; j < cols; j++) {
+            rows.push(value);
+          }
+          matrix.push(rows);
+
+        }
+        return matrix;
+      }
+       
+      const check = matrixUntil_100(10,10)
+      console.log(check);
+      const person = {
+    firstName: 'Nadiv',
+    lastName: 'Yosef',
+    age: 26
+}
+
+console.log(person);
+
+person.id = '206392698'
+sos = '563563'
+// use .--- for strings / number's
+
+// person[person.id] = '20'
+
+console.log(person);
+
+// const person1 = person
+
+// person1.adress = 'TLV'
+
+// console.log(person);
+
+// let g = 'gender'
+
+// person[g] = 'male'
+
+// // use [] for values
+
+// console.log(person);
+
+      
+    </script>
+  </body>
+</html>

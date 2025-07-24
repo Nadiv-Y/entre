@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.6rem;
+            margin: 0;
+        }
+        
+        .container{
+            width: 90vw;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .box{
+            flex-basis: 100px;
+        }
+        .box-1{
+            background-color: rgb(197, 201, 91);
+            flex-grow: 1;
+         
+        }
+        .box-2{
+            background-color: rgb(193, 146, 243);
+            flex-grow: 1;
+        }
+        @media screen and (min-width: 375px){
+            body{
+                font-size: 1.6rem;
+            }
+            
+            .container{
+                flex-direction: row;
+            }
+        }
+
+        @media print {
+            body{
+                font-size: 12pt;
+                padding: 2cm;
+            }
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box-1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit officiis optio voluptate dolor suscipit officia neque voluptatibus a consequuntur quas aliquid vel molestiae sit odio et repudiandae, harum, architecto, illo at corrupti perferendis voluptatem! Non, aliquid praesentium tempora a veritatis, aperiam quam dolores vitae dolore enim omnis fuga doloremque ad eligendi quo corrupti dolor illum architecto excepturi? Culpa molestias at, ut numquam hic voluptate labore minima totam, maxime doloribus suscipit corporis expedita nihil in quod? Animi in deleniti ab odio voluptatem aliquam temporibus odit mollitia quo culpa iusto cum nisi reprehenderit, quos alias autem tempore. Modi eligendi a repudiandae quod harum provident dolorem error magni blanditiis assumenda tenetur quae inventore beatae quasi obcaecati omnis doloribus </p>
+        </div>
+        <div class="box box-2">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint earum deserunt unde quis labore corporis aliquid repellendus ad officiis facere, praesentium nulla consequuntur dignissimos maiores cum modi itaque consequatur beatae blanditiis incidunt at. Facere assumenda illo adipisci eum quae sunt laboriosam nobis vero provident hic. Ab deleniti enim magnam maiores laudantium animi illo voluptate quasi libero repellat nisi porro, exercitationem accusantium consectetur vel laborum, quaerat, fugit alias corrupti hic nemo consequatur! Architecto commodi, debitis assumenda aut a natus molestias molestiae numquam doloremque magni dolorem, ex temporibus optio quisquam facere dolor ipsam id dignissimos fuga? Quidem eligendi omnis cumque delectus commodi et totam similique odit atque laboriosam vero reiciendis unde eveniet, consequatur quia, accusamus consequuntur excepturi at cum nisi error vel ad. Aspernatur, deleniti id sunt quibusdam quasi amet corporis eligendi</p>
+        </div>
+    </div>
+</body>
+</html>

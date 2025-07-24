@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("=firstQ=");
+      function createMatrix (rows, cols){
+        const matrix = [];
+        let value = 1;
+        for(let i = 0; i < rows; i++){
+            const rows = [];
+            for(let j = 0; j < cols; j++){
+                rows.push(value++)
+            }
+            matrix.push(rows)
+        }
+        return matrix
+      }
+      const myArray = createMatrix(10,10)
+
+      console.table(myArray);
+      
+      console.log('=egithQ=');
+
+      function isPolindrom(str){
+        const reversed = str.split('').reversed().join('');
+        return str === reversed
+      }
+const check = isPolindrom(myArray)
+    //   console.log(isPolindrom('madam'));
+      console.log('sfvfdv');
+      
+      
+      
+    </script>
+  </body>
+</html>

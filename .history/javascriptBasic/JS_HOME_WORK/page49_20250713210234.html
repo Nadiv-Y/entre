@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 49</title>
+  </head>
+  <body>
+    <script>
+      console.log("=firstQ=");
+      function matrixUntil_100(rows, cols) {
+        const matrix = [];
+        let value = 0;
+        for (let i = 0; i < rows; i++) {
+          const row = [];
+          for (let j = 0; j < cols; j++) {
+            row.push(value++);
+          }
+          matrix.push(row);
+        }
+        return matrix;
+      }
+      console.table(matrixUntil_100(10, 10));
+
+      console.log("=secondQ");
+      function matrixCross(rows, cols) {
+        const matrix = [];
+        let value = 0;
+        for (let i = 0; i < rows; i++) {
+          const row = [];
+          for (let j = 0; j < cols; j++) {
+           if(row.indexOf(i)===cols[j]){
+            return row.push(value + 1) 
+        } else{
+            row.push(value)
+        }
+          }
+          matrix.push(row);
+        }
+        return matrix;
+      }
+       console.table(matrixCross(10,10));
+       
+    
+ 
+
+    </script>
+  </body>
+</html>

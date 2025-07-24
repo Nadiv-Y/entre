@@ -1,0 +1,47 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px 7px greenyellow;
+    margin: 0px;
+    border: 1px black solid;
+    height: 90vh;
+}
+
+label {
+    display: inline
+}
+label:hover {
+    cursor: pointer;
+}
+label {
+    width: 15px;
+}
+
+.form-group {
+    margin-top: 1rem;
+}
+
+input:focus {
+    border-color: gold;
+    outline: 50;
+    cursor: crosshair;
+}
+input{
+    display: block;
+}
+div{
+    margin-left: 15px;
+}
+form{
+    padding: 1rem;
+}
+img{
+    display: inline;
+    margin-left: 250px;
+    margin-bottom: -150px;
+    border-radius: 15px;
+}
+h1{
+    margin-bottom: -25px;
+}
