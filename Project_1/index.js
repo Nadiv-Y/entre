@@ -46,7 +46,7 @@ resetBtn.addEventListener('click', () => {
 function renderNotes() {
     const notes = getNotesFromLocalStorage()
     for (const note of notes) {
-        const isExisitingNoteCard = document.querySelector(`[data-id="${note.noteId}`)
+        const isExisitingNoteCard = document.querySelector(`[data-id="${note.noteId}]`)
         if (!isExisitingNoteCard) {
             const noteCard = addNote(note)
             notesArea.append(noteCard)
@@ -106,7 +106,10 @@ function addNote(note) {
     dateAndtimeWrapper.className = 'date-and-time-wrapper'
 
     const date = document.createElement('p')
-    date.innerText = note.dateInput
+    const rawDate = note.dateInput
+    const [year, month, day] = rawDate.split('-')
+    const formattedDate = `${day}.${month}.${year}`
+    date.innerText = formattedDate
 
     const time = document.createElement('p')
     time.innerText = note.timeInput
