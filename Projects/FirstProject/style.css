@@ -31,10 +31,6 @@ h2 {
   flex-direction: row;
   gap: 10px;
 }
-/* .input-form:last-of-type,
-  .input-form:first-of-type {
-    margin-top: 1rem;
-  } */
 .time-container {
   height: 30%;
   display: flex;
@@ -75,10 +71,13 @@ h2 {
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
   font-weight: bold;
+  cursor: pointer;
 }
+
 .task:hover .bi-x-square {
   display: inline;
 }
+
 .bi-x-square {
   display: none;
   float: right;

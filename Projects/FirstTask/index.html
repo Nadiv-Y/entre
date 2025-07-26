@@ -11,14 +11,14 @@
   </head>
 
   <body class="bg-light">
-    <div class="container d-flex justify-content-center align-items-center p-3">
+    <div class="container d-flex flex-column justify-content-center align-items-center p-3">
       <form class="border rounded p-4 shadow w-100" style="max-width: 900px">
         <h3 class="mb-4 text-center">
           <i class="bi bi-airplane-fill"></i> Vacation Planer <i class="bi bi-airplane-fill"></i>
         </h3>
         <div class="row">
           <div class="col-md-3 mb-3">
-            <label for="tripIdea" class="form-label m-1">Trip Idea</label>
+            <label for="tripIdea" class="form-label m-1">Trip Name</label>
             <input type="text" class="form-control" id="tripIdea" placeholder="Washington D.C" required />
           </div>
           <div class="col-md-3 mb-3">
@@ -44,6 +44,26 @@
           <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
       </form>
+      <div class="w-100 d-flex justify-content-center align-items-center gap-4 mt-2">
+        <div class="card border-success mb-3" style="max-width: 18rem">
+          <div class="card-header bg-transparent border-success d-flex justify-content-between">
+            <div>
+              <span>123</span>
+              <i class="bi bi-heart-fill"></i>
+            </div>
+            <span class="d-inline">The Graaaand Canyon</span>
+            <i class="bi bi-x-square"></i>
+          </div>
+          <div class="card-body text-success">
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoQy9Iq0hRay8dQVJlKb4aB_W8Skw3enMtpQ&s" alt="Card image cap" />
+            <!-- <h5 class="card-title">Success card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </p> -->
+          </div>
+          <div class="card-footer bg-transparent border-success">Footer</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
