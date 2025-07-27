@@ -142,7 +142,7 @@ function displayVacCardsFromLocalStorage() {
         return
     }
     const placeholder = document.createElement('div')
-    for(key in storedVacCards){
+    for(const key in storedVacCards){
         placeholder.innerHTML = storedVacCards[key]
         document.querySelector('#cards-container').append(placeholder.firstElementChild)
     }
