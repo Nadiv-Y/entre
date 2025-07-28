@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Board</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="container py-4">
+    <h1 class="text-center mb-4 font-weight-bold">Task Board</h1>
+
+    <div class="card p-4 mb-4">
+        <div class="form-group">
+            <label for="titleTask">Task Title</label>
+            <input type="text" class="form-control" id="titleTask" placeholder="Enter task title" maxlength="30"
+                required />
+        </div>
+        <div class="form-group">
+            <label for="textTask">Description</label>
+            <textarea class="form-control" id="textTask" rows="3" placeholder="Describe your task" required></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="dateTask">Date</label>
+                <input type="date" class="form-control" id="dateTask" required />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="timeTask">Time</label>
+                <input type="time" class="form-control" id="timeTask" required />
+            </div>
+        </div>
+        <div class="form-buttons mt-3 justify-content-center">
+            <button id="addTaskBtn" class="btn btn-primary">Add Task</button>
+            <button id="clearFormBtn" class="btn btn-secondary">Clear Form</button>
+        </div>
+    </div>
+
+    <div class="row" id="notes"></div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
