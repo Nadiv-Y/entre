@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("=thirdQ=");
+      const oneStudents = 10;
+      const school = 1000;
+      let sumOfStudentGrades = 0;
+      let sumOfSchoolAverage = 0;
+      for (let i = 1; i <= oneStudents; i++) {
+        let grades = Math.floor(Math.random() * 101);
+        sumOfStudentGrades += grades;
+      }
+      for (let i = 11; i <= school; i++) {
+        let grades = Math.floor(Math.random() * 101);
+        sumOfSchoolAverage += grades;
+      }
+      const studentAverage = sumOfStudentGrades / 10;
+      const allSchoolAverage = (sumOfSchoolAverage + sumOfStudentGrades) / 1000;
+      console.log("the student average is: " + studentAverage);
+      console.log("the school average is: " + allSchoolAverage);
+
+      console.log("=sevenQ=");
+      let input = [2,5,3,8,4,6,8,2,10,2];
+      for (let i = 0; i < input.length; i++) {
+        input[i];
+        for (let s = input[i]; s > input[i + 1]; s--) {
+          console.log(s);}
+          for (let j = input[i]; j < input[i + 1]; j++) {
+            console.log(j);
+          }
+      }
+    </script>
+  </body>
+</html>

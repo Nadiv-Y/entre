@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("=firstQ=");
+      const val1 = 10;
+      const val2 = 11;
+      const val3 = 13;
+      function checkWhoIsBigger(params) {
+        if (val1 < val2 && val1 < val3 && val2 < val3) {
+          return val1 +','+ val2 +','+val3;
+        } else if (val2 < val1 && val2 < val3 && val1 < val3) {
+          return val2+','+ val1+','+ val3;
+        } else if (val3 < val1 && val3 < val3 && val2 < val1) {
+          return val3+','+ val2+','+ val1;
+        } else if (val3 < val1 && val3 < val2 && val1 < val2) {
+          return val3+','+ val1+','+ val2;
+        } else if (val1 < val2 && val1 < val3 && val3 < val2) {
+          return val1+','+ val3+','+ val2;
+        } else {
+          return val2+','+  val3+','+  val1;
+        }
+      }
+      const tellMeWhoIsBigger = checkWhoIsBigger(val1, val2, val3);
+      console.log(tellMeWhoIsBigger);
+
+      console.log("=secondQ=");
+      const studentGrade = 96
+      function giveMeAgrade(params) {
+         if (studentGrade < 55) {
+            return 'בלתי מספיק'
+         } else if (studentGrade <= 64 && studentGrade >= 55) {
+            return 'מספיק'
+         } else if (studentGrade <= 74 && studentGrade >= 65) {
+            return 'כמעט טוב'
+         }else if(studentGrade <= 84 && studentGrade >= 75){
+            return 'טוב'
+         }else if (studentGrade <= 94 && studentGrade >= 85) {
+            return 'טוב מאוד'
+         }else {
+            return 'מצויין'
+         }
+      }
+      let finelGrade = giveMeAgrade(studentGrade)
+      console.log(finelGrade);
+      
+      console.log("=thirdQ=");
+      const A =1
+      const B =5
+      const C =3
+      const D =2
+      const E =5
+      const F =5
+      const X = ((C*E)-(B*F)) / ((A*E)-(B*D))
+      const Y = ((A*F)-(C*D)) / ((A*E)-(B*D))
+      function returnXY(params) {
+        if ((A*E)-(B*D) === 0) {
+            return 'equation has no solution'
+        } else {
+            return 'X = ' + X + ' and Y= ' + Y
+        }
+      }
+      const equationSolution = returnXY(X,Y)
+      console.log(equationSolution);
+      
+      console.log("=forthQ=");
+      const year = 2002
+      function checkIfLeapYear(params) {
+        if (year % 4 === 0 && year % 100 != 0 || year % 400 === 0) {
+            return year + ' is a leap year'
+        } else {
+            return year + ' is a regiuler year'
+        }
+      }
+      const yearType = checkIfLeapYear(year)
+      console.log(yearType)
+
+      console.log("=fifthQ=");
+      const monthNumber = 2
+      function countDaysNumber(params) {
+        if (monthNumber === (4 && 6) ||monthNumber === (9 && 11) ) {
+            return yearType + ' the days number is: ' + 30
+        } else if (monthNumber === 2) {
+            if (yearType == year + ' is a leap year' ) {
+                return yearType + ' the days number is: ' + 29
+            }else {
+                return yearType + ' the days number is: ' + 28
+            }
+        } else {
+           return yearType + ' the days number is: ' + 31
+        }
+      }
+      const daysNumber = countDaysNumber(monthNumber, yearType)
+      console.log(daysNumber);
+      
+    </script>
+  </body>
+</html>
