@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./task.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
 
-    <script src="./task.js" ></script>
-</body>
+    <link rel="stylesheet" href="./task.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <form action="">
+        <div class="container bg-white">
+            <p class="fs-1 fw-bold topic" >Experiences</p>
+                  <div class="input-group input-group-lg">
+            <span class="input-group-text fw-bold fs-4" id="inputGroup-sizing-lg"
+              >Enter your vacation name</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              id="vacation-name"
+              placeholder="vacation name..."
+            />
+                  </div>
+            
+                  <div class="mb-3">
+            <label for="basic-url" class="form-label">Your vanity URL</label>
+            <div class="input-group">
+              <span class="input-group-text fw-bold fs-4" id="basic-addon3"
+                >https://upload-picture-from-the-vacation.com/users/</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="basic-url"
+                aria-describedby="basic-addon3 basic-addon4"
+                placeholder="URL here..."
+              />
+            </div>
+            <div class="form-text" id="basic-addon4">
+              Here you can add an URL adress and i will add the picture after saving the Data
+            </div>
+                  </div>
+            
+                  <div class="input-group mb-3">
+            <span class="input-group-text fs-4 fw-bold">$</span>
+            <input
+              type="number"
+              class="form-control"
+              aria-label="Amount (to the nearest dollar)"
+              id="price"
+              placeholder="How much did the vacation cost you?"
+            />
+            <span class="input-group-text fs-4 fw-bold">.00</span>
+                  </div>
+            
+                  <select class="form-select fs-4 fw-bold" aria-label="Default select example" id="rate">
+            <option selected>How was your vaction - Give a rating</option>
+            <option value="1">bad</option>
+            <option value="2">regular</option>
+            <option value="3">good</option>
+            <option value="4">excellent</option>
+                  </select>
+            
+                  <div class="input-group">
+            <span class="input-group-text fs-4 fw-bold">Share your thoughts</span>
+            <textarea class="form-control" aria-label="With textarea" placeholder="This box is optional, however your opinion is very important to us."></textarea>
+            <div class="form-text text-black" id="basic-addon4">
+            </div>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg" id="save">Save</button>
+                </div>
+
+                <div class="card-container"></div>
+                <script src="./task.js"></script>
+          
+
+            
+    </form>
+  </body>
 </html>
