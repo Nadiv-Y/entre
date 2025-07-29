@@ -1,0 +1,62 @@
+body {
+    background-image: url("granite-texture.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-font {
+    font-family: 'Pacifico', cursive, sans-serif;
+}
+
+.form-background {
+    background-image: url("notepad-lines.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.task-note {
+    width: 200px;
+    min-height: 180px;
+    background-color: #ffff88;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.task-note.visible {
+    opacity: 1;
+}
+
+.task-text {
+    max-height: 90px;
+    overflow-y: auto;
+}
+
+.task-footer {
+    font-size: 0.8rem;
+    color: #333;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    color: #900;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.task-note:hover .delete-btn {
+    opacity: 1;
+}

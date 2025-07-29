@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <span class="navbar-brand mx-auto text-white">Vacation Manager</span>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <form id="vacationForm">
+            <div class="mb-3">
+                <label for="vacationName" class="form-label">Vacation Name</label>
+                <input type="text" class="form-control" id="vacationName" placeholder="Trip to...." />
+            </div>
+            <div class="mb-3">
+                <label for="vacationImage" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="vacationImage" placeholder="https://example.com/image.jpg" />
+            </div>
+            <div class="mb-3">
+                <label for="vacationPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="vacationPrice" placeholder="Enter price in USD" min="0" />
+            </div>
+            <div class="mb-3">
+                <label for="vacationRating" class="form-label">Rating</label>
+                <select class="form-select" id="vacationRating">
+                  <option value="">Select rating</option>
+                  <option value="Excellent">Excellent</option>
+                  <option value="Good">Good</option>
+                  <option value="Regular">Regular</option>
+                  <option value="Bad">Bad</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-success" id="save-vacation">Save Vacation</button>
+        </form>
+        <div class="row mt-4" id="vacations-container"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
