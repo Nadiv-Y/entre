@@ -161,3 +161,16 @@ grid-row: 6/9;
   }
 }
 
+#delete-task{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #ec4646;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

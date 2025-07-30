@@ -17,7 +17,6 @@ function addTask() {
   const deleteBtn = document.createElement("button");
   deleteBtn.id = "delete-task";
   deleteBtn.type = "button";
-  deleteBtn.className = "btn-close";
   deleteBtn.innerText = "delete";
  
 
@@ -31,6 +30,11 @@ function addTask() {
   text.style.flex = "1";
   text.style.overflowY = "auto";
   text.style.maxHeight = "100%";
+  
+  if (!inputValue) {
+    alert("Please add task...");
+    return;
+  }
 
   const footer = document.createElement("div");
   footer.style.marginTop = "auto";
@@ -51,29 +55,25 @@ function addTask() {
   time.style.margin = "0";
   time.style.fontSize = "2rem"
 
-  footer.append(date, time);
-
-  if (!inputValue) {
-    alert("Please add task...");
-    return;
-  }
-
+  
+  
   if (!inputDate) {
     alert("Please add date...");
     return;
   }
-
+  
   if (!inputTime) {
     alert("Please add time...");
     return;
   }
 
+  footer.append(date, time);
   task.append(text, deleteBtn, footer);
   container.append(task);
 
-  document.querySelector("#input-value").value = " ";
-  document.querySelector("#date-task").value = " ";
-  document.querySelector("#time-task").value = " ";
+  document.querySelector("#input-value").value = "";
+  document.querySelector("#date-task").value = "";
+  document.querySelector("#time-task").value = "";
 
   deleteBtn.addEventListener("click", removeTask);
 
@@ -96,9 +96,9 @@ function resetTask() {
   if (!confirm("Are you sure?")) {
     return;
   }
-  document.querySelector("#input-value").value = " ";
-  document.querySelector("#date-task").value = " ";
-  document.querySelector("#time-task").value = " ";
+  document.querySelector("#input-value").value = "";
+  document.querySelector("#date-task").value = "";
+  document.querySelector("#time-task").value = "";
 }
 
 function addTasklToLocalStorage(element) {
