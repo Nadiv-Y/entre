@@ -77,7 +77,7 @@ function deleteTask(event) {
     if(!confirm('Are you sure you want to delete this task?')){
         return
     }
-    const noteToBeDeletet = event.target.parentElement.parentElement.parentElement
+    const noteToBeDeletet = event.target.closest('.note')
     const notesContainer = noteToBeDeletet.parentElement
     notesContainer.removeChild(noteToBeDeletet)
 

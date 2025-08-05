@@ -110,7 +110,7 @@ function addVacCard() {
 function deleteVacCard(event) {
     if(!confirm('If you click OK all of this card information will be lost forever! are you sure you want to delete this card?')){
     }
-    const cardToBeDeleted = event.target.parentElement.parentElement.parentElement
+    const cardToBeDeleted = event.target.closest('.card')
     const cardsContainer = cardToBeDeleted.parentElement
     cardsContainer.removeChild(cardToBeDeleted)
 
@@ -158,7 +158,7 @@ function displayVacCardsFromLocalStorage() {
 // }
 
 function addLike(cardLiked) {
-    const cardTolike = cardLiked.target.parentElement.parentElement.parentElement
+    const cardTolike = cardLiked.target.closest('.card')
     const likeAmount = cardTolike.querySelector('.like-amount')
     const newLikeAmount = parseInt(likeAmount.innerText) + 1
     likeAmount.innerText = newLikeAmount
