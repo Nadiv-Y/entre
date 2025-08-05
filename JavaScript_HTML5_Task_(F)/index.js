@@ -150,15 +150,19 @@ function renderInGallery() {
 
     const cards = document.querySelectorAll('.vactaion-card')
 
-    cards.forEach(card => {
+    for (const card of cards) {
         const cardId = parseInt(card.dataset.id)
+        let exist = false
 
-        const exist = vacations.some(vacation => vacation.countId === cardId)
-
+        for (const vacation of vacations) {
+            if (vacation.countId === cardId) {
+                exist = true
+            }
+        }
         if (!exist) {
             card.remove()
         }
-    })
+    }
 }
 
 function removeVacationCard(e) {
@@ -168,9 +172,15 @@ function removeVacationCard(e) {
 
         const vacations = getVacationsFromLocalStorage()
 
-        const UpdatedVacations = vacations.filter(vacation => vacation.countId !== cardId)
-
-        localStorage.setItem('vacations', JSON.stringify(UpdatedVacations))
+        let updatedVacations = vacations
+        
+        for(const vacation of vacations){
+            if(vacation.countId === cardId){
+                updatedVacations.pop(vacation)
+            }
+        }
+    
+        localStorage.setItem('vacations', JSON.stringify(updatedVacations))
         renderInGallery()
     }
 
@@ -228,5 +238,3 @@ cardsGallery.addEventListener('click', removeVacationCard)
 cardsGallery.addEventListener('click', likesCounter)
 
 renderInGallery()
-
-

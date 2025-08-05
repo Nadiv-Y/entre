@@ -148,7 +148,6 @@ label {
     display: grid;
     gap: var(--space-5);
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-columns: repeat(250px);
     border-right: 1px solid var(--border);
     grid-area: gallery;
     overflow-y: auto;
@@ -165,6 +164,7 @@ label {
     display: flex;
     height: fit-content;
     flex-direction: column;
+    max-width: 600px;
 }
 
 .img-and-like-wrapper {
