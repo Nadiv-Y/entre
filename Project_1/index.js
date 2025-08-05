@@ -1,8 +1,8 @@
 
 const modal = document.getElementById('add-note-dialog');
 const openBtn = document.getElementById('open-modal-btn');
-const notesArea = document.querySelector('#notes-area');
 const addNoteForm = document.getElementById('dialog-form')
+const notesArea = document.querySelector('#notes-area');
 const closeBtn = document.getElementById('close-modal')
 const resetBtn = document.getElementById('reset-form-btn')
 
@@ -46,33 +46,36 @@ resetBtn.addEventListener('click', () => {
 function renderNotes() {
     const notes = getNotesFromLocalStorage()
     for (const note of notes) {
-        const isExisitingNoteCard = document.querySelector(`[data-id="${note.noteId}]`)
+        const isExisitingNoteCard = document.querySelector(`[data-id="${note.noteId}"]`)
         if (!isExisitingNoteCard) {
             const noteCard = addNote(note)
             notesArea.append(noteCard)
         }
     }
 
-    const AllNotes = document.querySelectorAll('.note-wrapper')
+    const allNotesFrames = document.querySelectorAll('.note-wrapper')
+    console.log(allNotesFrames)
+    for (const noteFrame of allNotesFrames) {
+        const noteId = parseInt(noteFrame.dataset.id)
+        const pin = noteFrame.querySelector('.pin')
+        let exist = false
 
-    AllNotes.forEach(note => {
-        const noteId = parseInt(note.dataset.id)
-        const pin = note.querySelector('.pin')
-
-        const exist = notes.some(note => note.noteId === noteId)
+        for (const note of notes) {
+            if (note.noteId === noteId) {
+                exist = true
+                console.log(exist)
+            }
+        }
 
         if (!exist) {
             pin.classList.add('pin-out')
-            note.classList.add('note-fall')
-            pin.addEventListener('animationend', () => {
-                
-                note.addEventListener('animationend', () => {
-                    note.remove()
-                }, { once: true })
-            }, { once: true })
-        }
-    })
-
+            noteFrame.classList.add('note-fall')
+            
+            setTimeout(() => {
+                noteFrame.remove()
+            }, 800)
+        } 
+    }
 }
 
 function addNote(note) {
