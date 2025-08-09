@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>coins project</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -41,16 +41,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item m-1">
                   <a href="#" class="btn btn-primary">Home</a>
                 </li>
-                <li class="nav-item">
-                  <button type="button" class="btn btn-link">
-                    Live Reports
-                  </button>
+                <li class="nav-item m-1">
+                  <a href="#" class="btn btn-primary"  id="liveReport">Live Reports</a>
                 </li>
-                <li class="nav-item">
-                  <button type="button" class="btn btn-link">About</button>
+                <li class="nav-item m-1">
+                  <a href="#" id="about" class="btn btn-primary">About</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -59,7 +57,7 @@
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
-                />
+                  id="search">
                 <button class="btn btn-outline-success" type="submit">
                   Search
                 </button>
@@ -68,143 +66,21 @@
           </div>
         </nav>
       </div>
-
-      <div class="main">
-        <!-- <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-        <div class="card mb-3" style="width: 18rem">
-          <div class="card-body">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider"></span>
-            </label>
-            <h5 class="card-title">Coin</h5>
-            <p class="card-text">Coins</p>
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-      </div> -->
+      <div class="main"></div>
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutModalLabel">About Us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is the best investment of your life!</p>
+        <p>Contect Me 050-959-4944</p>
+      </div>
     </div>
-
+  </div>
+</div>
     <script src="./index.js"></script>
   </body>
 </html>
