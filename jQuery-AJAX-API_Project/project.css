@@ -1,0 +1,289 @@
+body {
+  background-color: black;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.currentPage {
+  color: #00e565;
+  text-decoration: underline;
+}
+
+.searchBox {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* .searchButton{
+  width: 20px;
+  height: 20px;
+} */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Kenia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #00e565;
+  font-size: 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+/* .home {
+  text-decoration: underline;
+} */
+
+li:hover {
+  color: #00e565;
+  cursor: pointer;
+}
+
+.searchButton {
+  color: white;
+  background-color: #00e565;
+  border-color: none;
+  border-radius: 5px;
+}
+
+.cardsArea {
+  display: flex !important;
+  margin: 114px;
+  gap: 12px;
+}
+
+.card {
+  width: 267px;
+  height: 185px;
+  background: linear-gradient(to top, #000000 0%, #2a2a2a 100%);
+  border: 2px solid #a6f9ca23;
+  border-radius: 10px;
+  box-shadow: 3px 4px 4.4px #6d6d6d34;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.coinName {
+  color: white;
+  font-size: 24px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.coinNickname {
+  color: #898c88;
+  grid-column: 1 / span 1;
+  grid-row: 2;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #00e565;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00e565;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.moreInfo {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  grid-column: 2 / span 1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsible {
+  background-color: #0d0d0d00;
+  color: #00e565;
+  cursor: pointer;
+  padding: 18px;
+  width: auto;
+  border: none;
+  /* text-align: left; */
+  outline: none;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.content {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: -115px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #000000 0%, #2a2a2a 100%);
+  border: 1px solid black;
+  color: #00e565;
+  padding: 4px;
+  border-radius: 6px;
+  z-index: 5;
+  display: none;
+  justify-content: space-around;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: #0d0d0d00;
+  color: white;
+}
+
+.content.show {
+  display: block;
+}
+
+.collapsible:after {
+  content: "+";
+  font-size: 13px;
+  color: #00e565;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.img {
+  width: 16px;
+  height: 16px;
+  background-color: #898c88;
+}
+.coin {
+  display: flex;
+  justify-content: space-evenly;
+}
+.USD{
+display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+}
+
+.EUR{
+display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+}
+
+.ILS{
+display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+}
+
+/* .USD.EUR.ILS {
+  
+} */
+
+.aboutSection {
+  width: 40%;
+  margin-left: 10%;
+}
+
+h2 {
+  color: white;
+  font-size: 64px;
+}
+
+.aboutContent {
+  color: white;
+}
