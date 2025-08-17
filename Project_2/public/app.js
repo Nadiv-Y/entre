@@ -1,3 +1,35 @@
+const contentArea = document.querySelector('#inner-content-area')
+// const navBarButtons = document.querySelectorAll('.nav-btn')
+
+// async function pageLoad(page){
+
+//     try {
+        
+//         const response = await fetch(page)
+//         const html = await response.text()
+
+//         contentArea.innerHTML = html
+
+//     } catch (error) {
+//         console.error(error)
+//         app.innerHTML = "<p>Cant get the data right now</p>"
+//     }
+// }
+
+
+// for(const button of navBarButtons){
+//     button.addEventListener('click', (e) => {
+//         const page = e.target.dataset.page
+//         console.log(page);
+         
+//         pageLoad(page)
+//         history.pushState({ page }, "", page)
+//     })
+// }
+
+// pageLoad("home.html")
+
+
 
 async function getCryptoCoins() {
     try {
@@ -15,7 +47,7 @@ async function getCryptoCoins() {
 
         let coins = []
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 100; i++) {
             coins.push(coinsResponse[i])
         }
 
@@ -47,10 +79,6 @@ function createCoinCard(coin) {
 
     const coinInfoWrapper = document.createElement('div')
     coinInfoWrapper.className = 'coin-info-wrapper'
-
-    // const coinImg = document.createElement('img')
-    // coinImg.className = 'coin-img'
-    // // coinImg.src = coin.image
 
     const coinSymbolAndNameWrapper = document.createElement('div')
     coinSymbolAndNameWrapper.className = 'coin-name-and-symbol'
@@ -101,37 +129,6 @@ function createCoinCard(coin) {
 
 const homePageBtn = document.querySelector('#home-page-btn')
 const aboutPageBtn = document.querySelector('#about-page-btn')
-const contentArea = document.querySelector('#inner-content-area')
-
-aboutPageBtn.addEventListener('click', async (e) => {
-    e.preventDefault()
-
-    try {
-        const response = await fetch('about.html')
-
-        if (response.status !== 200) {
-            throw new Error('Error fetching the about page data')
-        }
-
-        const responseHTML = await response.text()
-
-        contentArea.innerHTML = responseHTML
-
-
-    } catch (error) {
-        console.error(error)
-        contentArea.innerHTML = "<p>Cant get the data right now</p>"
-    }
-
-})
-
-homePageBtn.addEventListener('click', async (e) => {
-    e.preventDefault()
-
-    getCryptoCoins()
-
-})
-
 
 const searchInput = document.querySelector('#search-input')
 const searchInputBtn = document.querySelector('#search-btn')
@@ -180,6 +177,7 @@ async function getCoinMoreInfoData(cardId, card) {
             }
 
             coinData = await response.json()
+            console.log(coinData)
 
             setCache(cacheKey, coinData, 2 * 60 * 1000)
         }
@@ -221,6 +219,17 @@ function addMoreInfoDetailsToCard(coinData) {
     const accordionSeeMoreContent = document.createElement('div')
     accordionSeeMoreContent.className = 'see-more-content'
 
+    const imgDataTile = document.createElement('div')
+    imgDataTile.className = 'data-tile'
+
+    const imgDataTileTitle = document.createElement('p')
+    imgDataTileTitle.className = 'data-tile-title'
+    imgDataTileTitle.innerText = 'Coin Image'
+
+    const coinImg = document.createElement('img')
+    coinImg.className = 'coin-img'
+    coinImg.src = coinData.image.small
+
     const dollarsDataTile = document.createElement('div')
     dollarsDataTile.className = 'data-tile'
 
@@ -254,8 +263,8 @@ function addMoreInfoDetailsToCard(coinData) {
     shekelDataTileValue.className = 'data-tile-value'
     shekelDataTileValue.innerText = coinData.market_data.current_price.ils + '₪'
 
-
-    accordionSeeMoreContent.append(dollarsDataTile, euroDataTile, shekelDataTile)
+    accordionSeeMoreContent.append(imgDataTile, dollarsDataTile, euroDataTile, shekelDataTile)
+    imgDataTile.append(imgDataTileTitle, coinImg)
     dollarsDataTile.append(dollarDataTileTitle, dollarDataTileValue)
     euroDataTile.append(euroDataTileTitle, euroDataTileValue)
     shekelDataTile.append(shekelDataTileTitle, shekelDataTileValue)
@@ -294,12 +303,14 @@ function getChace(key) {
 const reportModal = document.querySelector('.report-modal')
 const modalOverlay = document.querySelector('.overlay')
 const modalCoinsList = document.querySelector('.coins-switch-list')
+let count = 0
 
 function openModalAfterFiveToggledButtons() {
     const switchButtons = contentArea.querySelectorAll('.checkbox')
 
-    let count = 0
+    
     let coinsNames = []
+    let switchSelected
 
     for (const switchBtn of switchButtons) {
 
@@ -311,7 +322,8 @@ function openModalAfterFiveToggledButtons() {
                     modalCoinsList.append(createCoinDataTile(coinName))
                 }
                 modalOverlay.classList.remove('hidden')  
-                
+                switchSelected = e.target  
+    
                 return
             }
 
@@ -357,7 +369,13 @@ function openModalAfterFiveToggledButtons() {
                 }
                 modalCoinsList.innerHTML = ''
                 modalOverlay.classList.add('hidden')
-                
+                switchSelected.checked = true
+                const selectedSwitchCard = switchSelected.closest('.card')
+                const coinid = selectedSwitchCard.dataset.id
+                const coinName = selectedSwitchCard.querySelector('.coin-name').innerText
+                coinsNames.push({ name: coinName, Id: coinid }) 
+                count++             
+                console.log(coinsNames);
             }
         }
     })
@@ -375,6 +393,7 @@ closeModalIconBtn.addEventListener('click', () => {
 
 cancelModalBtn.addEventListener('click', () => {
     modalCoinsList.innerHTML = ''
+
     modalOverlay.classList.add('hidden')
 })
 
