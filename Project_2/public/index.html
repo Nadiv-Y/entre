@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto</title>
+    <link rel="icon" type="image/svg+xml" href="lib/Logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="content-area" class="glass-effect">
+        <div id="header">
+            <div class="logo-wrapper">
+                <img id="logo-img" src="lib/Logo.svg" alt="logo">
+                <p class="logo-text">Crypto</p>
+            </div>
+
+            <div class="buttons-group glass-effect">
+                <button class="nav-btn" id="home-page-btn">Home</button>
+                <button class="nav-btn" id="about-page-btn">About</button>
+                <button class="nav-btn" id="reports-page-btn">Live Report</button>
+            </div>
+
+            <div class="search-wrapper">
+                <input class="glass-effect" id="search-input" type="search" placeholder="Type to search">
+                <button class="glass-effect" id="search-btn">Search</button>
+            </div>
+
+
+        </div>
+        <div id="inner-content-area">
+            <!-- <div class="card glass-effect">
+                <div class="card-header">
+                    <div class="coin-info-wrapper">
+                        <img src="lib/Logo.svg" alt="" class="coin-img">
+                        <div class="coin-name-and-symbol">
+                            <p class="coin-symbol">BTC</p>
+                            <p class="coin-name">Bitcoin</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input id="checkbox" type="checkbox">
+                        <span class="slider round glass-effect"></span>
+                    </label>
+                </div>
+                <details class="see-more-accordion">
+                    <summary class="see-more-heading">See More <i class="ph ph-plus toggle-icon"></i></summary>
+                    <div class="see-more-content">
+                        <div class="data-tile">
+                            <p class="data-tile-title">Price in Dollar</p>
+                            <p class="data-tile-value">200$</p>
+                        </div>
+                        <div class="data-tile">
+                            <p class="data-tile-title">Price in Euro</p>
+                            <p class="data-tile-value">200€</p>
+                        </div>
+                        <div class="data-tile">
+                            <p class="data-tile-title">Price in Shekel </p>
+                            <p class="data-tile-value">200₪</p>
+                        </div>
+                    </div>
+
+                </details> -->
+        </div>
+    </div>
+
+    <div class="overlay hidden">
+        <dialog class="report-modal glass-effect" open>
+            <button id="close-modal"><i class="fa-solid fa-x"></i></button>
+            <h1 id="modal-header">Remove coin from reports</h1>
+            <div class="coins-switch-list">
+            </div>
+            <button class="cancel-btn glass-effect">Cancel</button>
+
+        </dialog>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
