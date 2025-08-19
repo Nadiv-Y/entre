@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategy Parallax Cards</title>
+  <link rel="stylesheet" href="/lib/normalize.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Parallax background */
+    .parallax-section {
+      background-image: url('/Projects/SecondProject/parallax-bg.jpg'); /* your background */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 100px 0;
+    }
+
+    /* Card styling */
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      transition: transform 0.2s ease-out;
+    }
+
+    /* Bigger switches */
+    .card .form-check-input {
+      width: 3rem;
+      height: 1.5rem;
+    }
+
+    /* Card wrapper for safe transform */
+    .card-wrapper {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
-  <script src="test.js"></script>
+
+  <!-- Header -->
+  <header class="p-3 bg-dark text-white mb-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center gap-3">
+        <div class="d-flex align-items-center">
+          <img src="/Projects/SecondProject/icons8-bitcoin-48.png" style="width:48px;height:48px" alt="Strategy Logo" />
+          <h2 class="ms-2">Strategy</h2>
+        </div>
+        <ul class="nav col-auto mb-2 mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Live Reports</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+        <form class="d-flex col-12 col-md-auto mb-3 mb-md-0 ms-md-auto">
+          <input type="search" class="me-2 form-control form-control-dark" placeholder="Search..." />
+          <button type="button" class="btn btn-outline-secondary">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Parallax Cards Section -->
+  <section class="parallax-section">
+    <div class="container-fluid container-sm w-75 py-5">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center g-4">
+
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card-wrapper">
+            <div class="card shadow-sm border-0 rounded-3">
+              <div class="card-body ps-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h5 class="card-title mb-0">BTC</h5>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" />
+                  </div>
+                </div>
+                <p class="card-text text-muted mb-3">Bitcoin</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card-wrapper">
+            <div class="card shadow-sm border-0 rounded-3">
+              <div class="card-body ps-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h5 class="card-title mb-0">ETH</h5>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" />
+                  </div>
+                </div>
+                <p class="card-text text-muted mb-3">Ethereum</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card-wrapper">
+            <div class="card shadow-sm border-0 rounded-3">
+              <div class="card-body ps-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h5 class="card-title mb-0">DOGE</h5>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" />
+                  </div>
+                </div>
+                <p class="card-text text-muted mb-3">Dogecoin</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+          <div class="card-wrapper">
+            <div class="card shadow-sm border-0 rounded-3">
+              <div class="card-body ps-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h5 class="card-title mb-0">LTC</h5>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" />
+                  </div>
+                </div>
+                <p class="card-text text-muted mb-3">Litecoin</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+          <div class="card-wrapper">
+            <div class="card shadow-sm border-0 rounded-3">
+              <div class="card-body ps-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <h5 class="card-title mb-0">ADA</h5>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" role="switch" />
+                  </div>
+                </div>
+                <p class="card-text text-muted mb-3">Cardano</p>
+                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JS for scroll parallax -->
+  <script>
+    const cardWrappers = document.querySelectorAll('.card-wrapper');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+
+      cardWrappers.forEach((wrapper, index) => {
+        const speed = 0.05 + index * 0.02; // each card moves slightly different
+        wrapper.style.transform = `translateY(${scrollTop * speed}px)`;
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,10 @@
+header h2 {
+  font-size: 1.7rem;
+  line-height: 48px; 
+  flex-shrink: 0;    
+}
+/* Custom switch size */
+.card .form-check-input {
+  width: 3rem;
+  height: 1.5rem;
+}

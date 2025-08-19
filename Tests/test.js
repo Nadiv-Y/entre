@@ -1,3 +1,8 @@
-for(let i = 0; i<100; i+=3)
-  console.log(i);
-  
+const obj = {
+  name: "Carol",
+  greet() {
+    console.log(this.name)
+  },
+}
+const a = obj.greet
+a()
