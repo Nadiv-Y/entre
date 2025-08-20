@@ -16,12 +16,20 @@
 </head>
 
 <body>
+
     <div id="content-area" class="glass-effect">
         <div id="header">
-            <div class="logo-wrapper">
-                <img id="logo-img" src="lib/Logo.svg" alt="logo">
-                <p class="logo-text">Crypto</p>
+            <div class="logo-and-menu">
+                <div class="logo-wrapper">
+                    <img id="logo-img" src="lib/Logo.svg" alt="logo">
+                    <p class="logo-text">Crypto</p>
+                </div>
+                <button class="humburger-menu glass-effect">
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
             </div>
+
 
             <div class="buttons-group glass-effect">
                 <button class="nav-btn" id="home-page-btn" data-page="home.html">Home</button>
@@ -29,21 +37,32 @@
                 <button class="nav-btn" id="reports-page-btn" data-page="reports.html">Live Report</button>
             </div>
 
+
+
+
             <div class="search-wrapper">
                 <input class="glass-effect" id="search-input" type="search" placeholder="Type to search">
+                <button class="glass-effect" id="clear-search-btn"><i class="fa-solid fa-x"></i></button>
                 <button class="glass-effect" id="search-btn">Search</button>
             </div>
 
 
         </div>
         <div id="inner-content-area">
-           
+
 
 
 
         </div>
     </div>
 
+
+    <div class="buttons-group-humburger glass-effect">
+        <button class="nav-btn humburger" id="home-page-btn-humburger" data-page="home.html">Home</button>
+        <button class="nav-btn humburger" id="about-page-btn-humburger" data-page="about.html">About</button>
+        <button class="nav-btn humburger" id="reports-page-btn-humburger" data-page="reports.html">Live Report</button>
+    </div>
+    
     <div class="overlay hidden">
         <dialog class="report-modal glass-effect" open>
             <button id="close-modal"><i class="fa-solid fa-x"></i></button>

@@ -1,34 +1,54 @@
 const contentArea = document.querySelector('#inner-content-area')
-// const navBarButtons = document.querySelectorAll('.nav-btn')
-
-// async function pageLoad(page){
-
-//     try {
-        
-//         const response = await fetch(page)
-//         const html = await response.text()
-
-//         contentArea.innerHTML = html
-
-//     } catch (error) {
-//         console.error(error)
-//         app.innerHTML = "<p>Cant get the data right now</p>"
-//     }
-// }
 
 
-// for(const button of navBarButtons){
-//     button.addEventListener('click', (e) => {
-//         const page = e.target.dataset.page
-//         console.log(page);
-         
-//         pageLoad(page)
-//         history.pushState({ page }, "", page)
-//     })
-// }
 
-// pageLoad("home.html")
+const navBarButtons = document.querySelectorAll('.nav-btn')
+const burgerMenuButtons = document.querySelectorAll('.nav-btn.humburger')
+const homePageBtn = document.querySelector('#home-page-btn')
+const homePageBtnBurger = document.querySelector('#home-page-btn-humburger')
 
+console.log(navBarButtons)
+homePageBtn.classList.add('active')
+homePageBtnBurger.classList.add('active')
+
+renderHomePage()
+
+for (const button of navBarButtons) {
+    button.addEventListener('click', () => {
+        for (const btn of navBarButtons) {
+            btn.classList.remove('active')
+        }
+
+        button.classList.add('active')
+
+        if (button.id === 'home-page-btn' || button.id === 'home-page-btn-humburger') {
+            renderHomePage()
+
+        } else if (button.id === 'about-page-btn' || button.id === 'about-page-btn-humburger') {
+            renderAboutPage()
+
+        } else if (button.id === 'reports-page-btn' || button.id === 'reports-page-btn-humburger') {
+            console.log('reports-page');
+        }
+    })
+
+}
+
+
+const burgerMenuBtn = document.querySelector('.humburger-menu')
+const burgerMenu = document.querySelector('.buttons-group-humburger')
+
+
+burgerMenuBtn.addEventListener('click', () => {
+    burgerMenu.classList.toggle('show')
+})
+
+
+for (const btn of burgerMenuButtons) {
+    btn.addEventListener('click', () => {
+        burgerMenu.classList.remove('show')
+    })
+}
 
 
 async function getCryptoCoins() {
@@ -43,31 +63,60 @@ async function getCryptoCoins() {
 
         const coinsResponse = await response.json()
 
-        contentArea.innerHTML = '';
 
-        let coins = []
 
-        for (let i = 0; i < 100; i++) {
-            coins.push(coinsResponse[i])
-        }
-
-        for (const coin of coins) {
-            const card = createCoinCard(coin)
-            contentArea.append(card)
-        }
-
-        openModalAfterFiveToggledButtons()
-
-        return coins
+        return coinsResponse.slice(0, 100)
 
     } catch (error) {
         console.error(error)
-        contentArea.innerHTML = "<p>Cant get the data right now</p>"
+        return []
     }
 }
 
-getCryptoCoins()
 
+
+
+async function renderHomePage() {
+    const coins = await getCryptoCoins()
+
+    contentArea.innerHTML = ''
+
+    for (const coin of coins) {
+        const card = createCoinCard(coin)
+        contentArea.append(card)
+    }
+
+    openModalAfterFiveToggledButtons()
+}
+
+function renderAboutPage() {
+
+    contentArea.innerHTML = ''
+
+    const aboutPage = document.createElement('div')
+    aboutPage.classList = 'about-page'
+
+    const textWrapper = document.createElement('div')
+    textWrapper.className = 'about-page-text-wrapper'
+
+    const heading = document.createElement('h2')
+    heading.className = 'about-page-heading'
+    heading.innerText = 'About Crypto'
+
+    const description = document.createElement('p')
+    description.className = 'about-page-description'
+    description.innerText = 'Crypto is a modern platform that provides a simple and interactive dashboard for tracking the world of cryptocurrencies. Our mission is to make digital assets more accessible by giving users real-time insights into the latest coins, prices, and market trends. With a clean interface and intuitive design, Crypto helps both beginners and experienced investors explore, compare, and stay informed about the fast-moving crypto market.'
+
+    const coinImg = document.createElement('img')
+    coinImg.className = 'about-page-img'
+    coinImg.src = 'lib/coins.png'
+
+    aboutPage.append(textWrapper, coinImg)
+    textWrapper.append(heading, description)
+
+    contentArea.append(aboutPage)
+
+}
 
 function createCoinCard(coin) {
     const card = document.createElement('div')
@@ -86,10 +135,12 @@ function createCoinCard(coin) {
     const coinSymbol = document.createElement('p')
     coinSymbol.className = 'coin-symbol'
     coinSymbol.innerText = coin.symbol
+    coinSymbol.setAttribute('data-fulltext', coin.symbol)
 
     const coinName = document.createElement('p')
     coinName.className = 'coin-name'
     coinName.innerText = coin.name
+    coinName.setAttribute('data-fulltext', coin.name)
 
     const switchBtn = document.createElement('label')
     switchBtn.className = 'switch'
@@ -127,11 +178,11 @@ function createCoinCard(coin) {
 }
 
 
-const homePageBtn = document.querySelector('#home-page-btn')
 const aboutPageBtn = document.querySelector('#about-page-btn')
 
 const searchInput = document.querySelector('#search-input')
 const searchInputBtn = document.querySelector('#search-btn')
+const searchInputClearBtn = document.querySelector('#clear-search-btn')
 
 let userInput = ''
 
@@ -149,6 +200,11 @@ searchInputBtn.addEventListener('click', () => {
             card.classList.add('hide')
         }
     }
+})
+
+searchInputClearBtn.addEventListener('click', () => {
+    searchInput.value = ''
+    renderHomePage()
 })
 
 
@@ -308,7 +364,7 @@ let count = 0
 function openModalAfterFiveToggledButtons() {
     const switchButtons = contentArea.querySelectorAll('.checkbox')
 
-    
+
     let coinsNames = []
     let switchSelected
 
@@ -321,9 +377,9 @@ function openModalAfterFiveToggledButtons() {
                 for (const coinName of coinsNames) {
                     modalCoinsList.append(createCoinDataTile(coinName))
                 }
-                modalOverlay.classList.remove('hidden')  
-                switchSelected = e.target  
-    
+                modalOverlay.classList.remove('hidden')
+                switchSelected = e.target
+
                 return
             }
 
@@ -360,11 +416,11 @@ function openModalAfterFiveToggledButtons() {
             if (card) {
                 const cardSwitch = card.querySelector('.checkbox')
                 cardSwitch.checked = false
-                for(let i = 0; i < coinsNames.length; i++){
-                    if(coinsNames[i].Id === coinId){
+                for (let i = 0; i < coinsNames.length; i++) {
+                    if (coinsNames[i].Id === coinId) {
                         coinsNames.splice(i, 1)
                         count--
-                        console.log(coinsNames);      
+                        console.log(coinsNames);
                     }
                 }
                 modalCoinsList.innerHTML = ''
@@ -373,8 +429,8 @@ function openModalAfterFiveToggledButtons() {
                 const selectedSwitchCard = switchSelected.closest('.card')
                 const coinid = selectedSwitchCard.dataset.id
                 const coinName = selectedSwitchCard.querySelector('.coin-name').innerText
-                coinsNames.push({ name: coinName, Id: coinid }) 
-                count++             
+                coinsNames.push({ name: coinName, Id: coinid })
+                count++
                 console.log(coinsNames);
             }
         }
@@ -422,6 +478,5 @@ function createCoinDataTile(coinName) {
 
     return coinDataTile
 }
-
 
 
