@@ -1,8 +1,20 @@
 const cards = document.querySelector(".main");
 const searchInput = document.querySelector("#search");
+const loadingSpinner = document.querySelector("#loading");
+
+function showLoading() {
+  loadingSpinner.style.display = "block";
+  const text = document.querySelector("#loadingText");
+  text.innerText = "Loadind";
+}
+function hideLoading() {
+  loadingSpinner.style.display = "none";
+}
+
 let first100Coins = [];
 
 async function getData() {
+  showLoading();
   try {
     const response = await fetch("https://api.coingecko.com/api/v3/coins/list");
     if (!response.ok) throw new Error("Failed to fetch coins list");
@@ -12,6 +24,8 @@ async function getData() {
     console.log(first100Coins);
   } catch (err) {
     console.log("error" + err.message);
+  } finally {
+    hideLoading();
   }
 }
 
@@ -36,7 +50,7 @@ function display100Coins(first100Coins) {
       <div id="${coin.id}" class="card mb-3" style="width: 18rem">
         <div class="card-body">
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" data-id="${coin.id}"/>
             <span class="slider"></span>
           </label>
           <h5 class="card-title">${coin.name}</h5>
@@ -75,6 +89,7 @@ cards.addEventListener("click", async (e) => {
 });
 
 async function moreInfo(coinID) {
+  showLoading();
   try {
     const response = await fetch(
       `https://api.coingecko.com/api/v3/coins/${coinID}`
@@ -82,6 +97,8 @@ async function moreInfo(coinID) {
     if (!response.ok) throw new Error("Failed to fetch coin details");
 
     const data = await response.json();
+
+    localStorage.setItem(`coin${coinID}`, JSON.stringify(data))
 
     const image = data.image.small;
     const usd = data.market_data.current_price.usd;
@@ -104,7 +121,35 @@ async function moreInfo(coinID) {
 
     const modal = new bootstrap.Modal(document.getElementById("coinInfoModal"));
     modal.show();
+    
   } catch (err) {
     console.log("error" + err.message);
+  } finally {
+    hideLoading();
   }
 }
+
+let selectedCoins = []; //ךהמשיך מכאן, צריך לסיים עם הטאגלים
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+let pendingCoin = null;
+
+cards.addEventListener("change", (e)=>{
+  if(e.target.classList.contains("coin-toogle")){
+    const coinID = e.target.getAttribute("data-id")
+
+    if(e.target.checked){
+      if(selectedCoins<5){
+        selectedCoins.push(coinID)
+      }else{
+        e.target.checked = false;
+        pendingCoin = coinID;
+        showLimitModal()
+      }
+    }else{
+      selectedCoins = selectedCoins.filter((id)=> id !== coinID)
+    }
+  }
+})
+
+
+
