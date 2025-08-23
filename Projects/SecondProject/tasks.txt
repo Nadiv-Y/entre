@@ -1,0 +1,13 @@
+1. filter search
+  a. make it faster -- done.
+  b. maybe add a safe search so it only searches the symbol and not the symbol+name+no white spaces -- nah.
+2. handle errors in the displayCryptoCoins function - what will show if the browers cant show the crypto coins -- done.
+3. add a progress bar for the crypto coins -- done.
+4. add show more button for the crypto coins
+  -- Collapser
+  a. image
+  b. crypto price in USD, EUR, ILS (add symbols foreach)
+  c. progress bar
+  d. add to local storage - the data needs to be renewed every 2 minutes if clicked
+
+5. toggle button ...
