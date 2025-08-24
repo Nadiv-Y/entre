@@ -1,181 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strategy Parallax Cards</title>
-  <link rel="stylesheet" href="/lib/normalize.css" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-    crossorigin="anonymous"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overlay Collapse Columns</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Parallax background */
-    .parallax-section {
-      background-image: url('/Projects/SecondProject/parallax-bg.jpg'); /* your background */
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 100px 0;
+    .collapse-card {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      top: 100%; /* Position right below the button */
+      left: 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-
-    /* Card styling */
-    .card {
-      background-color: rgba(255, 255, 255, 0.9);
-      transition: transform 0.2s ease-out;
-    }
-
-    /* Bigger switches */
-    .card .form-check-input {
-      width: 3rem;
-      height: 1.5rem;
-    }
-
-    /* Card wrapper for safe transform */
-    .card-wrapper {
-      position: relative;
+    .col-wrapper {
+      position: relative; /* Needed for absolute positioning inside */
     }
   </style>
 </head>
 <body>
+  <div class="container my-5">
 
-  <!-- Header -->
-  <header class="p-3 bg-dark text-white mb-4">
-    <div class="container">
-      <div class="d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center gap-3">
-        <div class="d-flex align-items-center">
-          <img src="/Projects/SecondProject/icons8-bitcoin-48.png" style="width:48px;height:48px" alt="Strategy Logo" />
-          <h2 class="ms-2">Strategy</h2>
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol1">
+          Toggle Column 1
+        </button>
+        <div class="collapse collapse-card" id="collapseCol1">
+          <div class="card card-body">Content 1</div>
         </div>
-        <ul class="nav col-auto mb-2 mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Live Reports</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-        </ul>
-        <form class="d-flex col-12 col-md-auto mb-3 mb-md-0 ms-md-auto">
-          <input type="search" class="me-2 form-control form-control-dark" placeholder="Search..." />
-          <button type="button" class="btn btn-outline-secondary">Search</button>
-        </form>
+      </div>
+      <div class="col-md-4 col-wrapper">
+        <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol2">
+          Toggle Column 2
+        </button>
+        <div class="collapse collapse-card" id="collapseCol2">
+          <div class="card card-body">Content 2</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-wrapper">
+        <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol3">
+          Toggle Column 3
+        </button>
+        <div class="collapse collapse-card" id="collapseCol3">
+          <div class="card card-body">Content 3</div>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- Parallax Cards Section -->
-  <section class="parallax-section">
-    <div class="container-fluid container-sm w-75 py-5">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center g-4">
-
-        <!-- Card 1 -->
-        <div class="col">
-          <div class="card-wrapper">
-            <div class="card shadow-sm border-0 rounded-3">
-              <div class="card-body ps-4">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  <h5 class="card-title mb-0">BTC</h5>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" />
-                  </div>
-                </div>
-                <p class="card-text text-muted mb-3">Bitcoin</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
-              </div>
-            </div>
-          </div>
+    <!-- Row 2 -->
+    <div class="row">
+      <div class="col-md-4 col-wrapper">
+        <button class="btn btn-info w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol4">
+          Toggle Column 4
+        </button>
+        <div class="collapse collapse-card" id="collapseCol4">
+          <div class="card card-body">Content 4</div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="col">
-          <div class="card-wrapper">
-            <div class="card shadow-sm border-0 rounded-3">
-              <div class="card-body ps-4">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  <h5 class="card-title mb-0">ETH</h5>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" />
-                  </div>
-                </div>
-                <p class="card-text text-muted mb-3">Ethereum</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-wrapper">
+        <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol5">
+          Toggle Column 5
+        </button>
+        <div class="collapse collapse-card" id="collapseCol5">
+          <div class="card card-body">Content 5</div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="col">
-          <div class="card-wrapper">
-            <div class="card shadow-sm border-0 rounded-3">
-              <div class="card-body ps-4">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  <h5 class="card-title mb-0">DOGE</h5>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" />
-                  </div>
-                </div>
-                <p class="card-text text-muted mb-3">Dogecoin</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-wrapper">
+        <button class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol6">
+          Toggle Column 6
+        </button>
+        <div class="collapse collapse-card" id="collapseCol6">
+          <div class="card card-body">Content 6</div>
         </div>
-
-        <!-- Card 4 -->
-        <div class="col">
-          <div class="card-wrapper">
-            <div class="card shadow-sm border-0 rounded-3">
-              <div class="card-body ps-4">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  <h5 class="card-title mb-0">LTC</h5>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" />
-                  </div>
-                </div>
-                <p class="card-text text-muted mb-3">Litecoin</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col">
-          <div class="card-wrapper">
-            <div class="card shadow-sm border-0 rounded-3">
-              <div class="card-body ps-4">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  <h5 class="card-title mb-0">ADA</h5>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" type="checkbox" role="switch" />
-                  </div>
-                </div>
-                <p class="card-text text-muted mb-3">Cardano</p>
-                <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
 
-  <!-- JS for scroll parallax -->
-  <script>
-    const cardWrappers = document.querySelectorAll('.card-wrapper');
+  </div>
 
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-
-      cardWrappers.forEach((wrapper, index) => {
-        const speed = 0.05 + index * 0.02; // each card moves slightly different
-        wrapper.style.transform = `translateY(${scrollTop * speed}px)`;
-      });
-    });
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

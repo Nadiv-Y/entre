@@ -47,29 +47,40 @@ async function retriveDataFromAPI(URL) {
 
 async function updateProgressBar($bar, value) {
   $bar.css("width", `${value}%`).attr("aria-valuenow", value)
-  
+
   await new Promise((resolve) => requestAnimationFrame(resolve))
   if (value === 100) {
-    $bar.parent().addClass('fade')
+    $bar.parent().addClass("fade")
     $bar.parent().fadeOut(700)
   }
 }
 
 function makeCoinHTML(coin) {
-  return `<div class="card shadow-sm border-0 rounded-3 g-1"
-       data-symbol="${coin.symbol.toUpperCase()}" 
-       data-name="${coin.name.toUpperCase()}">
-          <div class="card-body ps-4">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <h5 class="card-title mb-0">${coin.symbol}</h5>
-              <div class="form-check form-switch m-0">
-                <input class="form-check-input" type="checkbox" role="switch"/>
-              </div>
-            </div>
-            <p class="card-text text-muted mb-3">${coin.name}</p>
-            <a href="#" class="btn btn-sm btn-outline-primary">More Info</a>
+  return `<div class="card shadow-sm border-0 rounded-3 g-1" data-symbol="${coin.symbol.toUpperCase()}" id="${coin.id}">
+      <div class="card-body ps-4 position-relative">
+
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <h5 class="card-title mb-0">${coin.symbol}</h5>
+          <div class="form-check form-switch m-0">
+            <input class="form-check-input" type="checkbox" role="switch" />
           </div>
-        </div>`
+        </div>
+
+        <p class="card-text text-muted mb-3">${coin.name}</p>
+
+        <a class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" 
+        href="#collapse-${coin.id}" role="button" aria-expanded="false" aria-controls="collapse-${coin.id}"> More Info </a>
+
+        <div class="collapse position-absolute w-100 mt-2 shadow" style="top: 100%; left: 0; z-index: 10;"
+             id="collapse-${coin.id}"
+             data-bs-parent="#${CONSTANTS.IDS.cryptoContainer}">
+          <div class="card card-body border-0">
+            Some placeholder content for <b>${coin.name}</b>.
+          </div>
+        </div>
+
+      </div>
+    </div>`
 }
 
 function renderCoins(list) {
