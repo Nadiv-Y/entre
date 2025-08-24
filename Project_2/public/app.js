@@ -52,6 +52,9 @@ for (const btn of burgerMenuButtons) {
 
 
 async function getCryptoCoins() {
+
+    
+
     try {
 
         const response = await fetch('https://api.coingecko.com/api/v3/coins/list')

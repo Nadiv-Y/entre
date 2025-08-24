@@ -1,0 +1,381 @@
+:root {
+
+    /* Colors */
+
+    --background-color-white: #fff;
+    --background-color-gray: #FAFAFA;
+    --background-color-primary: #65B94F;
+    --background-color-disabled: #d7d7d7;
+    --background-color-primary-hover: #489634;
+    --text-color-main: #3B3B3B;
+    --text-color-secondary: #656565;
+    --text-color-placholder: #8C8C8C;
+    --text-color-primary: #65B94F;
+    --text-white: #fff;
+    --border-main: #EAEAEA;
+    --border-secondary: #c4c4c4;
+    --border-primary: #65B94F;
+
+
+    /* Spacing */
+
+    --spacing-0: 0rem;
+    --spacing-2: 0.125rem;
+    --spacing-4: 0.25rem;
+    --spacing-8: 0.5rem;
+    --spacing-12: 0.75rem;
+    --spacing-16: 1rem;
+    --spacing-20: 1.25rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-36: 2.25rem;
+    --spacing-40: 2.5rem;
+    --spacing-48: 3rem;
+    --spacing-96: 6rem;
+
+
+    /* Font-size */
+
+    --font-size-0: 0rem;
+    --font-size-2: 0.125rem;
+    --font-size-4: 0.25rem;
+    --font-size-8: 0.5rem;
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-32: 2rem;
+    --font-size-40: 2.5rem;
+
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: var(--background-color-gray);
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        'header header'
+        'serach-list dashboard';
+    height: 100svh;
+}
+
+button {
+    border: none;
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-12) var(--spacing-24);
+    font-weight: 500;
+    color: var(--text-white);
+    border-radius: 999px;
+}
+
+button:hover {
+    background-color: var(--background-color-primary-hover);
+    cursor: pointer;
+}
+
+button:disabled{
+    background-color: var(--background-color-disabled);
+    cursor: default;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-0) var(--spacing-40);
+    height: 100%;
+    grid-area: header;
+    background-color: var(--background-color-white);
+    border-bottom: 1px solid var(--border-main);
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: var(--spacing-4);
+    align-items: center;
+}
+
+#logo-img {
+    width: var(--font-size-32);
+    height: var(--font-size-32);
+}
+
+#logo-text {
+    font-size: var(--font-size-20);
+    font-weight: 500;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+    background-color: var(--background-color-white);
+    border-right: 1px solid var(--border-main);
+    padding: var(--spacing-32) var(--spacing-40);
+    overflow-y: hidden;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    border: 1px solid var(--border-main);
+    padding: var(--spacing-8) var(--spacing-12);
+    padding-left: var(--spacing-36);
+    font-size: var(--font-size-14);
+    color: var(--text-color-secondary);
+    border-radius: 999px;
+    width: 100%;
+}
+
+.search-wrapper>i {
+    position: absolute;
+    left: var(--spacing-12);
+    pointer-events: none;
+    font-size: var(--spacing-20);
+    color: var(--text-color-placholder);
+}
+
+#search-input::placeholder {
+    color: var(--text-color-placholder);
+}
+
+#search-input:focus {
+    outline: none;
+    border: 1px solid var(--border-primary);
+}
+
+.btn-and-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-0) var(--spacing-4);
+}
+
+#select-country-text {
+    font-size: var(--font-size-14);
+    color: var(--text-color-secondary);
+    font-weight: 500;
+}
+
+#select-all-in-search-btn {
+    font-size: var(--font-size-14);
+    background-color: transparent;
+    color: var(--text-color-primary);
+    padding: var(--spacing-0);
+    font-weight: 600;
+}
+
+#select-all-in-search-btn {
+    font-size: var(--font-size-14);
+    background-color: transparent;
+    color: var(--text-color-primary);
+    padding: var(--spacing-0);
+}
+
+.serach-results-list {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-0) var(--spacing-4);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.country-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding: var(--spacing-12) var(--spacing-0);
+    border-bottom: 1px solid var(--border-main);
+}
+
+.country-row.hide {
+    display: none;
+}
+
+.checkbox-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-wrapper>i {
+    color: var(--text-white);
+    font-size: var(--spacing-12);
+    position: absolute;
+    pointer-events: none;
+    left: var(--spacing-2);
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--spacing-4);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    margin-right: var(--spacing-4);
+}
+
+.checkbox:checked {
+    background-color: var(--background-color-primary);
+    border-color: var(--border-primary);
+}
+
+.country-flag {
+    width: 32px;
+}
+
+.country-name {
+    font-size: var(--font-size-14);
+    color: var(--text-color-main);
+}
+
+.data-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+    padding: var(--spacing-32) var(--spacing-40);
+    overflow: hidden;
+}
+
+.dashboard-title {
+    font-size: var(--font-size-20);
+    font-weight: 500;
+    color: var(--text-color-main);
+    margin-left: var(--spacing-4);
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 94px 1fr;
+    grid-template-areas:
+        'card1 card2'
+        'table table';
+    gap: var(--spacing-20) var(--spacing-32);
+    background-color: var(--background-color-white);
+    border: 1px solid var(--border-main);
+    border-radius: var(--spacing-16);
+    height: 100%;
+    padding: var(--spacing-32);
+    overflow: hidden;
+}
+
+.data-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-white);
+    border: 1px solid var(--border-main);
+    padding: var(--spacing-20);
+    gap: var(--spacing-8);
+    border-radius: var(--spacing-16);
+}
+
+#total-countries-population {
+    grid-area: card1;
+}
+
+#average-population {
+    grid-area: card2;
+}
+
+.card-heading {
+    font-size: var(--font-size-14);
+    color: var(--text-color-secondary);
+}
+
+.card-value {
+    font-size: var(--font-size-24);
+    color: var(--text-color-main);
+    font-weight: 700;
+}
+
+.data-table-area {
+    grid-area: table;
+    overflow-y: hidden;
+}
+
+.tabs-wrapper {
+    display: flex;
+    width: fit-content;
+}
+
+.tab-btn {
+    background-color: var(--background-color-white);
+    border-radius: var(--spacing-0);
+    color: var(--text-color-secondary);
+    border-bottom: 1px solid var(--border-main);
+    font-size: var(--font-size-14);
+    margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+    background-color: var(--background-color-gray);
+}
+
+.tab-btn.active {
+    color: var(--text-color-primary);
+    border-bottom: 2px solid var(--border-primary);
+    font-weight: 600;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--border-main);
+}
+
+.table-wrapper{
+    overflow-y: auto;
+    height: 100%;
+}
+
+.data-table{
+    width: 100%;
+}
+
+tr {
+    display: flex;
+}
+
+.headers-row{
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border-main);
+}
+
+th {
+    background-color: var(--background-color-gray);
+    font-size: var(--font-size-14);
+    font-weight: 400;
+    color: var(--text-color-secondary);
+    text-align: start;
+    padding: var(--spacing-16) var(--spacing-20);
+    width: 100%;
+}
+
+td {
+    font-size: var(--font-size-14);
+    font-weight: 400;
+    color: var(--text-color-secondary);
+    text-align: start;
+    padding: var(--spacing-20) var(--spacing-20);
+    border-bottom: 1px solid var(--border-main);
+    width: 100%;
+}

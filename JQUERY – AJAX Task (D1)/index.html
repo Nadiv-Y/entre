@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="logo-wrapper">
+            <img src="lib/world icon.png" alt="" id="logo-img">
+            <p id="logo-text">World Data</p>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="search-wrapper">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="search" id="search-input" placeholder="Search a country">
+        </div>
+        <div class="btn-and-header-wrapper">
+            <p id="select-country-text">Select a country</p>
+            <button class="link-btn" id="select-all-in-search-btn">Select All</button>
+        </div>
+        <div class="serach-results-list">
+        </div>
+        <button disabled class="primary-btn" id="show-data-btn">Show Data</button>
+    </section>
+
+    <section class="data-dashboard">
+        <h1 class="dashboard-title">Countries Data</h1>
+        <div class="content-wrapper">
+            <div class="data-card" id="total-countries-population">
+                <p class="card-heading">Total Countries Population</p>
+                <p class="card-value" id="total-countries-population-value">No data to show</p>
+            </div>
+            <div class="data-card" id="average-population">
+                <p class="card-heading">Average Population</p>
+                <p class="card-value" id="average-population-value">No data to show</p>
+            </div>
+            <div class="data-table-area">
+                <div class="tabs-wrapper">
+                    <button class="tab-btn active" id="country-tab">Country</button>
+                    <button class="tab-btn" id="region-tab">Region</button>
+                    <button class="tab-btn" id="coin-tab">Coin</button>
+                </div>
+                <div class="divider"></div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <tr class="headers-row">
+                            <th>Country Name</th>
+                            <th>Number of citizens</th>
+                            <th>Coin Used In Country</th>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
