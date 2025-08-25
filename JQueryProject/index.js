@@ -66,11 +66,12 @@ searchInput.addEventListener("input", () => {
 });
 
 document.querySelector("#about").addEventListener("click", modal);
-console.log("the user clicked on about");
 
-function modal() {
+function modal(e) {
   const modal = new bootstrap.Modal(document.getElementById("aboutModal"));
   modal.show();
+  console.log("the user clicked on about");
+  e.preventDefault();
 }
 
 let coinID = "";
@@ -80,7 +81,7 @@ cards.addEventListener("click", async (e) => {
       console.log("user clicked on more info button");
       e.preventDefault();
       const coinID = e.target.getAttribute("data-id");
-      console.log(coinID);
+      console.log("the coin name is: " + coinID);
       await moreInfo(coinID);
     }
   } catch (err) {
@@ -98,7 +99,7 @@ async function moreInfo(coinID) {
 
     const data = await response.json();
 
-    localStorage.setItem(`coin${coinID}`, JSON.stringify(data))
+    localStorage.setItem(`coin${coinID}`, JSON.stringify(data));
 
     const image = data.image.small;
     const usd = data.market_data.current_price.usd;
@@ -121,7 +122,6 @@ async function moreInfo(coinID) {
 
     const modal = new bootstrap.Modal(document.getElementById("coinInfoModal"));
     modal.show();
-    
   } catch (err) {
     console.log("error" + err.message);
   } finally {
@@ -129,27 +129,40 @@ async function moreInfo(coinID) {
   }
 }
 
-let selectedCoins = []; //ךהמשיך מכאן, צריך לסיים עם הטאגלים
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-let pendingCoin = null;
+let selectedCoins = [];
+let pendingCoinId = null;
 
-cards.addEventListener("change", (e)=>{
-  if(e.target.classList.contains("coin-toogle")){
-    const coinID = e.target.getAttribute("data-id")
+cards.addEventListener("change", (e) => {
+  showLoading();
+  try {
+    const toggleId = e.target.getAttribute("data-id");
+    const isOn = e.target.checked;
 
-    if(e.target.checked){
-      if(selectedCoins<5){
-        selectedCoins.push(coinID)
-      }else{
-        e.target.checked = false;
-        pendingCoin = coinID;
-        showLimitModal()
+    if (isOn) {
+      if (selectedCoins.length < 5) {
+        selectedCoins.push(toggleId);
+        console.log(selectedCoins);
+      } else {
+        limitModal(selectedCoins)
       }
-    }else{
-      selectedCoins = selectedCoins.filter((id)=> id !== coinID)
+    } else {
+      selectedCoins = selectedCoins.filter((id) => id !== toggleId);
     }
+  } catch (err) {
+    console.log("error" + err.message);
+  } finally {
+    hideLoading();
   }
-})
+});
 
+function limitModal(selectedCoins) {
+const modalTitle = document.querySelector("#limitSelectedCoins")
+const coins = JSON.stringify(selectedCoins)
+modalTitle.innerHTML = coins
+  const modal = new bootstrap.Modal(
+    document.getElementById("limitSelectedCoins")
+  );
+  modal.show();
+  console.log("the user reached to the limit");
 
-
+}
