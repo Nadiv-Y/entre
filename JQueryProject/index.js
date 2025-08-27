@@ -130,7 +130,7 @@ async function moreInfo(coinID) {
 }
 
 let selectedCoins = [];
-let pendingCoinId = null;
+let pendingCoin = [];
 
 cards.addEventListener("change", (e) => {
   showLoading();
@@ -143,10 +143,13 @@ cards.addEventListener("change", (e) => {
         selectedCoins.push(toggleId);
         console.log(selectedCoins);
       } else {
-        limitModal(selectedCoins)
+        limitModal(selectedCoins);
+        pendingCoin.push(toggleId);
+        console.log(pendingCoin);
       }
     } else {
       selectedCoins = selectedCoins.filter((id) => id !== toggleId);
+      pendingCoin = pendingCoin.filter((id) => id !== toggleId);
     }
   } catch (err) {
     console.log("error" + err.message);
@@ -156,13 +159,67 @@ cards.addEventListener("change", (e) => {
 });
 
 function limitModal(selectedCoins) {
-const modalTitle = document.querySelector("#limitSelectedCoins")
-const coins = JSON.stringify(selectedCoins)
-modalTitle.innerHTML = coins
+  const modalTitle = document.querySelector("#limitSelectedCoinsLable");
+  const modalBody = document.querySelector("#selectedCoins");
+
+  modalTitle.innerText = `You have reched the limit, please choose coin for replace:`;
+  const coin1 = `
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked data-id="${selectedCoins[0]}">
+  <label class="form-check-label" for="checkChecked">
+    ${selectedCoins[0]}
+  </label>
+</div>`;
+  const coin2 = `
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked  data-id="${selectedCoins[1]}">
+  <label class="form-check-label" for="checkChecked">
+    ${selectedCoins[1]}
+  </label>
+</div>
+`;
+  const coin3 = `
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked  data-id="${selectedCoins[2]}">
+  <label class="form-check-label" for="checkChecked">
+    ${selectedCoins[2]}
+  </label>
+</div>
+`;
+  const coin4 = `
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked  data-id="${selectedCoins[3]}">
+  <label class="form-check-label" for="checkChecked">
+    ${selectedCoins[3]}
+  </label>
+</div>
+`;
+  const coin5 = `
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked  data-id="${selectedCoins[4]}">
+  <label class="form-check-label" for="checkChecked">
+    ${selectedCoins[4]}
+  </label>
+</div>
+`;
+  modalBody.innerHTML = coin1 + coin2 + coin3 + coin4 + coin5;
+
   const modal = new bootstrap.Modal(
     document.getElementById("limitSelectedCoins")
   );
   modal.show();
   console.log("the user reached to the limit");
-
 }
+const modalBody = document.querySelector("#selectedCoins")
+
+modalBody.addEventListener("change", (e) => {     //contonue from here - yoa have finished your un checked coin login
+  try {
+    const unCheckedCoin = e.target.getAttribute("data-id");
+    const isOn = e.target.checked;
+    if(!isOn){
+      console.log(unCheckedCoin);
+    }
+  } catch (err) {
+    console.log("error" + err.message);
+  }
+});
