@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  border: 1px black solid;
+}
+
+.box {
+  flex-basis: 20%;
+  width: 20%;
+}
+
+.div1 {
+  background-color: red;
+}
+
+.div2 {
+  background-color: green;
+}
+
+.div3 {
+  background-color: blue;
+}
+
+@media screen and (min-width: 900px) {
+  .div3 {
+    flex-shrink: 1;
+    flex-basis: 10%;
+  }
+}
