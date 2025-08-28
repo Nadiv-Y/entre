@@ -210,14 +210,34 @@ function limitModal(selectedCoins) {
   modal.show();
   console.log("the user reached to the limit");
 }
-const modalBody = document.querySelector("#selectedCoins")
+const modalBody = document.querySelector("#selectedCoins");
 
-modalBody.addEventListener("change", (e) => {     //contonue from here - yoa have finished your un checked coin login
+modalBody.addEventListener("change", (e) => {
   try {
     const unCheckedCoin = e.target.getAttribute("data-id");
     const isOn = e.target.checked;
-    if(!isOn){
-      console.log(unCheckedCoin);
+    const checkedCoin = pendingCoin[0];
+    if (!isOn && checkedCoin) {
+      console.log("the coin to replace: " + unCheckedCoin);
+      console.log("this is the coin that need to get in: " + checkedCoin);
+
+      const oldCheckbox = document.querySelector(
+        `input[type="checkbox"][data-id="${unCheckedCoin}"]`
+      );
+      if (oldCheckbox) oldCheckbox.checked = false;
+
+       const newCheckbox = document.querySelector(`input[type="checkbox"][data-id="${checkedCoin}"]`);
+      if (newCheckbox) newCheckbox.checked = true;
+
+      selectedCoins = selectedCoins.filter(id => id !== unCheckedCoin);
+      selectedCoins.push(checkedCoin);
+
+      pendingCoin = [];
+
+      const modal = bootstrap.Modal.getInstance(document.getElementById("limitSelectedCoins"));
+      modal.hide();
+
+      console.log("Updated selected coins:", selectedCoins);
     }
   } catch (err) {
     console.log("error" + err.message);
