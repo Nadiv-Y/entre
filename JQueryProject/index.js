@@ -98,6 +98,8 @@ async function moreInfo(coinID) {
     if (!response.ok) throw new Error("Failed to fetch coin details");
 
     const data = await response.json();
+    console.log(data);
+    
 
     localStorage.setItem(`coin${coinID}`, JSON.stringify(data));
 
@@ -133,12 +135,11 @@ let selectedCoins = [];
 let pendingCoin = [];
 
 cards.addEventListener("change", (e) => {
-  showLoading();
   try {
     const toggleId = e.target.getAttribute("data-id");
     const isOn = e.target.checked;
 
-    if (isOn) {
+    if (isOn) { 
       if (selectedCoins.length < 5) {
         selectedCoins.push(toggleId);
         console.log(selectedCoins);
@@ -153,8 +154,6 @@ cards.addEventListener("change", (e) => {
     }
   } catch (err) {
     console.log("error" + err.message);
-  } finally {
-    hideLoading();
   }
 });
 
@@ -226,15 +225,19 @@ modalBody.addEventListener("change", (e) => {
       );
       if (oldCheckbox) oldCheckbox.checked = false;
 
-       const newCheckbox = document.querySelector(`input[type="checkbox"][data-id="${checkedCoin}"]`);
+      const newCheckbox = document.querySelector(
+        `input[type="checkbox"][data-id="${checkedCoin}"]`
+      );
       if (newCheckbox) newCheckbox.checked = true;
 
-      selectedCoins = selectedCoins.filter(id => id !== unCheckedCoin);
+      selectedCoins = selectedCoins.filter((id) => id !== unCheckedCoin);
       selectedCoins.push(checkedCoin);
 
       pendingCoin = [];
 
-      const modal = bootstrap.Modal.getInstance(document.getElementById("limitSelectedCoins"));
+      const modal = bootstrap.Modal.getInstance(
+        document.getElementById("limitSelectedCoins")
+      );
       modal.hide();
 
       console.log("Updated selected coins:", selectedCoins);
