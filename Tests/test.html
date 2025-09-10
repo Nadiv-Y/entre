@@ -1,85 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overlay Collapse Columns</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .collapse-card {
-      position: absolute;
-      z-index: 10;
-      width: 100%;
-      top: 100%; /* Position right below the button */
-      left: 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .col-wrapper {
-      position: relative; /* Needed for absolute positioning inside */
-    }
-  </style>
-</head>
-<body>
-  <div class="container my-5">
-
-    <!-- Row 1 -->
-    <div class="row">
-      <div class="col-md-4">
-        <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol1">
-          Toggle Column 1
-        </button>
-        <div class="collapse collapse-card" id="collapseCol1">
-          <div class="card card-body">Content 1</div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coins project</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cryptonite</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item m-1">
+                  <a href="#" class="btn btn-primary">Home</a>
+                </li>
+                <li class="nav-item m-1">
+                  <a href="#" class="btn btn-primary"  id="liveReport">Live Reports</a>
+                </li>
+                <li class="nav-item m-1">
+                  <a href="#" id="about" class="btn btn-primary">About</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  id="search">
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
       </div>
-      <div class="col-md-4 col-wrapper">
-        <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol2">
-          Toggle Column 2
-        </button>
-        <div class="collapse collapse-card" id="collapseCol2">
-          <div class="card card-body">Content 2</div>
-        </div>
+      <div class="main"></div>
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutModalLabel">About Us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-md-4 col-wrapper">
-        <button class="btn btn-warning w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol3">
-          Toggle Column 3
-        </button>
-        <div class="collapse collapse-card" id="collapseCol3">
-          <div class="card card-body">Content 3</div>
-        </div>
+      <div class="modal-body">
+        <p>This is the best investment of your life!</p>
+        <p>Contect Me 050-631-6312</p>
       </div>
     </div>
-
-    <!-- Row 2 -->
-    <div class="row">
-      <div class="col-md-4 col-wrapper">
-        <button class="btn btn-info w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol4">
-          Toggle Column 4
-        </button>
-        <div class="collapse collapse-card" id="collapseCol4">
-          <div class="card card-body">Content 4</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-wrapper">
-        <button class="btn btn-danger w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol5">
-          Toggle Column 5
-        </button>
-        <div class="collapse collapse-card" id="collapseCol5">
-          <div class="card card-body">Content 5</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-wrapper">
-        <button class="btn btn-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCol6">
-          Toggle Column 6
-        </button>
-        <div class="collapse collapse-card" id="collapseCol6">
-          <div class="card card-body">Content 6</div>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<div class="modal fade" id="coinInfoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="coinInfoModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary" type="button" id="loading" disabled>
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    <span role="status" id="loadingText"></span>
+  </button>
+</div>
+
+
+<div class="modal fade" id="limitSelectedCoins" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="limitSelectedCoinsLable"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="selectedCoins"></div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="./test.js"></script>
+  </body>
 </html>

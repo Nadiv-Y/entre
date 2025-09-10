@@ -10,7 +10,7 @@ header h2 {
   height: 1.5rem;
 }
 
-.card-text {
+.coin-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

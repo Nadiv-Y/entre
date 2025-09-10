@@ -43,6 +43,16 @@
     <div class="container-fluid container-sm w-sm-75 w-100">
       <div class="row row-cols-sm-3 row-cols-1 justify-content-center m-4" id="cryptoContainer"></div>
     </div>
+    <div id="overlay" class="d-none position-fixed top-0 start-0 end-0 bottom-0 bg-dark bg-opacity-25">
+      <div id="customAlert" class="position-fixed p-3 bg-white top-50 start-50 translate-middle w-50 rounded shadow text-center">
+        <h4 class="p-2">Choose a coin to swap with ${coin}</h4>
+
+        <div class="d-flex flex-wrap justify-content-center" id="choiceContainer">
+        </div>
+
+        <button class="btn btn-secondary btn-sm mt-3" lastcoin="null" id="cancelButton">Cancel</button>
+      </div>
+    </div>
 
     <script type="module" src="/Projects/SecondProject/script.js"></script>
     <script

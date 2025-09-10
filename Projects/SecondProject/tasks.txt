@@ -5,9 +5,9 @@
 3. add a progress bar for the crypto coins -- done.
 4. add show more button for the crypto coins
   -- Collapser
-  a. image
-  b. crypto price in USD, EUR, ILS (add symbols foreach)
-  c. progress bar
-  d. add to local storage - the data needs to be renewed every 2 minutes if clicked
-
+  a. image -- done.
+  b. crypto price in USD, EUR, ILS (add symbols foreach) -- done.
+  c. progress bar-- done. 
+  d. add to local storage - the data needs to be renewed every 2 minutes if clicked -- done.
+   handle errors here !important ? 
 5. toggle button ...
