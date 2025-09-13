@@ -1,0 +1,28 @@
+﻿JavaScript Array Methods — 20 Practice Questions
+
+1. שני המתודות האלו עוברות על המערך ומבצעות פעולות לכל אחד ואחד מהתאים. Map יוצר מערך חדש שבו מתבצעות הפעולות, בשונה מforeach. 
+2. [1,2,3,4,5].filter((number)=>number%2===0)
+[1, 2, 3, 4, 5].reduce((accumulator, currentNumber) => { if (currentNumber % 2 === 0) {accumulator.push(currentNumber)} return accumulator}, [])
+3. Find – מוצא את האיבר הראשון לפי תנאי מסוים.
+Filter – מסנן את כל האיברים לפי תנאי מסוים.
+findIndex – כמו find אך מוציא את המיקום במערך.
+4. Some – מחזיר אמת במידה ויש לפחות איבר אחד במערך שעובר את התנאי.
+Every – מחזיר אמת במידה וכל האיברים עוברים את התנאי.
+5. Includes – מחזיר אמת במידה ויש ערך מסוים במערך.
+indexOf  - מחזיר את המיקום של הערך במערך.
+NaN לא שווה לשום מספר, לכן indexOf יחזיר -1. Includes משתמש במתודת 'SameValueZero' לבדיקת השוויון בין הערכים, לכן המתודה תחזיר אמת.
+6. [...a.slice(0, 2), ...a.slice(3)] 
+a.splice(2,1) –> משנה את המערך 
+
+7. מכיוון שסוג הקלט הינו מחרוזת, זה מסדר אותו לפי הספרות ולא הגודל של המספר עצמו.
+[3,2,5,4].sort()
+[3,2,5,4].sort((a, b) => {return b - a})
+8. ['é','e','ê'].sort((a,b) => a.localeCompare(b)
+['é','e','ê'].sort((a,b) => b.localeCompare(a)
+9. Pop – להוציא את האיבר האחרון
+Push – להוסיף למערך איבר במקום האחרון
+Shift – להוציא את האיבר הראשון
+Unshift - להוסיף איבר במקום הראשון
+10. orders = orders.filter((order) => order.inStock === true).map((order) => order.price).reduce((prev, curr) => {if (curr > 50) {prev += curr}return prev}, 0)
+11.  לא הבנתי את זה
+12. כאשר משתמשים בconcat, זה מדביק את האיברים בתוך המערך שניתן. וכאשר משתמשים בspread, זה עובר איבר איבר ושם אותו במערך.
