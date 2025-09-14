@@ -1,10 +1,9 @@
-let orders = [
-  { price: 20, inStock: true },
-  { price: 75, inStock: false },
-  { price: 120, inStock: true },
-  { price: 40, inStock: true },
-  { price: 60, inStock: true },
-]
+console.log(a); // ?
+// let a = 10;
 
-orders = orders.filter((order) => order.inStock === true).map((order) => order.price).reduce((prev, curr) => {if (curr > 50) {prev += curr}return prev}, 0)
-console.log(orders)
+
+// function f() {
+// console.log(b); // ?
+// const b = 5;
+// }
+// f();
