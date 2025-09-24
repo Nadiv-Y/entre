@@ -126,36 +126,64 @@ const ES6 = () => {
 
   //for in vs for of
 
-  const user4 = {name: 'Nadiv',age: 26 }
+  const user4 = { name: "Nadiv", age: 26 };
 
-  for(const key in user4){
-    console.log(key,user4[key]);
+  for (const key in user4) {
+    console.log(key, user4[key]);
   }
 
-  const arr4 =[10,20,30]
+  const arr4 = [10, 20, 30];
 
-  for(const item of arr4){
+  for (const item of arr4) {
     console.log(item);
   }
 
   //question 21
   function* powers(base, limit) {
-  for (let i = 0; i <= limit; i++) {
-    yield base ** i; 
+    for (let i = 0; i <= limit; i++) {
+      yield base ** i;
+    }
   }
+
+  for (const val of powers(2, 5)) {
+    console.log(val);
+  }
+
+  console.log([...powers(3, 4)]);
+
+  const user5 = { name: "nadiv", age: 26 };
+  const clone = Object.assign({}, user5);
+  const key1 = Object.keys(user5);
+  const value = Object.values(user5);
+  const entries = Object.entries(user5);
+
+  //question 25
+
+  const str = "Nadiv";
+  const of = Array.of(1, 2, 3, 4, 5);
+  const find = [1, 34, 5, 3, 22, 67];
+
+  //question 26
+
+  
+const secret = Symbol("secretKey");
+
+const user26 = {
+  name: "Nadiv",
+  age: 26,
+  [secret]: "mySecretValue"
+};
+
+for (let key in user26) {
+  console.log(key); 
 }
 
-for (const val of powers(2, 5)) {
-  console.log(val);
-}
+console.log(Object.keys(user26)); 
 
-console.log([...powers(3, 4)]); 
+const symbols = Object.getOwnPropertySymbols(user26);
 
-const user5 = {name: 'nadiv', age: 26}
-const clone = Object.assign({},user5)
-const key1 = Object.keys(user5)
-const value = Object.values(user5)
-const entries = Object.entries(user5)
+console.log(symbols[0].toString()); 
+console.log(user26[symbols[0]]); 
 
 
   return (
@@ -278,14 +306,44 @@ const entries = Object.entries(user5)
       <br />
       <p>
         answer 18: <br />
-        <p>The main diferent between for of to for in is that for of uses is in array when we want to get value from the array. and for in we will use in objects</p>
-      </p><br/>
+        <p>
+          The main diferent between for of to for in is that for of uses is in
+          array when we want to get value from the array. and for in we will use
+          in objects
+        </p>
+      </p>
+      <br />
       <p>
-        asnwer 24: <br/>
+        asnwer 24: <br />
         <p>example for object.assign {JSON.stringify(clone)}</p>
         <p>example for object.keys {key1}</p>
         <p>example for object.values {value}</p>
         <p>example for object.entries {entries}</p>
+      </p>
+      <br />
+      <p>
+        answer 25: <br />
+        <p>array.from() : {Array.from(str)}</p>
+        <p>{console.log(Array.from(str))}</p>
+        <p>the perpuse of array.from() is to create new array from object</p>
+        <p>
+          array.of - create new array from the values that we given to him, for
+          example {of}
+        </p>
+        <p>{console.log(of)}</p>
+        <p>
+          .find - will find the value that we want by using bool:{" "}
+          {find.find((n) => n < 3)}
+        </p>
+        <p>
+          .findIndex return the index of the value inside the array:{" "}
+          {find.findIndex((n) => n < 10)}
+        </p>
+        <p>.includes - returs true if the value exist or false if not: {console.log(find.includes(22))} {console.log(find.includes(0))}</p>
+      </p><br/>
+      <p>
+        answer 26: <br/>
+        <p></p>
       </p>
     </div>
   );
