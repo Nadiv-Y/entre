@@ -1,0 +1,521 @@
+{
+    "topics": [
+        {
+            "id": "react-beginner",
+            "title": "React Hooks",
+            "subtitle": "Beginner Questions (30)",
+            "variant": "react",
+            "status": "In Progress"
+        },
+        {
+            "id": "react-hooks",
+            "title": "React Hooks",
+            "subtitle": "Practical Beginner Questions (30)",
+            "variant": "react",
+            "status": "In Progress"
+        },
+        {
+            "id": "javascript-arrays",
+            "title": "JavaScript Array Methods",
+            "subtitle": "Practice Question (20)",
+            "variant": "javaScript",
+            "status": "In Progress"
+        },
+        {
+            "id": 4,
+            "title": "javaScript",
+            "subtitle": "20 Question (Q1 - Q10)",
+            "variant": "javaScript",
+            "status": "In Progress"
+        },
+        {
+            "id": 5,
+            "title": "javaScript",
+            "subtitle": "20 Question (Q1 - Q10)",
+            "variant": "javaScript",
+            "status": "Done"
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "topicId": "react-beginner",
+            "question": "What is useState used for in React?",
+            "answer": "useState is used to store state in React component. It lets React remember values between renders and trigger a re-render whenever the state change",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 2,
+            "topicId": "react-beginner",
+            "question": "How do you declare a state variable with useState?",
+            "answer": "You declare a state variable by destructuring the array returend by useState. For example: const [value, setvalue] = useState(initial value)",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 3,
+            "topicId": "react-beginner",
+            "question": "What does useState return?",
+            "answer": "useState returns an array with two elements: the current state value and a function to update the value",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 4,
+            "topicId": "react-beginner",
+            "question": "How do you update the value of a state variable?",
+            "answer": "You update a state variable by calling its setter function. For example: setCount(count + 1)",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 5,
+            "topicId": "react-beginner",
+            "question": "Can you store objects or arrays in useState?",
+            "answer": "Yes, you can store arrays or objects in useState. For example: const [items, setItems] = useState([]), const [user, setUser] = useState({ name: 'Dolev', age: 31})",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 6,
+            "topicId": "react-beginner",
+            "question": "What is the main purpose of useEffect?",
+            "answer": "The main purpose of useEffect is to run side effects in a React component, such as fetching data, working with the DOM, or setting timers. You can control when it runs: once on mount, on every render, or only when specific dependencies change",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 7,
+            "topicId": "react-beginner",
+            "question": "How do you run an effect only once after the component mounts?",
+            "answer": "You run an effect only once after the component mounts by passing an empty dependency array [] to useEffect",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 8,
+            "topicId": "react-beginner",
+            "question": "What is the dependency array in useEffect used for?",
+            "answer": "The dependency array tells React when to re-run the effect. The effect runs only when one of the dependencies in the array changes.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 9,
+            "topicId": "react-beginner",
+            "question": "How can you clean up an effect in useEffect?",
+            "answer": "You clean up an effect by returning a cleanup function from inside useEffect. React runs this function before the component unmounts or before the effect runs again.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 10,
+            "topicId": "react-beginner",
+            "question": "Can useEffect run more than once?",
+            "answer": "Yes, useEffect can run more then once. Without a dependency array it runs after every render, and with dependencies it runs whenever those values change.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 11,
+            "topicId": "react-beginner",
+            "question": "What problem does useContext help solve?",
+            "answer": "useContext helps solve the problem of prop drilling. It allows components to share values (like theme or user data) without passing props throughv every level of the component tree.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 12,
+            "topicId": "react-beginner",
+            "question": "How do you provide a value to useContext?",
+            "answer": "You provide a value to useContext by wrapping component with the Context.Provider and passing the value as a prop.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 13,
+            "topicId": "react-beginner",
+            "question": "How do you access context in a child component?",
+            "answer": "You access context in a child component by calling useContext with the context object. For example: const value = useContext(MyContext).",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 14,
+            "topicId": "react-beginner",
+            "question": "Can you use multiple contexts in one component?",
+            "answer": "Yes, a component can use multiple contexts by calling useContext with each context it needs.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 15,
+            "topicId": "react-beginner",
+            "question": "What is useReducer commonly used for?",
+            "answer": "useReducer is commonly used for managing more complex state with multiple values or update logic. It centrelizes the state update in a reducer function, making the logic easier to organize then with useState",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 16,
+            "topicId": "react-beginner",
+            "question": "What two things does useReducer return?",
+            "answer": "useReducer returns two things: the current state and the dispatch function used to send actions and update the state.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 17,
+            "topicId": "react-beginner",
+            "question": "How is useReducer different from useState?",
+            "answer": "useState is best for simple state and direct updates, while useReducer is better foe complex state or when multiple actions are needed to update the state in different ways.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 18,
+            "topicId": "react-beginner",
+            "question": "What is an action in useReducer?",
+            "answer": "An action in useReducer is an object that describes what kind of update should happen. It usually has a type field and can also include extra data(payload).",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 19,
+            "topicId": "react-beginner",
+            "question": "What does useCallback help optimize?",
+            "answer": "useCallback helps optimize performance by memoizing function so they don't get recreated on every render, which prevents unnecessary re-renders of child components.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 20,
+            "topicId": "react-beginner",
+            "question": "What two arguments does useCallback take?",
+            "answer": "useCallback taks two arguments: the function to memoize and the dependency array that control when the function should be recreated",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 21,
+            "topicId": "react-beginner",
+            "question": "When should you use useCallback?",
+            "answer": "You should use useCallback when passing functions as props to memoized child components or when a function is expensive to recreate. It prevents unnecessary re-renders and improves performance.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 22,
+            "topicId": "react-beginner",
+            "question": "What is the purpose of useMemo?",
+            "answer": "The purpose of useMemo is to memoize the results of an expoensive calculation so it dosen't get recalculated on every render, only when its dependencies change.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 23,
+            "topicId": "react-beginner",
+            "question": "How is useMemo different from useCallback?",
+            "answer": "useMemo memoizes the result of a calculation and returns a value, while useCallback memoizes a function so it isn't recreated on every render.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 24,
+            "topicId": "react-beginner",
+            "question": "When should you use useMemo?",
+            "answer": "You should use useMemo when you have an expensive calculation or when creating objects/arrays that should only be recalculated if specific dependencies change.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 25,
+            "topicId": "react-beginner",
+            "question": "What is useRef commonly used for?",
+            "answer": "useRef is commonly used to reference DOM elements or to store values across renders without causing re-renders.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 26,
+            "topicId": "react-beginner",
+            "question": "Can useRef store values that don’t cause re-renders?",
+            "answer": "Yes, useRef can store values that don't cause the component to re-render when they change.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 27,
+            "topicId": "react-beginner",
+            "question": "How do you get access to a DOM element with useRef?",
+            "answer": "You can access a DOM element by creating a ref with useRef and attaching it to the element using the ref attribute. For Example: const inputRef = useRef(null); <input ref={inputRef}/>",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 28,
+            "topicId": "react-beginner",
+            "question": "What is a custom hook in React?",
+            "answer": "A custom hook is a reusable function in React that starts with use and can use other hooks inside. It's used to share logic across multiple components.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 29,
+            "topicId": "react-beginner",
+            "question": "How do you name a custom hook?",
+            "answer": "A custom hook must be named starting with use. This tells React it's a hook and ensure the rules of hooks are applied.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 30,
+            "topicId": "react-beginner",
+            "question": "Why would you create a custom hook?",
+            "answer": "You would create a custom hook to reuse logic across multiple components and keep your code cleaner and easier to maintain. For example, instead of duplicating the same function in several components, you can extract it into a custom hook.",
+            "status": "Done",
+            "hasCode": false
+        },
+        {
+            "id": 31,
+            "topicId": "react-hooks",
+            "question": "Create a counter component using useState that increases when you click a button.",
+            "answer": "import { useState } from \"react\";\n\nexport const Counter = () => {\n\n    const [count, setCount] = useState(0)\n\n    return (\n        <div>\n            <p>Count: {count}</p>\n            <button onClick={() => setCount(count + 1)}>Increase Count</button>\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 32,
+            "topicId": "react-hooks",
+            "question": "How would you use useState to toggle between light mode and dark mode?",
+            "answer": "import { useState } from \"react\";\n\nexport const ColorSwitch = () => {\n\n    const [theme, setTheme] = useState('light')\n\n    return (\n        <div style={{ backgroundColor: theme === 'light' ? '#fff' : '#000' }}>\n            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>\n                Switch to {theme === 'light' ? 'Dark' : 'Light'}\n            </button>\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 33,
+            "topicId": "react-hooks",
+            "question": "Build a form input that saves the text entered into state with useState.",
+            "answer": "import { useState } from \"react\";\n\nexport const Comp = () => {\n\n    const [userInput, setUserInput] = useState('')\n\n    return (\n        <div>\n            <input\n              value={userInput}\n              onChange={(e) => setUserInput(e.target.value)} \n              type=\"text\" />\n            <p>{userInput}</p>\n        </div>\n    );\n}",
+            "status": "In Progress",
+            "hasCode": true
+        },
+        {
+            "id": 34,
+            "topicId": "react-hooks",
+            "question": "How do you reset a useState variable back to its initial value?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 35,
+            "topicId": "react-hooks",
+            "question": "Show how to manage an array of items (like a todo list) using useState.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 36,
+            "topicId": "react-hooks",
+            "question": "Use useEffect to log 'Component mounted' when the component first renders.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 37,
+            "topicId": "react-hooks",
+            "question": "Write code to fetch data from an API using useEffect when the component loads.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 38,
+            "topicId": "react-hooks",
+            "question": "How do you use useEffect to update the document title with the current counter value?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 39,
+            "topicId": "react-hooks",
+            "question": "Show how to clean up a timer (setInterval) using useEffect.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 40,
+            "topicId": "react-hooks",
+            "question": "Use useEffect to listen for a window resize event and update state with the new width.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 41,
+            "topicId": "react-hooks",
+            "question": "Create a context to share a theme value (light/dark) across components.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 42,
+            "topicId": "react-hooks",
+            "question": "How do you consume a context value inside a functional component using useContext?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 43,
+            "topicId": "react-hooks",
+            "question": "Provide an example of a context provider wrapping multiple components.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 44,
+            "topicId": "react-hooks",
+            "question": "Show how two components can share the same state using useContext.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 45,
+            "topicId": "react-hooks",
+            "question": "Use useReducer to create a counter with increment and decrement buttons.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 46,
+            "topicId": "react-hooks",
+            "question": "Write a reducer function to manage a todo list (add and remove todos).",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 47,
+            "topicId": "react-hooks",
+            "question": "How do you initialize useReducer with a default state value?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 48,
+            "topicId": "react-hooks",
+            "question": "Show how to dispatch an action to update state using useReducer.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 49,
+            "topicId": "react-hooks",
+            "question": "Show how useCallback can prevent a child component from re-rendering unnecessarily.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 50,
+            "topicId": "react-hooks",
+            "question": "Write an example of memoizing a function with useCallback to handle button clicks.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 51,
+            "topicId": "react-hooks",
+            "question": "How do you pass a stable callback function as a prop using useCallback?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 52,
+            "topicId": "react-hooks",
+            "question": "Write an example of using useMemo to optimize an expensive calculation.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 53,
+            "topicId": "react-hooks",
+            "question": "Show how to memoize a filtered list of items using useMemo.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 54,
+            "topicId": "react-hooks",
+            "question": "When rendering a list, demonstrate how useMemo can help prevent recalculations.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 55,
+            "topicId": "react-hooks",
+            "question": "Show how to use useRef to focus an input field on button click.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 56,
+            "topicId": "react-hooks",
+            "question": "How do you use useRef to store a previous value of a prop or state?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 57,
+            "topicId": "react-hooks",
+            "question": "Use useRef to keep track of how many times a component has rendered.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 58,
+            "topicId": "react-hooks",
+            "question": "Create a custom hook that fetches data from an API.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 59,
+            "topicId": "react-hooks",
+            "question": "Build a custom hook to manage form input fields (value and onChange).",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 60,
+            "topicId": "react-hooks",
+            "question": "Create a custom hook that listens for window scroll position and returns it.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        }
+    ]
+}

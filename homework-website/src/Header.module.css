@@ -1,0 +1,39 @@
+.header {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    gap: 30px;
+}
+
+.mainTitle {
+    font-family: 'Sharp Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+.subTitle {
+    font-family: 'Sharp Grotesk', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+.textWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.show{
+    display: inline;
+    background-color: violet;
+}
+
+.hide{
+    display: none;
+    background-color: violet;
+}

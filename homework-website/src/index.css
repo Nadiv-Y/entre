@@ -1,0 +1,41 @@
+:root{
+  --primary-color: #99558D;
+  --primary-text: #413F3F;
+  --secondary-text: #939393;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+@font-face {
+  font-family: 'Sharp Grotesk';
+  src: url('./fonts/SharpGrotesk-Medium25.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Grotesk';
+  src: url('./fonts/SharpGrotesk-Light25.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: linear-gradient(314deg,rgba(247, 240, 232, 1) 6%, rgba(252, 234, 249, 1) 80%);
+  height: 100svh;
+  padding: 20px;
+}
+
+#root{
+  height: 100%;
+}
+
