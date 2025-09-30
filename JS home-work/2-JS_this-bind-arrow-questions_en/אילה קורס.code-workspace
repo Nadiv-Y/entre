@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../server-3000"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "אילה קורס"
+	}
+}
