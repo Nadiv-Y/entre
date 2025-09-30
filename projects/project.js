@@ -1,4 +1,4 @@
-displayItemsFromLocalStorage();
+displayItemsFromLocalStorage(); 
 
 document.getElementById("save-task").addEventListener("click", insertNote);
 const taskBoard = document.getElementById("task-notes");
