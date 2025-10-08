@@ -1,43 +1,29 @@
-import { useEffect, useState } from 'react';
 import { AccordionsList } from './AccordionsList';
 import { Header } from './Header';
 import styles from './TopicPage.module.css'
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { ColorSwitch, Comp, Counter } from './textDeleteAfter';
+import { useFetch } from './useFetch';
+
 
 export const TopicPage = () => {
-    const {topicId} = useParams()
-    const [questions, setQuestions] = useState([])
-    const [currentTopic, setCurrentTopic] = useState({})
+    const { topicId } = useParams()
+    const { data: questions, loading: questionsLoading, error: questionsError } =
+        useFetch({ url: `http://localhost:3000/questions?topicId=${topicId}` });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`http://localhost:3000/questions?topicId=${topicId}`)
-                const topicRes = await axios.get(`http://localhost:3000/topics/${topicId}`)
+    const { data: currentTopic, loading: topicLoading, error: topicError } =
+        useFetch({ url: `http://localhost:3000/topics/${topicId}` });
 
-                setQuestions(res.data)
-                setCurrentTopic(topicRes.data)
+    if (questionsLoading || topicLoading) return <p>Loading...</p>;
+    if (questionsError || topicError) return <p>Error loading data</p>;
 
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
-
-        fetchData()
-
-    }, [topicId])
     return (
         <div className={styles.page}>
-        <Comp/>
             <Header
                 title={currentTopic.title}
                 subtitle={currentTopic.subtitle}
                 showSearch={false}
             />
-
-            <AccordionsList 
+            <AccordionsList
                 questions={questions}
             />
         </div>

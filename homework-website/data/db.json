@@ -5,14 +5,14 @@
             "title": "React Hooks",
             "subtitle": "Beginner Questions (30)",
             "variant": "react",
-            "status": "In Progress"
+            "status": "Done"
         },
         {
             "id": "react-hooks",
             "title": "React Hooks",
             "subtitle": "Practical Beginner Questions (30)",
             "variant": "react",
-            "status": "In Progress"
+            "status": "Done"
         },
         {
             "id": "javascript-arrays",
@@ -22,9 +22,9 @@
             "status": "In Progress"
         },
         {
-            "id": 4,
-            "title": "javaScript",
-            "subtitle": "20 Question (Q1 - Q10)",
+            "id": "es6",
+            "title": "ES6 (ES2015)",
+            "subtitle": "Practice Question (30)",
             "variant": "javaScript",
             "status": "In Progress"
         },
@@ -33,7 +33,7 @@
             "title": "javaScript",
             "subtitle": "20 Question (Q1 - Q10)",
             "variant": "javaScript",
-            "status": "Done"
+            "status": "In Progress"
         }
     ],
     "questions": [
@@ -298,221 +298,565 @@
             "topicId": "react-hooks",
             "question": "Build a form input that saves the text entered into state with useState.",
             "answer": "import { useState } from \"react\";\n\nexport const Comp = () => {\n\n    const [userInput, setUserInput] = useState('')\n\n    return (\n        <div>\n            <input\n              value={userInput}\n              onChange={(e) => setUserInput(e.target.value)} \n              type=\"text\" />\n            <p>{userInput}</p>\n        </div>\n    );\n}",
-            "status": "In Progress",
+            "status": "Done",
             "hasCode": true
         },
         {
             "id": 34,
             "topicId": "react-hooks",
             "question": "How do you reset a useState variable back to its initial value?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useState } from \"react\";\n\nexport const Reset = () => {\n\n    const initialValue = 0;\n    const [count, setCount] = useState(initialValue);\n\n    return (\n        <div>\n            <p>Count: {count}</p>\n            <button onClick={() => setCount(count + 1)}>Increse</button>\n            <button onClick={() => setCount(initialValue)}>Reset Count</button>\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 35,
             "topicId": "react-hooks",
             "question": "Show how to manage an array of items (like a todo list) using useState.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useState } from \"react\";\n\nexport const ToDoList = () => {\n\n    const [todos, setTodos] = useState([])\n    const [task, setTask] = useState('')\n\n    return (\n        <div>\n            <label>Add Task:</label>\n            <input\n                value={task}\n                onChange={(e) => setTask(e.target.value)}\n                type=\"text\" />\n            <button\n                onClick={() => {\n                    setTodos([...todos, task])\n                    setTask('')\n                }}\n            >Add Task</button>\n            <ul>\n                {todos.map((todo, index) =>\n                    <li\n                        key={index}\n                    >\n                        {todo}\n                    </li>\n                )}\n            </ul>\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 36,
             "topicId": "react-hooks",
             "question": "Use useEffect to log 'Component mounted' when the component first renders.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect } from \"react\";\n\nexport const FirstRender = () => {\n\n    useEffect(() => {\n        console.log(\"Component mounted\")\n    }, [])\n\n    return (\n        <div>\n         \n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 37,
             "topicId": "react-hooks",
             "question": "Write code to fetch data from an API using useEffect when the component loads.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useState } from \"react\";\n\nexport const Posts = () => {\n\n    const [data, setData] = useState([])\n\n    useEffect(() => {\n        const fetchData = async () => {\n            try {\n                const res = await fetch('https://jsonplaceholder.typicode.com/posts')\n                const dataJson = await res.json()\n                setData(dataJson)\n            } catch (error) {\n                throw new Error(\"Failed to fetch\"); \n            }\n        }\n\n        fetchData()\n\n    }, [])\n\n    return (\n        <div>\n            {data.map(post => \n                <p\n                key={post.id}\n                >\n                    {post.title}\n                </p>\n            )}\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 38,
             "topicId": "react-hooks",
             "question": "How do you use useEffect to update the document title with the current counter value?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useState } from \"react\";\n\nexport const DocTitle = () => {\n\n    const [count, setCount] = useState(0)\n\n    useEffect(() => {\n      document.title = `Count: ${count}`\n    }, [count])\n\n    return (\n        <div>\n         <button\n         onClick={() => setCount(count + 1)}\n         >Increse Counter</button>\n        </div>\n    );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 39,
             "topicId": "react-hooks",
             "question": "Show how to clean up a timer (setInterval) using useEffect.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useState } from \"react\";\n\nexport const Timer = () => {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    const intervalId = setInterval(() => {\n        setCount((prev) => prev + 1)\n    }, 1000)\n\n    return () => clearInterval(intervalId)\n  }, []);\n\n  return <p>Count: {count}</p>;\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 40,
             "topicId": "react-hooks",
             "question": "Use useEffect to listen for a window resize event and update state with the new width.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useState } from \"react\";\n\nexport const WindowWidth = () => {\n  \n  const [windowWidth, setWindowWidth] = useState(window.innerWidth)\n\n  useEffect(() => {\n\n    const handleResize = () => setWindowWidth(window.innerWidth)\n\n    window.addEventListener('resize', handleResize)\n\n    return () => window.removeEventListener('resize', handleResize)\n\n  }, [])\n\n\n  return (\n    <div>\n      <p>\n        {windowWidth}\n      </p>\n    </div>\n  ) \n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 41,
             "topicId": "react-hooks",
             "question": "Create a context to share a theme value (light/dark) across components.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { createContext } from \"react\";\n\nexport const ThemeContext = createContext();\n\nexport const ThemeProvider = ({ theme = 'dark', children }) => {\n  return (\n    <ThemeContext.Provider value={theme}>\n      {children}\n    </ThemeContext.Provider>\n  );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 42,
             "topicId": "react-hooks",
             "question": "How do you consume a context value inside a functional component using useContext?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useContext } from \"react\";\nimport { ThemeContext } from \"./ThemeContext\";\n\nexport const ThemedText = () => {\n  const theme = useContext(ThemeContext);\n\n  return (\n      <p>Selected Theme: {theme}</p>\n  );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 43,
             "topicId": "react-hooks",
             "question": "Provide an example of a context provider wrapping multiple components.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "function App() {\n  return (\n    <ThemeProvider theme=\"dark\">\n      <Header />\n      <Footer />\n    </ThemeProvider>\n  );\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 44,
             "topicId": "react-hooks",
             "question": "Show how two components can share the same state using useContext.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useContext } from \"react\";\nimport { ThemeContext } from \"./ThemeContext\";\n\nexport const Footer = () => {\n  const theme = useContext(ThemeContext);\n  return (\n     <div>\n      <p>I'm a footer with a {theme} theme</p>\n     </div>\n  );\n};\n\nimport { useContext } from \"react\";\nimport { ThemeContext } from \"./ThemeContext\";\n\nexport const Header = () => {\n  const theme = useContext(ThemeContext);\n  return (\n     <div>\n      <p>I'm a header with a {theme} theme</p>\n     </div>\n  );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 45,
             "topicId": "react-hooks",
             "question": "Use useReducer to create a counter with increment and decrement buttons.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useReducer } from \"react\";\n\nexport const Reducer = () => {\n    const initialValue = { count: 0 };\n\n    const reducer = (state, action) => {\n        switch (action.type) {\n            case \"INCREMENT\":\n                return { count: state.count + 1 };\n            case \"DECREMENT\":\n                return { count: state.count - 1 };\n            default:\n                return state;\n        }\n    };\n\n    const [state, dispatch] = useReducer(reducer, initialValue);\n\n    return (\n        <div>\n            <p>Count: {state.count}</p>\n            <button onClick={() => dispatch({ type: 'INCREMENT' })}>INCREMENT</button>\n            <button onClick={() => dispatch({ type: 'DECREMENT' })}>DECREMENT</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 46,
             "topicId": "react-hooks",
             "question": "Write a reducer function to manage a todo list (add and remove todos).",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useReducer, useState } from \"react\";\n\nexport const TodoListReducer = () => {\n    const initialValue = [];\n\n    const [task, setTask] = useState('');\n\n    const reducer = (state, action) => {\n        switch (action.type) {\n            case \"ADD_TODO\":\n                return [...state, action.payload];\n            case \"REMOVE_TODO\":\n                return state.filter(task => task.taskId !== action.payload.taskId);\n            default:\n                return state;\n        }\n    };\n\n    const [state, dispatch] = useReducer(reducer, initialValue);\n\n    return (\n        <div>\n            <input\n                value={task}\n                type=\"text\"\n                onChange={(e) => setTask(e.target.value)}\n            />\n            <button onClick={() => {\n                 dispatch({ type: 'ADD_TODO', payload: { taskId: Date.now(), task: task } });\n                 setTask('');\n                }}>Add Todo</button>\n            \n            <ul>\n                {state.map(task => \n                    <li key={task.taskId}>\n                        {task.task}\n                        <button onClick={() => dispatch({ type: 'REMOVE_TODO', payload: { taskId: task.taskId } })}>Remove Todo</button>\n                    </li>\n                )}\n            </ul>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 47,
             "topicId": "react-hooks",
             "question": "How do you initialize useReducer with a default state value?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useReducer } from \"react\";\n\nexport const InitialValue = () => {\n    const initialValue = 0;\n\n    const reducer = (state, action) => {\n        switch (action.type) {\n            case \"ADD_ONE\":\n                return state + 1;\n            case \"REDUCE_ONE\":\n                return state - 1;\n            default:\n                return state;\n        }\n    };\n\n    const [state, dispatch] = useReducer(reducer, initialValue);\n\n    return (\n        <div>\n            <p>Counter: {state} </p>\n            <button onClick={() => dispatch({ type: 'ADD_ONE' })}>Add One</button>\n            <button onClick={() => dispatch({ type: 'REDUCE_ONE' })}>Reduce One</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 48,
             "topicId": "react-hooks",
             "question": "Show how to dispatch an action to update state using useReducer.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useReducer } from \"react\";\n\nexport const InitialValue = () => {\n    const initialValue = 0;\n\n    const reducer = (state, action) => {\n        switch (action.type) {\n            case \"ADD_ONE\":\n                return state + action.payload;\n            case \"REDUCE_ONE\":\n                return state - action.payload;\n            default:\n                return state;\n        }\n    };\n\n    const [state, dispatch] = useReducer(reducer, initialValue);\n\n    return (\n        <div>\n            <p>Counter: {state} </p>\n            <button onClick={() => dispatch({ type: 'ADD_ONE', payload: 1 })}>Add One</button>\n            <button onClick={() => dispatch({ type: 'REDUCE_ONE', payload: 1 })}>Reduce One</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 49,
             "topicId": "react-hooks",
             "question": "Show how useCallback can prevent a child component from re-rendering unnecessarily.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useCallback, useState } from \"react\";\nimport React from \"react\";\n\nexport const Parent = () => {\n    const [count, setCount] = useState(0);\n\n    const handleClick = useCallback(() => {\n        console.log(\"Button clicked\");\n    }, []);\n\n    return (\n        <div>\n            <p>count: {count}</p>\n            <button onClick={() => setCount(count + 1)}>Increment</button>\n            <Child onClick={handleClick} />\n        </div>\n    );\n};\n\nexport const Child = React.memo(({ onClick }) => {\n    return (\n        <button onClick={onClick}>\n            Click Me!\n        </button>\n    );\n});",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 50,
             "topicId": "react-hooks",
             "question": "Write an example of memoizing a function with useCallback to handle button clicks.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useCallback, useState } from \"react\";\n\nexport const Parent = () => {\n    const [count, setCount] = useState(0);\n\n    const handleClick = useCallback(() => {\n        setCount(count + 1);\n    }, [count]);\n\n    return (\n        <div>\n            <p>count: {count}</p>\n            <button onClick={handleClick}>Increment</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 51,
             "topicId": "react-hooks",
             "question": "How do you pass a stable callback function as a prop using useCallback?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useCallback, useState } from \"react\";\nimport React from \"react\";\n\nexport const Parent = () => {\n    const [count, setCount] = useState(0);\n\n    const handleClick = useCallback(() => {\n        setCount(count + 1);\n    }, [count]);\n\n    return (\n        <div>\n            <p>count: {count}</p>\n            <button onClick={handleClick}>Increment</button>\n            <Child onAction={handleClick} />\n        </div>\n    );\n};\n\nexport const Child = React.memo(({ onAction }) => {\n    return (\n        <div>\n            <button onClick={onAction}>Click Me</button>\n        </div>\n    );\n});",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 52,
             "topicId": "react-hooks",
             "question": "Write an example of using useMemo to optimize an expensive calculation.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useMemo, useState } from \"react\";\n\nexport const Parent = () => {\n    const [num, setNum] = useState(0);\n\n    const expensiveCalc = useMemo(() => {\n        console.log(\"Running expensive calculation...\");\n        let result = 0;\n        for (let i = 0; i < 1000000000; i++) {\n            result += i % num;\n        }\n        return result;\n    }, [num]);\n\n    return (\n        <div>\n            <p>{num}</p>\n            <p>Result: {expensiveCalc}</p>\n            <input type=\"number\" onChange={(e) => setNum(Number(e.target.value))} />\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 53,
             "topicId": "react-hooks",
             "question": "Show how to memoize a filtered list of items using useMemo.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useMemo, useState } from \"react\";\n\nexport const FilteredList = () => {\n   const [list, setList] = useState([\n    {name: 'Dolev', age: 32, id: 1},\n    {name: 'Dolec', age: 17, id: 2},\n    {name: 'Dolex', age: 16, id: 3},\n    {name: 'Dolez', age: 34, id: 4},\n   ]);\n\n   const filteredArray = useMemo(() => {\n        return list.filter(item => item.age > 18);\n   }, [list]);\n\n    return (\n        <div>\n            <ul>\n                {list.map(item => (\n                  <li key={item.id}>\n                    {item.name} is {item.age} years old\n                  </li>\n                ))}\n            </ul>\n            <button onClick={() => setList(filteredArray)}>Show only over 18</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 54,
             "topicId": "react-hooks",
             "question": "When rendering a list, demonstrate how useMemo can help prevent recalculations.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useMemo, useState } from \"react\";\n\nexport const FilteredList = () => {\n    const [numList, setNumList] = useState([4, 2, 7, 1]);\n\n    const sortedNums = useMemo(() => {\n        const sortedList = [...numList].sort((a, b) => a - b);\n        console.log('worked');\n        return sortedList;\n    }, [numList]);\n\n    return (\n        <div>\n            <ul>\n                {sortedNums.map(num => <li key={num}>{num}</li>)}\n            </ul>\n            <button onClick={() => setNumList([...numList, Math.floor(Math.random() * 10)])}>Add Random Number</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 55,
             "topicId": "react-hooks",
             "question": "Show how to use useRef to focus an input field on button click.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useRef } from \"react\";\n\nexport const RefInput = () => {\n    const inputRef = useRef(null);\n\n    return (\n        <div>\n            <input type=\"text\" ref={inputRef} />\n            <button onClick={() => inputRef.current.focus()}>Make input focused</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 56,
             "topicId": "react-hooks",
             "question": "How do you use useRef to store a previous value of a prop or state?",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useRef, useState } from \"react\";\n\nexport const CountRef = () => {\n  const [count, setCount] = useState(0);\n\n  const prevCountRef = useRef();\n\n  useEffect(() => {\n    prevCountRef.current = count;\n  }, [count]);\n\n  return (\n    <div>\n      <p>Current count: {count}</p>\n      <p>Previous count: {prevCountRef.current}</p>\n      <button onClick={() => setCount(prev => prev + 1)}>Increase</button>\n    </div>\n  );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 57,
             "topicId": "react-hooks",
             "question": "Use useRef to keep track of how many times a component has rendered.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useRef, useState } from \"react\";\n\nexport const RenderCountRef = () => {\n    const [count, setCount] = useState(0);\n\n    const renderCountRef = useRef(0);\n\n    useEffect(() => {\n        renderCountRef.current = renderCountRef.current + 1;\n    });\n\n    return (\n        <div>\n            <p>count: {count}</p>\n            <p>Render count: {renderCountRef.current}</p>\n            <button onClick={() => setCount(prev => prev + 1)}>Increase</button>\n        </div>\n    );\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 58,
             "topicId": "react-hooks",
             "question": "Create a custom hook that fetches data from an API.",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useEffect, useState } from \"react\";\nimport axios from 'axios'\n\nexport const useFetch = ({url}) => {\n    const [data, setData] = useState([])\n    const [loading, setLoading] = useState(true)\n    const [error, setError] = useState('')\n\n    useEffect(() => {\n        const fetchData = async () => {\n            try {\n                const res = await axios.get(url)\n                setData(res.data)\n                setError('')\n            } catch (error) {\n                setLoading(false)\n                setError(error.message)\n            } finally {\n                setLoading(false)\n            }\n        }\n\n        fetchData()\n    }, [url])\n\n    return {data, error, loading}\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 59,
             "topicId": "react-hooks",
             "question": "Build a custom hook to manage form input fields (value and onChange).",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "import { useState } from \"react\";\n\nexport const useInput = (initialValue = '') => {\n    const [value, setValue] = useState(initialValue);\n\n    const onChange = (e) => {\n        setValue(e.target.value);\n    };\n\n    return { value, onChange };\n}",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 60,
             "topicId": "react-hooks",
             "question": "Create a custom hook that listens for window scroll position and returns it.",
+            "answer": "import { useEffect, useState } from \"react\";\n\nexport const useScroll = (initialValue = 0) => {\n    const [scrollY, setScrollY] = useState(initialValue);\n    const [scrollX, setScrollX] = useState(initialValue);\n\n    useEffect(() => {\n        const setAxis = () => {\n            setScrollY(window.scrollY);\n            setScrollX(window.scrollX);\n        };\n        window.addEventListener('scroll', setAxis);\n\n        setAxis();\n\n        return () => window.removeEventListener('scroll', setAxis);\n    }, []);\n\n    return { scrollX, scrollY };\n};",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 61,
+            "topicId": "javascript-arrays",
+            "question": "map vs forEach: Contrast semantics and return values. Show one example where forEach cannot replace map.",
+            "answer": "map creats and retuns a new array with the results of applying a function to each element, \nforEach executes a function for each element but returns undefined, so it's only useful for side effects. for example:\n\nconst nums = [1,2,3];\nconst doubled = nums.map(n => n * 2); // [2,4,6]\n\nconst result = [];\nnums.forEach(n => result.push(n * 2));\nconsole.log(result); // [2,4,6]\n\nHere forEach cannot replace map because it doesn’t produce a new array by itself.",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 62,
+            "topicId": "javascript-arrays",
+            "question": "filter vs reduce (for filtering): Remove odds from [1,2,3,4,5] using both. Which is clearer and why?\n// with filter\n// with reduce",
+            "answer": "Using filter is more clear and expressive for removing odds, because it directly describes the intent of filtering. Reduce can achieve the same result but is less readable in this context.\n\nconst numbers = [1,2,3,4,5];\n\n// with filter\nconst evenNumbers = numbers.filter(num => num % 2 === 0);\nconsole.log(evenNumbers); // [2,4]\n\n// with reduce\nconst evenNumbers2 = numbers.reduce((acc, currentVal) => {\n  if (currentVal % 2 === 0) {\n    acc.push(currentVal);\n  }\n  return acc;\n}, []);\nconsole.log(evenNumbers2); // [2,4]",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 63,
+            "topicId": "javascript-arrays",
+            "question": "find vs filter: Differences in return type, short-circuiting, and common use cases. When would you prefer findIndex?",
+            "answer": "filter always returns an array with all matching elements while find returns the first matching element or undefined. Find short-circuits and stops once it finds a match, but filter checks\nthe entire array. You use findIndex when you need the position of the first match, for example if you want to update or remove that element.\n\nconst nums = [10,20,30];\n\n// filter\nconsole.log(nums.filter(n => n > 15)); // [20,30]\n\n// find\nconsole.log(nums.find(n => n > 15)); // 20\n\n// findIndex\nconst idx = nums.findIndex(n => n > 15);\nnums[idx] = 99;\nconsole.log(nums); // [10,99,30]",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 64,
+            "topicId": "javascript-arrays",
+            "question": "some vs every: Explain short-circuiting behavior and give a real predicate example for each.",
+            "answer": "some returns true if at least one element passes the test, while every requires all elements to pass.\nBoth methods short-circuit: some stops once it finds the first true result, and every stops once it finds the first false result.\n\nconst nums = [1, 2, 3];\n\n// some → stops early when x > 2\nconsole.log(nums.some(x => x > 2)); // true\n\n// every → stops early when x < 2 fails\nconsole.log(nums.every(x => x > 2)); // false\n\n// real example\nconst users = [\n  { name: 'Dan', isOnline: true },\n  { name: 'Lea', isOnline: false }\n];\n\nconsole.log(users.some(u => u.isOnline)); // true (at least one online)\nconsole.log(users.every(u => u.isOnline)); // false (not all online)",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 65,
+            "topicId": "javascript-arrays",
+            "question": "includes vs indexOf: How do they differ in handling NaN? Provide a tiny demo.\nconst xs = [1, NaN, 3];\n// includes?\n// indexOf?",
+            "answer": "includes checks if a value exists in the array and returns true or false, while indexOf returns the index of the value or -1 if not found.\nThe key difference is that includes uses SameValueZero comparison, so it correctly detects NaN, while indexOf uses === and fails to find NaN.\n\nconst xs = [1, NaN, 3];\n\n// includes can detect NaN\nconsole.log(xs.includes(NaN)); // true\n\n// indexOf cannot detect NaN\nconsole.log(xs.indexOf(NaN)); // -1",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 66,
+            "topicId": "javascript-arrays",
+            "question": "slice vs splice: Remove the 3rd element from an array in two ways and explain which method mutates.\nconst a = [1,2,3,4];\n// non-mutating remove with slice\n// mutating remove with splice",
+            "answer": "slice does not mutate the original array, while splice does.\nYou can remove the 3rd element using slice by combining two parts into a new array, and with splice by directly deleting it from the original.\n\nconst a = [1, 2, 3, 4];\n\n// non-mutating remove with slice\nconst sliced1 = a.slice(0, 2);\nconst sliced2 = a.slice(3, 4);\nconst newSliced = sliced1.concat(sliced2);\nconsole.log(newSliced); // [1, 2, 4]\nconsole.log(a); // [1, 2, 3, 4]\n\n// mutating remove with splice\nconst removed = a.splice(2, 1);\nconsole.log(removed); // [3]\nconsole.log(a); // [1, 2, 4]",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 67,
+            "topicId": "javascript-arrays",
+            "question": "sort pitfalls: Why does ['10','2','1'].sort() produce a surprising order? Provide two correct numeric comparators (asc/desc).\n// asc\n// desc",
+            "answer": "By default, sort() converts elements to strings and compares them lexicographically (like words), not numerically. So ['10','2','1'].sort() returns ['1','10','2'] because '1' comes before '2' when compared as text.\nTo sort numbers correctly, provide a numeric comparator.\n\nconst nums = ['10','2','1'];\n\n// ascending numeric order\nconsole.log(nums.sort((a, b) => a - b)); // ['1','2','10']\n\n// descending numeric order\nconsole.log(nums.sort((a, b) => b - a)); // ['10','2','1']",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 68,
+            "topicId": "javascript-arrays",
+            "question": "localeCompare for strings: Sort ['é','e','ê'] correctly for French and then reverse it.\n// ascending (fr)\n// descending (fr)",
+            "answer": "localeCompare compares strings according to language rules instead of Unicode code points. By providing a locale (like 'fr' for French), you can correctly sort accented letters.\nWithout localeCompare, ['é','e','ê'] would not appear in proper French order.\n\nconst letters = ['é','e','ê'];\n\n// ascending (French)\nconst asc = letters.slice().sort((a, b) => a.localeCompare(b, 'fr'));\nconsole.log(asc); // ['e','é','ê']\n\n// descending (French)\nconst desc = letters.slice().sort((a, b) => b.localeCompare(a, 'fr'));\nconsole.log(desc); // ['ê','é','e']",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 69,
+            "topicId": "javascript-arrays",
+            "question": "push/pop vs shift/unshift: Compare typical uses and performance implications in large arrays.",
+            "answer": "push adds an element to the end of an array and pop removes from the end. unshift adds to the beginning and shift removes from the beginning.\nPerformance-wise, push and pop are fast because they only affect the last element, while shift and unshift are slow for large arrays since they must reindex all elements.\n\nconst arr = [1, 2, 3];\n\n// push / pop (end)\narr.push(4); // [1,2,3,4]\narr.pop(); // [1,2,3]\n\n// unshift / shift (start)\narr.unshift(0); // [0,1,2,3]\narr.shift(); // [1,2,3]",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 70,
+            "topicId": "javascript-arrays",
+            "question": "Chaining: Transform an orders array into the total price of in-stock items over $50 using map/filter/reduce in a single chain.\n// orders: [{price, inStock}, ...]",
+            "answer": "To get the total price of in-stock items over $50, first filter the array to keep only items where inStock is true and price > 50, then reduce to sum their prices. map is optional if you prefer to extract prices before reducing.\n\nconst orders = [\n  { price: 40, inStock: true },\n  { price: 75, inStock: false },\n  { price: 100, inStock: true }\n];\n\nconst total = orders\n  .filter(order => order.inStock && order.price > 50)\n  .reduce((sum, order) => sum + order.price, 0);\n\nconsole.log(total); // 100",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 71,
+            "topicId": "javascript-arrays",
+            "question": "Stability of sort: Is Array.prototype.sort stable in modern JS? Show how to keep original order for items with equal keys when building a comparator.",
+            "answer": "Modern JavaScript engines implement a stable Array.prototype.sort, meaning elements with equal keys keep their original order. In older engines, stability was not guaranteed. To ensure stable behavior manually, you can include each element's original index and compare it when keys are equal.\n\nconst students = [\n  { name: 'Tom', grade: 90 },\n  { name: 'Ana', grade: 80 },\n  { name: 'Ben', grade: 90 },\n  { name: 'Liz', grade: 70 }\n];\n\nconst withIndex = students.map((s, i) => ({ ...s, index: i }));\nconst sorted = withIndex.sort((a, b) => {\n  if (a.grade !== b.grade) return b.grade - a.grade;\n  return a.index - b.index; // preserve original order for equal grades\n});\n\nconsole.log(sorted);",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 72,
+            "topicId": "javascript-arrays",
+            "question": "Performance thought exercise: You need to append many small arrays into one big array in a loop. Compare: `big = big.concat(small)` vs `big.push(...small)` vs prealloc + index writes. Pros/cons?",
+            "answer": "When appending many small arrays into one large array, concat, push(...), and preallocation differ in speed and memory use.\n\n1. big = big.concat(small): Creates a new array every time, copying all elements. Slower for large loops but keeps immutability.\n2. big.push(...small): Mutates the existing array and is faster since no copying occurs. Less safe if you need the original array unchanged.\n3. Preallocate + index writes: Fastest method if the final size is known; you can preallocate an array and fill it by index in a loop, but it's more complex to write.\n\nExample:\nlet big = [];\nconst small = [1,2,3];\n\n// concat (slow, creates new array)\nfor(let i=0;i<1000;i++) big = big.concat(small);\n\n// push (faster, mutates array)\nfor(let i=0;i<1000;i++) big.push(...small);\n\n// preallocate (fastest if size known)\nconst total = 1000 * small.length;\nconst big2 = new Array(total);\nlet idx = 0;\nfor(let i=0;i<1000;i++) {\n  for(let j=0;j<small.length;j++) {\n    big2[idx++] = small[j];\n  }\n}",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 73,
+            "topicId": "javascript-arrays",
+            "question": "Safety with nested data: Given an array of users where some have `addresses: []` or missing, count total addresses using flatMap safely without throwing.\n// users: [{addresses?: [{...}]}, ...]",
+            "answer": "flatMap maps each element and flattens one level of arrays. When some objects may have missing or empty properties, you can safely return an empty array to avoid errors. Using u.addresses || [] ensures flatMap always receives an array.\n\nconst users = [\n  { name: 'A', addresses: [{ city: 'TLV' }] },\n  { name: 'B' }, // missing addresses\n  { name: 'C', addresses: [] }\n];\n\nconst total = users.flatMap(u => u.addresses || []).length;\nconsole.log(total); // 1",
+            "status": "Done",
+            "hasCode": true
+        },
+        {
+            "id": 74,
+            "topicId": "es6",
+            "question": "let vs const vs var: List the key differences in scoping, redeclaration, and reassignment. When would you still reach for var (if ever)?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 75,
+            "topicId": "es6",
+            "question": "Temporal Dead Zone (TDZ): What happens in each case and why?\nconsole.log(a); // ?\nlet a = 10;\n\nfunction f() {\n  console.log(b); // ?\n  const b = 5;\n}\nf();",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 76,
+            "topicId": "es6",
+            "question": "Block scope: Why does `{ let x = 1 } console.log(x)` throw but `{ var y = 2 } console.log(y)` works? Explain using scope rules.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 77,
+            "topicId": "es6",
+            "question": "Arrow functions and `this`: What does this print and why?\nconst obj = {\n  x: 42,\n  m() {\n    const inner = () => this.x;\n    return inner();\n  }\n};\nconsole.log(obj.m());",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 78,
+            "topicId": "es6",
+            "question": "Arrow vs function: In which situations should you not use an arrow function? Give two examples (e.g., constructors, methods needing dynamic `this`).",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 79,
+            "topicId": "es6",
+            "question": "Default parameters: Explain the output.\nfunction greet(name = 'Guest', exclaim = name.length > 3) {\n  return `Hello, ${name}${exclaim ? '!' : '.'}`;\n}\nconsole.log(greet());\nconsole.log(greet('Ana'));\nconsole.log(greet('Dima', false));",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 80,
+            "topicId": "es6",
+            "question": "Rest parameters: Implement `sum(...nums)` returning the total. Why is `arguments` not ideal here?\n// your code",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 81,
+            "topicId": "es6",
+            "question": "Spread operator: Convert `const set = new Set([1,2,3])` to an array and append `4` without mutating the original Set.\n// your code",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 82,
+            "topicId": "es6",
+            "question": "Object literal enhancements: Rewrite to use shorthand properties, computed property names, and concise methods.\nconst x = 1, y = 2;\nconst key = 'sum';\nconst obj = {\n  x: x,\n  y: y,\n  sum: function(){ return x + y; }\n};",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 83,
+            "topicId": "es6",
+            "question": "Destructuring arrays: Swap two variables without a temp and extract the first item and the rest.\nlet a = 10, b = 20;\n// swap here\nconst arr = [1,2,3,4];\n// first = ?, rest = ?",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 84,
+            "topicId": "es6",
+            "question": "Destructuring objects: Given\nconst user = { id: 7, name: 'Avi', address: { city: 'TLV', zip: 12345 } };\nExtract `id`, rename `name` to `fullName`, and get `city` with safe default `'N/A'` if `address` is missing.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 85,
+            "topicId": "es6",
+            "question": "Template literals: Build a multi-line string with interpolation and a backtick character inside it. Show how to escape backticks.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 86,
+            "topicId": "es6",
+            "question": "Tagged templates: Write a simple tag function `safe` that HTML-escapes interpolations to avoid XSS.\nconst name = '<img onerror=alert(1) />';\nconsole.log( safe`Hello, ${name}!` );",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 87,
+            "topicId": "es6",
+            "question": "Classes: Convert the following constructor/prototype code to an ES6 class with a getter.\nfunction Person(name) {\n  this.name = name;\n}\nPerson.prototype.say = function(){ return 'Hi ' + this.name; };\nObject.defineProperty(Person.prototype, 'initial', {\n  get() { return this.name[0]; }\n});",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 88,
+            "topicId": "es6",
+            "question": "Inheritance and `super`: Implement `class Admin extends User` that calls `super(name)` and overrides `say()` while still using the parent logic.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 89,
+            "topicId": "es6",
+            "question": "Static methods/fields: Create a class `Id` with a static counter and a static `next()` that returns incrementing IDs starting from 1.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 90,
+            "topicId": "es6",
+            "question": "Modules (named vs default): Given two files, show how to export a default and a named function from `math.js` and import them in `app.js`.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 91,
+            "topicId": "es6",
+            "question": "Re-exports: In `index.js`, re-export everything from `utils.js` and also export a default from `main.js` under the same module.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 92,
+            "topicId": "es6",
+            "question": "Iterables: Implement a custom iterable `range(3,7)` that works with `for...of` and the spread operator.\n// for (const n of range(3,7)) console.log(n); // 3,4,5,6,7\n// [...range(1,3)] // [1,2,3]",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 93,
+            "topicId": "es6",
+            "question": "Iterators vs for...in: Explain the difference between `for...of` and `for...in` with arrays and objects. Provide one example where each is appropriate.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 94,
+            "topicId": "es6",
+            "question": "Generators: Write a generator `powers(base, limit)` that yields `base^0` up to `base^limit`.\n// your code",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 95,
+            "topicId": "es6",
+            "question": "Map and Set: When would you prefer `Map` over a plain object, and `Set` over an array? Give concrete examples and complexity notes.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 96,
+            "topicId": "es6",
+            "question": "WeakMap & WeakSet: Explain their main difference from Map/Set and a real use case (e.g., caching, private fields).",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 97,
+            "topicId": "es6",
+            "question": "Object methods: Use `Object.assign`, `Object.keys`, `Object.values`, `Object.entries` to clone an object and build a new one with transformed values.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 98,
+            "topicId": "es6",
+            "question": "Array helpers added around ES6: Show examples of `Array.from`, `Array.of`, `find`, `findIndex`, `includes`. Explain a pitfall with `new Array(3)` vs `Array.of(3)`.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 99,
+            "topicId": "es6",
+            "question": "Symbols: Create a symbol-keyed property on an object that does not show up in `for...in` or `Object.keys`, but is retrievable through `Object.getOwnPropertySymbols`.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 100,
+            "topicId": "es6",
+            "question": "Well-known symbols: Use `Symbol.iterator` to make a plain object iterable. Optionally, demonstrate `Symbol.toStringTag` to customize `Object.prototype.toString.call(obj)`.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 101,
+            "topicId": "es6",
+            "question": "Promises: Convert a callback-style `readFile(path, cb)` into a `readFileP(path)` that returns a Promise. Show success and error handling with `.then/.catch`.",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 102,
+            "topicId": "es6",
+            "question": "Promise chaining & microtasks: What is the output order?\nconsole.log('A');\nPromise.resolve().then(() => console.log('B'));\nconsole.log('C');\nqueueMicrotask(() => console.log('D'));",
+            "answer": "The answer",
+            "status": "In Progress",
+            "hasCode": false
+        },
+        {
+            "id": 103,
+            "topicId": "es6",
+            "question": "Promise utilities: Implement a simplified `all(promises)` that resolves to an array of results in order, or rejects immediately on the first rejection.",
             "answer": "The answer",
             "status": "In Progress",
             "hasCode": false

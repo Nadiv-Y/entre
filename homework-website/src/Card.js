@@ -3,7 +3,7 @@ import reactLogo from './lib/react.svg'
 import javaScriptLogo from './lib/javaScript.svg'
 import cn from 'classnames'
 
-export const Card = ({title, subTitle, status, variant='react', onClick}) => {
+export const Card = ({title, subTitle, status, statusCount, variant='react', onClick}) => {
     return ( 
         <div 
         className={cn(styles.card,
@@ -18,7 +18,11 @@ export const Card = ({title, subTitle, status, variant='react', onClick}) => {
                     <p className={styles.subTitle}>{subTitle}</p>
                 </div>  
             </div>
-            <p className={cn(styles.status, variant === 'javaScript' && styles.statusJavaScript)}>{status}</p>
+            <div className={styles.statusWrapper}>
+                <p className={cn(styles.status, variant === 'javaScript' && styles.statusJavaScript)}>{status}</p>
+                <p className={cn(styles.status, variant === 'javaScript' && styles.statusJavaScript)}>{statusCount}</p>
+            </div>
+            
         </div>
      );
 }
