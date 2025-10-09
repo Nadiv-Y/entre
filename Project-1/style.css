@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  /* background: #f6f7fb; */
+  background: url(./corkboard.png);
+  font-family: Arial, sans-serif;
+}
+.container {
+  padding: 20px 0;
+  padding-bottom: 0;
+}
+.page-title {
+  margin: 0 0 16px;
+  font-family: "Kalam", cursive;
+}
+
+.form-paper {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 12px;
+
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><rect width='100%25' height='100%25' fill='white'/><rect y='0' width='100%25' height='1' fill='rgba(0,120,255,.16)'/></svg>");
+  background-repeat: repeat;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.note {
+  position: relative;
+  background: #f6ff99;
+  border: 1px solid #f0e3a8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 12px 12px 34px;
+  min-height: 140px;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.note.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.note-content {
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 8px;
+}
+
+.note-meta {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  font-size: 1.5rem;
+  color: #6b7280;
+}
+
+.note-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+.note:hover .note-close {
+  display: inline-block;
+}
+.note-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.form-control {
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+h2.h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0 15px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.note-col {
+  margin-bottom: 25px;
+}
