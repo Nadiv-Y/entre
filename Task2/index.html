@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌍 חיפוש מדינות 🌍</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>🌐חיפוש מדינות🌐</h1>
+      <p class="subtitle">משימה מספר 2 - מוגש ע"י אביחי חזות</p>
+    </header>
+
+    <main class="container">
+      <form id="searchForm" class="row" autocomplete="off">
+        <label for="q">שם מדינה באנגלית (או חלק ממנה):</label>
+        <input id="q" name="q" type="text" placeholder="למשל: united, isra, fran" />
+        <button type="submit">חפש</button>
+        <button type="button" id="loadAll">טען את כל המדינות</button>
+      </form>
+
+      <div id="loading" class="info" hidden>טוען נתונים…</div>
+      <div id="error" class="error" hidden></div>
+
+      <section id="resultsArea" hidden>
+        <h2>סטטיסטיקות</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="label">מספר מדינות</div>
+            <div class="value" id="statCount">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">סך האוכלוסייה</div>
+            <div class="value" id="statSum">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">ממוצע אוכלוסייה</div>
+            <div class="value" id="statAvg">—</div>
+          </div>
+        </div>
+
+        <h2>מדינות ותושבים</h2>
+        <div id="countriesTableWrap"></div>
+
+        <h2>חלוקה ליבשות</h2>
+        <div id="regionsTableWrap"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
