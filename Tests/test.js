@@ -1,25 +1,13 @@
-//  Implement `once(fn, ctx?)` which returns a version that can run
-// only once and invokes `fn` with `this = ctx` if provided,
-// otherwise preserves the caller’s `this`:
+//  Implement `bindAll(obj, ...methodNames)`
+// that binds the listed methods to `obj`
+// (handy before passing callbacks).
 
-const log = function (a, b) {
-  console.log(this.prefix, a + b)
+function bindAll(obj, ...methodNames) {
+  methodNames.forEach((m) => obj = obj[m].bind(obj));
 }
+let obj1 = {
+  a(){
 
-const once = function (fn, ctx = this) {
-  let a = true
-  
-  fn = fn.bind(ctx)
-  if (a) {
-    return fn
-    a = false
   }
 }
-
-const onceLog = once(log, { prefix: "[sum]" })
-
-console.log(onceLog)
-
-onceLog(1, 2) // prints once
-
-onceLog(3, 4) // does not print
+console.log(bindAll(obj1, 'a'));
