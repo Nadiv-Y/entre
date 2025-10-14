@@ -1,13 +1,34 @@
-//  Implement `bindAll(obj, ...methodNames)`
-// that binds the listed methods to `obj`
-// (handy before passing callbacks).
+import React from "react"
 
-function bindAll(obj, ...methodNames) {
-  methodNames.forEach((m) => obj = obj[m].bind(obj));
-}
-let obj1 = {
-  a(){
+class NameForm extends React.Component {
+  state = {
+    name: "",
+  }
 
+  handleChange = (e) => {
+    this.setState({ name: e.target.value }) // עדכון state לפי value של input
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault() // מונע ריענון הדף
+    console.log("Submitted name:", this.state.name) // מדפיס את הערך הנוכחי
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={this.state.name} // controlled input
+            onChange={this.handleChange}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    )
   }
 }
-console.log(bindAll(obj1, 'a'));
+
+export default NameForm
