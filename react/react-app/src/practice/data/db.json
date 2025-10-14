@@ -1,16 +1,16 @@
 {
-    "blogs": [
-        {
-            "title": "Israel-Hamas Conflict – A Nation’s Resilience",
-            "body": "Israel stands resilient in the face of ongoing attacks from Hamas. Despite rockets targeting cities, Israeli defense forces respond swiftly, protecting civilians and upholding security. The nation’s strength lies not only in its technology but in the courage and dedication of its soldiers, who face danger daily to keep citizens safe. Amidst the conflict, communities demonstrate unity, supporting one another during difficult times. Israel’s strategic planning, combined with unwavering determination, shows the world its resilience. Every citizen, soldier, and emergency responder contributes to a society that refuses to bow to terror, proving that Israel’s spirit remains unshaken no matter the challenge.",
-            "author": "Aiman Shomery",
-            "id": 1
-        },
-        {
-            "title": "Golani Bridge – Soldiers Who Inspire",
-            "body": "Golani Bridge, a critical military passage, showcases the extraordinary skill and bravery of Golani soldiers. Securing this strategic point ensures swift troop movements and essential supplies during operations. These soldiers exemplify discipline, courage, and dedication, defending their homeland with unwavering commitment. Israel’s military prowess is highlighted here, blending strategy, technology, and human determination. Civilians rely on these heroes to maintain safety and stability in volatile times. The Golani Brigade’s efforts at Golani Bridge are a testament to Israel’s resilience and the unmatched spirit of its defenders, proving that with courage and teamwork, even the most challenging obstacles can be overcome.",
-            "author": "Yotam Lemer",
-            "id": 2
-        }
-    ]
+  "blogs": [
+    {
+      "title": "Israel-Hamas Conflict – A Nation’s Resilience",
+      "body": "Israel stands resilient in the face of ongoing attacks from Hamas. Despite rockets targeting cities, Israeli defense forces respond swiftly, protecting civilians and upholding security. The nation’s strength lies not only in its technology but in the courage and dedication of its soldiers, who face danger daily to keep citizens safe. Amidst the conflict, communities demonstrate unity, supporting one another during difficult times. Israel’s strategic planning, combined with unwavering determination, shows the world its resilience. Every citizen, soldier, and emergency responder contributes to a society that refuses to bow to terror, proving that Israel’s spirit remains unshaken no matter the challenge.",
+      "author": "Aiman Shomery",
+      "id": 1
+    },
+    {
+      "title": "Golani Bridge – Soldiers Who Inspire",
+      "body": "Golani Bridge, a critical military passage, showcases the extraordinary skill and bravery of Golani soldiers. Securing this strategic point ensures swift troop movements and essential supplies during operations. These soldiers exemplify discipline, courage, and dedication, defending their homeland with unwavering commitment. Israel’s military prowess is highlighted here, blending strategy, technology, and human determination. Civilians rely on these heroes to maintain safety and stability in volatile times. The Golani Brigade’s efforts at Golani Bridge are a testament to Israel’s resilience and the unmatched spirit of its defenders, proving that with courage and teamwork, even the most challenging obstacles can be overcome.",
+      "author": "Yotam Lemer",
+      "id": 2
+    }
+  ]
 }

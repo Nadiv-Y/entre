@@ -11,11 +11,7 @@ const Home = () => {
     if (data) setFilteredBlogs(data);
   }, [data]);
 
-  const deletBlog = (id) => {
-    console.log("delte button clicked", id);
-    const newBlogs = filteredBlogs.filter((blog) => blog.id !== id);
-    setFilteredBlogs(newBlogs);
-  };
+
 
   return (
     <div className="Home">
@@ -25,7 +21,6 @@ const Home = () => {
         <BlogList
           blogs={filteredBlogs}
           title={"All blogs"}
-          deletBlog={deletBlog}
         />
       )}
     </div>
