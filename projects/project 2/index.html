@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,9 +19,10 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1 class="mt-5 mb-5">Cryptonite</h1>
-
-    <hr class="border border-black opacity-100" />
+    <header class="img-header text-center text-white py-5">
+      <h1 class="mt-5 mb-5">CoinVerse</h1>
+    </header>
+    <hr class="neon-line" />
 
     <div class="bottom-container w-100 bg-white">
       <div class="main-container mx-auto w-75">
@@ -34,13 +34,17 @@
               >
                 <ul class="navbar-nav flex-row gap-3">
                   <li class="nav-item">
-                    <a class="nav-link text-primary" id="home" href="#">Home</a>
+                    <a class="nav-link text-custom" id="home" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-primary" id="live-reports" href="#">Live Reports</a>
+                    <a class="nav-link text-custom" id="live-reports" href="#"
+                      >Live Reports</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-primary" id="about" href="#">About</a>
+                    <a class="nav-link text-custom" id="about" href="#"
+                      >About</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -55,7 +59,7 @@
                     id="search-input"
                   />
                   <button
-                    class="btn btn-outline-success"
+                    class="btn btn-outline-custom"
                     type="submit"
                     id="search-btn"
                   >
@@ -67,13 +71,37 @@
           </div>
         </nav>
 
-      <div id="home-page" class="mt-4">
-        <div id="main-content" class="row row-cols-1 row-cols-md-3 g-4"></div>
-      </div>
+        <div id="home-page" class="mt-4">
+          <div id="main-content" class="row row-cols-1 row-cols-md-3 g-4"></div>
+        </div>
 
-      <div id="live-reports-page" class="mt-4 d-none">
-        <div id="chartContainer" style="height: 400px; width: 100%;"></div>
-      </div>
+        <div id="live-reports-page" class="mt-4 d-none">
+          <div id="chartContainer" style="height: 400px; width: 100%"></div>
+        </div>
+
+        <div id="about-page" class="container py-5 d-none">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+              <img
+                src="./AvATAR.jpeg"
+                alt="Atar Ziada"
+                class="img-fluid rounded-circle shadow"
+                style="max-width: 200px"
+              />
+            </div>
+            <div class="col-md-8">
+              <h2 class="text-custom">About This Project</h2>
+              <p>Name: Atar Ziada</p>
+              <p class="text-custom">
+                This project is called <strong>CoinVerse</strong>. It’s a crypto dashboard
+                built using HTML, CSS, JavaScript, and public APIs
+                like CoinGecko & CryptoCompare. <br /><br />
+                You can search coins, toggle up to 5 live reports, and track
+                real-time USD values.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -126,7 +154,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="./index.js"></script> -->
-    <script src="./index copy.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
