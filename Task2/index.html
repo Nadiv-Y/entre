@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Countries Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <h1>Countries Dashboard</h1>
+  </header>
+
+  <main class="page">
+    <section class="toolbar">
+      <form id="searchForm" class="search" autocomplete="off">
+        <input id="query" name="query" type="search" placeholder="Search by country name… (e.g., united)"
+          aria-label="Country name" />
+        <button id="btnSearch" type="submit" class="btn">Search</button>
+        <button id="btnAll" type="button" class="btn btn-secondary">Load All</button>
+      </form>
+      <div id="notice" class="muted" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="output" class="content" aria-live="polite"></section>
+  </main>
+
+  <div id="spinner" class="spinner hidden" aria-hidden="true" aria-label="Loading">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <footer class="page-footer">
+    <small>Data: <a href="https://restcountries.com" target="_blank" rel="noreferrer">REST Countries</a></small>
+  </footer>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
