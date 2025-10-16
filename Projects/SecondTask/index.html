@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries Stats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="p-3 mb-3 bg-dark text-light d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <h2 class="mb-3 mb-md-0">  Countries Stats</h2>
+      <form class="d-flex gap-2">
+        <input type="search" class="form-control" id="searchInput" placeholder="Search country..." />
+        <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+        <button type="button" class="btn btn-secondary" id="allBtn">All</button>
+      </form>
+    </header>
+    <main class="container">
+      <div id="stats" class="row">
+        <div class="col-md-6 stat-card">
+          <h5>Countries & Populations</h5>
+          <table class="table table-striped" id="countriesTable">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Population</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <div class="stat-card">
+            <h5>Summary</h5>
+            <p><b>Total countries:</b> <span id="totalCountries">0</span></p>
+            <p><b>Total population:</b> <span id="totalPopulation">0</span></p>
+            <p><b>Average population:</b> <span id="avgPopulation">0</span></p>
+          </div>
+          <div class="stat-card">
+            <h5>Regions</h5>
+            <table class="table table-striped" id="regionsTable">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Countries</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="stat-card">
+            <h5>Currencies</h5>
+            <table class="table table-striped" id="currenciesTable">
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Countries</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
