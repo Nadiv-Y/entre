@@ -1,0 +1,141 @@
+
+.parallax-scrolling{
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('./images/cryptoSmBG3.jpg');
+}
+
+
+#mark-for-home{
+    margin-bottom: 180px;
+}
+
+#all-coins-pict{
+    /* padding-top: 60vh; */
+    background-repeat: repeat-x;
+    background-size: auto;
+    background-image: url('./images/cryptoSmBG3.jpg');
+    text-align: center;
+}
+#all-coins-img{
+    width: 80vw;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item .active{
+    background-color: rgb(255, 193, 7);
+}
+
+
+.header-img-container{
+    background-color: black;
+    background-image: url('./images/cryptoSmBG3.jpg');
+}
+#header-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-switch .form-check-input:focus {
+    border-color: rgba(255, 255, 255, 1);
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
+}
+.form-switch .form-check-input:checked {
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(33,37,41,1.0)'/></svg>");
+}
+input[type="radio"] {
+    background-color: rgba(255, 193, 7, 1);
+    border-color: rgba(255, 255, 255, 1);
+}
+input[type="radio"]:checked {
+    background-color: rgb(255, 193, 7);
+    border-color: rgba(255, 255, 255, 1);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(33,37,41,1.0)'/></svg>");
+}
+
+.card img{
+    width: 50px;
+}
+#about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10vw;
+    padding: 8vw;
+    padding-top: 10vw;
+}
+#about-img {
+    width: 7vw;
+}
+
+.smalltext{
+    font-size: .6rem;
+    overflow: hidden;
+}
+.smallheader{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+@media screen and (max-width: 767px) {
+    .parallax-scrolling{
+        display: none;
+    }
+    
+    #all-coins-pict{
+       margin-bottom: 45vw; 
+    }
+    .smallheader{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1rem;
+    }
+    #about {
+    padding-top: 60vw;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 770px){
+    .parallax-scrolling{
+        display: none;
+    }
+    
+    #all-coins-pict{
+        margin-bottom: 200px;
+    }
+    
+    .smallheader{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: .4rem;
+    }
+    #about {
+    padding-top: 60vw;
+    }
+}
+@media screen and (min-width: 771px) and (max-width: 1023px){
+    .parallax-scrolling{
+        display: none;
+    }
+    
+    #all-coins-pict{
+        margin-bottom: 260px;
+    }
+    .smallheader{
+    overflow: hidden;
+    font-weight: bold;
+    font-size: .6rem;
+    }
+    #about {
+    padding-top: 40vw;
+    }
+}
