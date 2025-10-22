@@ -1,0 +1,98 @@
+/* .coins-cards {
+  height: 100% !important;
+  width: 100%;
+  display: grid;                
+  grid-template-columns: 1fr 1fr 1fr 1fr ; 
+  grid-template-rows: auto;      
+  gap: 10px;                      
+  padding: 20px; 
+} */
+/* .card{
+  height: 100% !important;
+  padding: 7px;
+}
+.coin{
+  height: 80% !important;
+} */
+.coins-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr );
+  gap: 20px;
+  padding: 20px !important;
+  grid-auto-flow: row dense !;
+}
+.card {
+  transition: all 0.3s ease; 
+  padding: 10px !important;
+  
+}
+.hidden {
+  display: none;
+}
+
+.card-body {
+    height: 100% !important;
+  display: grid;
+  grid-template-areas:
+    "title switch"
+    "text1 ."
+    "button .";
+      padding: 8px !important;
+}
+
+.card-title {
+  grid-area: title !important;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.card-text {
+  grid-area: text1 !important;
+  margin: 5px;
+}
+
+.switch {
+  grid-area: switch !important;
+  justify-self: end;
+}
+.form-check-input {
+  width: 50px !important;
+  height: 25px;
+  background-color: rgb(238, 241, 240);
+}
+.btn {
+  grid-area: button !important;
+  width: 80%;
+  background-color:rgb(39, 171, 181) ;
+  border: rgb(39, 171, 181) 1px solid !important;
+}
+.form-check-input:checked {
+  background-color: rgb(39, 171, 181); 
+  border-color: rgb(39, 171, 181);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(39, 171, 181, 0.25);
+}
+
+
+@media (max-width: 894px) { 
+.coins-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr );
+  gap: 20px;
+  padding: 20px !important;
+  grid-auto-flow: row dense !;
+}
+}
+
+@media (max-width: 500px) {
+
+ 
+.coins-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr );
+  gap: 20px;
+  padding: 20px !important;
+  grid-auto-flow: row dense !;
+}
+}
