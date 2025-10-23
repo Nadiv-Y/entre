@@ -1,0 +1,176 @@
+/* Navbar look & feel */
+.brand-accent { color: #00c6e8 !important; }
+.nav-elevated { border-bottom: 1px solid #eef2f5; }
+
+/* Tabs */
+.nav-tabs-clean .nav-link {
+  padding: 0.9rem 1rem;            /* large tap targets */
+  color: #4b5563;
+  font-weight: 600;
+  position: relative;
+  border-radius: 0.5rem;
+  transition: background .2s ease, color .2s ease;
+}
+.nav-tabs-clean .nav-link:hover {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.03);
+}
+.nav-tabs-clean .nav-link.active {
+  color: #00c6e8;
+  background: transparent;
+}
+.nav-tabs-clean .nav-link.active::after {
+  content: "";
+  position: absolute;
+  /* RTL-safe: inset-inline instead of left/right */
+  inset-inline: 10% 10%;
+  bottom: -0.55rem;
+  height: 3px;
+  background: #00c6e8;
+  border-radius: 2px;
+}
+
+/* Search */
+.nav-actions .form-control { min-width: 14rem; }
+.nav-actions .form-control:focus { box-shadow: none; border-color: #00c6e8; }
+.nav-actions .btn { white-space: nowrap; }
+
+/* Make input-group edges seamless */
+.nav-actions .input-group .input-group-text {
+  background: #fff;
+  border-right: 0;
+}
+.nav-actions .input-group .form-control {
+  border-left: 0;
+}
+
+/* Responsive: stack & stretch on mobile */
+@media (max-width: 767.98px) {
+  .navbar .navbar-collapse { padding-block: 0.75rem; }
+  .nav-tabs-clean { gap: 0.25rem; }
+  .nav-tabs-clean .nav-link {
+    padding: 0.85rem 1rem;
+    border-radius: 0.4rem;
+  }
+  .nav-actions { gap: 0.5rem; }
+  .nav-actions .input-group,
+  .nav-actions .form-control {
+    width: 100%;
+    min-width: 0;                 /* full-width search */
+  }
+}
+
+/* Respect safe areas on modern phones */
+@supports (padding: max(0px)) {
+  .navbar.sticky-top {
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* ===== Loader (professional, centered) ===== */
+#global-loader {
+  position: fixed;
+  inset: 0;                          /* shorthand for top/right/bottom/left: 0 */
+  display: grid;
+  place-items: center;               /* perfect centering */
+  background: rgba(0,0,0,0.35);      /* dim backdrop */
+  backdrop-filter: blur(2px);        /* subtle blur if supported */
+  z-index: 2000;
+}
+#global-loader .loader-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Header (keep your image + overlay) ===== */
+/* ===== Header – Compact banner ===== */
+.parallax-header {
+  position: relative;
+  background-image: url("./assets/hero-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /* ⬇️ מצומצם משמעותית */
+  min-height: 32vh;           /* היה ~52vh */
+  padding: 64px 16px;         /* היה 140px 20px */
+  overflow: hidden;
+}
+
+
+/* darker overlay across the whole hero */
+.parallax-header::before,
+.parallax-header .overlay {          /* keep your existing .overlay support */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.75) 40%,
+    rgba(0,0,0,0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* ===== Banner panel: the dark pill behind text ===== */
+.banner-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.55);      /* solid dark behind text */
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px 28px;
+  color: #eafcff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  max-width: 780px;
+}
+
+/* Title + subtitle: crisp, no neon bleed */
+.banner-panel h1 {
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #f5fbff;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4); /* subtle, not glowing */
+  margin: 0;
+}
+.banner-panel p {
+  font-size: clamp(.95rem, 1.6vw, 1.15rem);
+  color: #cfe9f3;
+  margin: 0;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .parallax-header { background-attachment: scroll; padding: 100px 16px; }
+  .banner-panel { padding: 14px 18px; border-radius: 12px; }
+}
+
+.banner-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;        /* היה 16px */
+  padding: 12px 18px;         /* היה 18px 28px */
+  color: #eafcff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  max-width: 680px;           /* היה 780px */
+}
+
+.banner-panel h1 {
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);  /* קטן יותר */
+  font-weight: 800;
+  letter-spacing: .4px;
+  color: #f5fbff;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+  margin: 0 0 4px 0;
+}
+.banner-panel p {
+  font-size: clamp(.9rem, 1.4vw, 1.05rem);  /* קטן יותר */
+  color: #cfe9f3;
+  margin: 0;
+}
