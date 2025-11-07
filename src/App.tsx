@@ -9,13 +9,17 @@ function App() {
   const onAddProduct = (product: Product) => {
     setProdect((prev) => [...prev, product]);
   };
+
+  const hendleDelete = (index: number)=>{
+    setProdect(product.filter((_,i)=>i!==index))
+  }
   
 
   return (
     <div className="App">
       <h2>Hi There, Please Add Prodect</h2>
       <ProductForm onAddProduct={onAddProduct} />
-      <ProductTable products={product}/>
+      <ProductTable products={product} onDelete={hendleDelete}/>
     </div>
   );
 }

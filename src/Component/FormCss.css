@@ -1,0 +1,51 @@
+.form-control {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.form {
+  width: 80vw;
+  display: flex;
+}
+
+.main-form {
+  display: flex;
+  justify-content: center;
+}
+
+.select {
+  border: black 1px solid;
+  margin-right: 5px;
+}
+
+.main-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.table {
+  width: 80vw;
+  height: 80vh;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.header-table {
+  justify-content: center;
+  align-items: center;
+}
+
+tr{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px black solid;
+}
+td{
+     box-shadow: 0px 4px 20px rgba(0,0,0,0.25)
+}
+
+.deleteButton{
+    background-color: rgb(243, 70, 125);
+}
