@@ -5,7 +5,6 @@ function fetchAndRender(url, searchTerm = "") {
       return
     }
 
-    // Filter results if searchTerm is provided
     if (searchTerm) {
       data = data.filter((c) => c.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
       if (!data.length) {
@@ -14,10 +13,8 @@ function fetchAndRender(url, searchTerm = "") {
       }
     }
 
-    // Sort countries by population descending
     data.sort((a, b) => b.population - a.population)
 
-    // Summary statistics
     const totalCountries = data.length
     const totalPopulation = data.reduce((sum, c) => sum + (c.population || 0), 0)
     const avgPopulation = Math.round(totalPopulation / totalCountries)
@@ -26,13 +23,13 @@ function fetchAndRender(url, searchTerm = "") {
     $("#totalPopulation").text(totalPopulation.toLocaleString())
     $("#avgPopulation").text(avgPopulation.toLocaleString())
 
-    // Build countries table
+    // countries table
     let countriesRows = ""
     const regionCount = {}
     const currencyCount = {}
 
     data.forEach((c) => {
-      countriesRows += `<tr><td>${c.name.common}</td><td>${c.population.toLocaleString()}</td></tr>`
+      countriesRows += tablecolumn(c.name.common, c.population.toLocaleString())
 
       const region = c.region || "Other"
       regionCount[region] = (regionCount[region] || 0) + 1
@@ -46,30 +43,28 @@ function fetchAndRender(url, searchTerm = "") {
 
     $("#countriesTable tbody").html(countriesRows)
 
-    // Build regions table
+    //regions table
     const sortedRegions = Object.entries(regionCount).sort((a, b) => b[1] - a[1])
     let regionsRows = ""
     sortedRegions.forEach(([region, count]) => {
-      regionsRows += `<tr><td>${region}</td><td>${count}</td></tr>`
+      regionsRows += tablecolumn(region, count)
     })
     $("#regionsTable tbody").html(regionsRows)
 
-    // Build currencies table
+    //currencies table
     const sortedCurrencies = Object.entries(currencyCount).sort((a, b) => b[1] - a[1])
     let currenciesRows = ""
     sortedCurrencies.forEach(([cur, count]) => {
-      currenciesRows += `<tr><td>${cur}</td><td>${count}</td></tr>`
+      currenciesRows += tablecolumn(cur, count)
     })
     $("#currenciesTable tbody").html(currenciesRows)
   })
 }
 
-// Fetch all countries
 $("#allBtn").on("click", function () {
   fetchAndRender("https://restcountries.com/v3.1/all?fields=name,population,region,currencies")
 })
 
-// Search by input
 $("#searchBtn").on("click", function () {
   const country = $("#searchInput").val().trim()
   if (!country) {
@@ -79,7 +74,10 @@ $("#searchBtn").on("click", function () {
   fetchAndRender(`https://restcountries.com/v3.1/name/${country}?fields=name,population,region,currencies`, country)
 })
 
-// Reset all tables and stats
+function tablecolumn(key, value) {
+  return `<tr><td>${key}</td><td>${value}</td></tr>`
+
+}
 function resetTables() {
   $("#countriesTable tbody").empty()
   $("#regionsTable tbody").empty()
