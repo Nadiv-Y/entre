@@ -25,7 +25,7 @@ export default function Cart(props:CartProps) {
                         <td>{obj.name}</td>
                         <td>{obj.category}</td>
                         <td>{obj.price}</td>
-                        <td>{obj.image}</td>
+                        <td><img src={obj.image} alt={obj.name+' picture'} width='50px'></img></td>
                         <td><button onClick={()=>props.remove(obj.id)}>Remove Product</button></td>
                     </tr>
                 ))
