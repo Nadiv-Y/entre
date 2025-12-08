@@ -1,0 +1,13 @@
+# בסיס - תמונת MySQL רשמית בגרסה 9.5
+FROM mysql:9.5
+
+# התקנת tzdata (זמן אזורי)
+RUN apt-get update && \
+    apt-get install -y tzdata && \
+    rm -rf /var/lib/apt/lists/*
+
+# הגדרת משתני סביבה לסיסמת root
+ENV MYSQL_ROOT_PASSWORD=root
+
+# חשיפה של פורט ברירת המחדל של MySQL
+EXPOSE 3306
