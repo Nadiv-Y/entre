@@ -1,0 +1,51 @@
+sql - database
+table 1 - users
+
+id
+username
+firstname 
+lastname
+password
+
+
+table 2 - vacations
+
+id
+description
+destination
+price
+picture
+dates
+
+table 3 - user-vacations
+
+user id
+vacation id
+
+client/src/
+├── components/
+│   ├── VacationCard.tsx
+│   └── Navbar.tsx
+│
+├── pages/
+│   ├── Login.tsx
+│   ├── Register.tsx
+│   ├── Vacations.tsx
+│   ├── Admin.tsx
+│   └── Reports.tsx
+│
+├── redux/
+│   ├── store.ts
+│   ├── authSlice.ts
+│   └── vacationsSlice.ts
+│
+├── services/
+│   ├── api.ts
+│   └── socket.ts
+│
+├── models/
+│   ├── User.ts
+│   └── Vacation.ts
+│
+├── App.tsx
+└── index.tsx
