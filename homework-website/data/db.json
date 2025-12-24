@@ -625,80 +625,80 @@
             "id": 74,
             "topicId": "es6",
             "question": "let vs const vs var: List the key differences in scoping, redeclaration, and reassignment. When would you still reach for var (if ever)?",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "var` is function-scoped and allows redeclaration and reassignment; it ignores block boundaries. `let` and `const` are block-scoped, meaning they exist only within their enclosing { } block. `let` can be reassigned but not redeclared, while `const` cannot be reassigned or redeclared. In modern ES6+, `var` is rarely used—only in legacy code or when function-level scope is explicitly needed.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 75,
             "topicId": "es6",
             "question": "Temporal Dead Zone (TDZ): What happens in each case and why?\nconsole.log(a); // ?\nlet a = 10;\n\nfunction f() {\n  console.log(b); // ?\n  const b = 5;\n}\nf();",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "Both console.log calls throw a ReferenceError. Variables declared with let or const are hoisted but not initialized. Accessing them before their declaration line is inside the Temporal Dead Zone (TDZ), meaning they exist in memory but cannot be accessed until after initialization. This prevents accidental use of variables before they're defined.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 76,
             "topicId": "es6",
             "question": "Block scope: Why does `{ let x = 1 } console.log(x)` throw but `{ var y = 2 } console.log(y)` works? Explain using scope rules.",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "`let` and `const` are block-scoped, so variables declared inside `{}` exist only within that block. Accessing `x` outside its block throws a ReferenceError. `var` is function-scoped, not block-scoped, so variables declared with `var` are accessible outside normal blocks but not outside functions. Therefore, `{ var y = 2 } console.log(y)` works while `{ let x = 1 } console.log(x)` fails.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 77,
             "topicId": "es6",
             "question": "Arrow functions and `this`: What does this print and why?\nconst obj = {\n  x: 42,\n  m() {\n    const inner = () => this.x;\n    return inner();\n  }\n};\nconsole.log(obj.m());",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "It prints 42. Arrow functions do not have their own `this`; they inherit it lexically from the surrounding scope. Since `inner` is defined inside `m`, its `this` is the same as `m`'s — the `obj` itself. Therefore, `this.x` refers to `obj.x`, which equals 42.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 78,
             "topicId": "es6",
             "question": "Arrow vs function: In which situations should you not use an arrow function? Give two examples (e.g., constructors, methods needing dynamic `this`).",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "Arrow functions do not have their own `this` or `arguments`; they inherit them from the surrounding scope. Therefore, they should not be used as object methods that rely on a dynamic `this`, or as constructors called with `new`. In these cases, a regular function is needed to create its own `this` context and arguments object.",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 79,
             "topicId": "es6",
             "question": "Default parameters: Explain the output.\nfunction greet(name = 'Guest', exclaim = name.length > 3) {\n  return `Hello, ${name}${exclaim ? '!' : '.'}`;\n}\nconsole.log(greet());\nconsole.log(greet('Ana'));\nconsole.log(greet('Dima', false));",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "Default parameters apply when an argument is missing or undefined. Here, greet('Guest') → 'Hello, Guest!' because 'Guest'.length > 3 is true. greet('Ana') → 'Hello, Ana.' because 'Ana'.length > 3 is false. greet('Dima', false) → 'Hello, Dima.' because exclaim is explicitly set to false, so the default is ignored.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 80,
             "topicId": "es6",
             "question": "Rest parameters: Implement `sum(...nums)` returning the total. Why is `arguments` not ideal here?\n// your code",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "Rest parameters (`...nums`) collect all arguments into a real array, allowing array methods like reduce, map, or filter. For example: `function sum(...nums) { return nums.reduce((t, n) => t + n, 0); }`. The older `arguments` object is array-like (not a true array) and lacks array methods, and arrow functions do not have their own `arguments`, so rest parameters are more modern and flexible.",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 81,
             "topicId": "es6",
             "question": "Spread operator: Convert `const set = new Set([1,2,3])` to an array and append `4` without mutating the original Set.\n// your code",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "The spread operator `...` expands iterables like Sets or arrays into individual elements. To create a new array without mutating the original Set, use: `const arr = [...set, 4];`. This copies all elements of the Set into a new array and appends 4, leaving the original Set unchanged.",
+            "status": "Done",
             "hasCode": false
         },
         {
             "id": 82,
             "topicId": "es6",
             "question": "Object literal enhancements: Rewrite to use shorthand properties, computed property names, and concise methods.\nconst x = 1, y = 2;\nconst key = 'sum';\nconst obj = {\n  x: x,\n  y: y,\n  sum: function(){ return x + y; }\n};",
-            "answer": "The answer",
-            "status": "In Progress",
-            "hasCode": false
+            "answer": "ES6 object literal enhancements let you use shorthand properties when key and variable names match,\n computed property names for dynamic keys, and concise methods without the `function` keyword. Example:\n\nconst obj = {\n  x,\n  y,\n  [key]() { return x + y; }\n};",
+            "status": "Done",
+            "hasCode": true
         },
         {
             "id": 83,
             "topicId": "es6",
             "question": "Destructuring arrays: Swap two variables without a temp and extract the first item and the rest.\nlet a = 10, b = 20;\n// swap here\nconst arr = [1,2,3,4];\n// first = ?, rest = ?",
-            "answer": "The answer",
-            "status": "In Progress",
+            "answer": "Array destructuring allows assigning multiple values at once. To swap variables: `[a, b] = [b, a];`. To extract the first element and the rest of the array: `const [first, ...rest] = arr;`. This results in `first = 1` and `rest = [2, 3, 4]`",
+            "status": "Done",
             "hasCode": false
         },
         {
