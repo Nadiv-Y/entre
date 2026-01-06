@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './DropDown.module.css'
+import { CaretDownIcon } from '@phosphor-icons/react';
 
 interface DropDownProps {
  options: string[]
@@ -19,7 +20,7 @@ export const DropDown = ({options, placeholder, onSelect}: DropDownProps) => {
         >
             <div className={styles.header}>
                 <p>{selectedOption}</p>
-                
+                <CaretDownIcon/>
             </div>
             {isOpen && <ul className={styles.optionsList}>
                 {options.map( option => (

@@ -39,3 +39,9 @@
 .option:hover{
     background-color: #e1e1e1;
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

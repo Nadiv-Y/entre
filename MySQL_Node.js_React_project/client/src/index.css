@@ -4,7 +4,16 @@
     
 }
 
-body, #root{
+@font-face {
+  font-family: 'paperFont';  
+  src: url('./assets/fonts/Chomsky.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root{
     height: 100svh;
     margin: 0;
 }
+
