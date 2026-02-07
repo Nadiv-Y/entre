@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #7b8887;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #2a9d8f;
+  color: white;
+  border-bottom: 5px solid rgb(95, 133, 128);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  z-index: 100;
+}
+
+.users-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 30px;
+}
+
+.user-card {
+  background: #ccc6c680;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  padding: 10px;
+  width: calc(33.333% - 10px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.user-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#favorites-counter {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#clear-favorites {
+  margin-left: 20px;
+  padding: 5px 10px;
+  color: rgb(128, 124, 124);
+  border-radius: 3px;
+  border: 2px solid rgb(44, 116, 92);
+  cursor: pointer;
+
+}
+
+#clear-favorites:hover {
+  background-color: #f0a3a3;
+  color: rgb(46, 41, 41);
+}
+
+
+#refresh-users {
+  padding: 5px 10px;
+  color: rgb(161, 156, 156);
+  border-radius: 3px;
+  border: 2px solid rgb(44, 116, 92);
+  cursor: pointer;
+  background-color: #f9f9f9;
+  margin-left: 10px;
+}
+
+#refresh-users:hover {
+  background-color: #5aee98;
+  color: rgb(29, 27, 27);
+}
+
+.user-card.favorite {
+  background-color: #e0f7f4;
+  border: 2px solid #2a9d8f;
+}
+
+
+.user-card-placeholder {
+  border: 2px dashed #494a4b;
+  background: #c9caca;
+  height: 225px; 
+  width: calc(33.333% - 10px);
+  /* margin-bottom: 10px; */
+  border-radius: 8px;
+}
+
+
+
+
+
+/* ===== Responsive design ===== */
+
+/* Tablets (2 cards per row) */
+@media (max-width: 900px) {
+  .user-card {
+    width: calc(50% - 10px);
+  }
+
+  .user-card-placeholder {
+    width: calc(50% - 10px);
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  #favorites-counter {
+    font-size: 1rem;
+  }
+}
+
+/* Smartphones (1 card per row) */
+@media (max-width: 600px) {
+  .user-card {
+    width: 100%;
+  }
+
+  .user-card-placeholder {
+    width: 100%;
+  }
+
+  .user-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .user-card button {
+    width: 80%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #favorites-counter {
+    margin-top: 8px;
+  }
+}

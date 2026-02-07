@@ -1,0 +1,22 @@
+.vacations-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.vacations-page h2 {
+    text-align: center;
+    color: var(--text);
+}
+
+.vacations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

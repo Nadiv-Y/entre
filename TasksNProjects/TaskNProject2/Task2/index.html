@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Add Product</h1>
+
+  <form id="productForm">
+    <label>
+      Product Name:
+      <input type="text" id="name" required>
+    </label>
+
+    <label>
+      Price:
+      <input type="number" id="price" required>
+    </label>
+
+    <label>
+      Category:
+      <select id="category" required>
+        <option value="">Select category</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Meat">Meat</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Basic">Basic</option>
+      </select>
+    </label>
+
+    <label>
+      Image URL:
+      <input type="text" id="image" required>
+    </label>
+
+    <button type="submit">Add Product</button>
+  </form>
+
+  <h2>My Cart</h2>
+
+  <div class="table-container">
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
