@@ -1,0 +1,13 @@
+{
+    "name": "vacation-project",
+    "version": "1.0.0",
+    "description": "Root script for running full stack application",
+    "scripts": {
+        "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+        "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+        "qa": "chmod +x qa.sh && ./qa.sh"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

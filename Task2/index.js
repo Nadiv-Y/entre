@@ -38,7 +38,6 @@ const withLoading = async (fn) => {
   }
 };
 
-// ===== Networking (fetch + timeout + fallback) =====
 const API_BASE_V3 = "https://restcountries.com/v3.1";
 const API_BASE_V2 = "https://restcountries.com/v2";
 const FIELDS = "name,region,population,currencies";
@@ -120,7 +119,6 @@ const API = {
     ),
 };
 
-// ===== Rendering =====
 const el = (tag, attrs = {}, html = "") => {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);

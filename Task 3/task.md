@@ -1,0 +1,38 @@
+# Task: Backend Setup for Appointments Project
+
+- [x]  Setup database files <!-- id: 0 -->
+    - [x] Create directory structure `Task 3/appointments-project/backend/database` <!-- id: 1 -->
+    - [x] Create `create-schema.sql` <!-- id: 2 -->
+    - [x] Create `seed.sql` <!-- id: 3 -->
+- [x] Verify files created <!-- id: 4 -->
+- [x] **Backend Implementation** <!-- id: 5 -->
+    - [x] Research `Class-full-stack` reference architecture <!-- id: 6 -->
+    - [x] Initialize `package.json` and install dependencies <!-- id: 7 -->
+    - [x] Create Configuration (`.env`, `config.ts`/`js`) <!-- id: 8 -->
+    - [x] Create Database Connection Pool (`dal` or `database` module) <!-- id: 9 -->
+    - [x] Create Middleware (CORS, JSON, Error Handling) <!-- id: 10 -->
+    - [x] Create Main Application Entry (`app.ts`/`js` or `server.ts`/`js`) <!-- id: 11 -->
+    - [x] Verify Server Startup <!-- id: 12 -->
+- [x] **API Feature Implementation** <!-- id: 13 -->
+    - [x] Research Controller patterns <!-- id: 14 -->
+    - [x] Implement `DevelopmentTeams` feature (Route + Controller) <!-- id: 15 -->
+    - [x] Implement `Meetings` feature (Route + Controller) <!-- id: 16 -->
+    - [x] Register routes in `app.ts` <!-- id: 17 -->
+    - [x] Verify build and functionality <!-- id: 18 -->
+- [x] **Frontend Implementation** <!-- id: 19 -->
+    - [x] Research `Class-full-stack` frontend architecture <!-- id: 20 -->
+    - [x] Initialize React App and install dependencies (MUI, Redux, Axios) <!-- id: 21 -->
+    - [x] Implement API Service Layer <!-- id: 22 -->
+    - [x] Implement Redux Store (Actions/Reducers/Slices) <!-- id: 23 -->
+    - [x] Create Components (TeamSelect, MeetingList, AddMeetingForm) <!-- id: 24 -->
+    - [x] Integrate Logic in Main App <!-- id: 25 -->
+    - [x] Verify Frontend Build <!-- id: 26 -->
+- [x] **Running & Preview** <!-- id: 27 -->
+    - [x] Setup Database (Docker Container) <!-- id: 28 -->
+    - [x] Start Backend Server <!-- id: 29 -->
+    - [x] Start Frontend Server <!-- id: 30 -->
+    - [x] Generate Preview (Browser Walkthrough) <!-- id: 31 -->
+- [x] **Bonus Features** <!-- id: 32 -->
+    - [x] **Bonus A**: Prevent Overlapping Meetings (Backend) <!-- id: 33 -->
+    - [x] **Bonus B**: Show Duration (Frontend) <!-- id: 34 -->
+    - [x] Verify Overlap Rules (3 Test Cases) <!-- id: 35 -->
