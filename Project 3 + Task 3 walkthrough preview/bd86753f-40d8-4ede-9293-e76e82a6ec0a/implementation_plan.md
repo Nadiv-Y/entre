@@ -1,0 +1,25 @@
+# Implementation Plan - Run Task 3
+
+## Goal
+Run the "Task 3" (Appointments) project, ensuring database is initialized and both backend/frontend are operational.
+
+## Proposed Changes
+
+### Configuration
+- **Backend**: Update `.env` to use Port **3001** (avoid conflict with React's default 3000).
+- **Frontend**: Identify API config and point to `http://localhost:3001`.
+
+### Database
+- Run `database/create-schema.sql` to create `Appointments` DB.
+- Run `database/seed.sql` to populate data.
+
+### Execution
+1.  **Install**: `npm install` in both `backend` and `frontend`.
+2.  **Start Backend**: `npm start` (on 3001).
+3.  **Start Frontend**: `npm start` (on 3000).
+
+## Verification Plan
+### Automated Browser Testing
+- Navigate to `http://localhost:3000`.
+- Verify list of appointments loads.
+- Test adding/editing appointments if features exist.
