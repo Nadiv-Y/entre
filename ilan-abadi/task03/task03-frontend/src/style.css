@@ -1,0 +1,166 @@
+html {
+    font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    color: #0D6efd;
+}
+
+/* .page-container-green{
+   background-color: lightgreen; 
+}
+.page-container-lightgreen{
+   background-color:palegreen; 
+}
+.page-container-lightgreen{
+   background-color:cyan; 
+} */
+
+/* .container{
+    display: flex;
+    justify-content: center;
+}
+
+.card-style{
+    width: 50vw;
+    text-align: start;
+}
+
+.inputs-flex{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.vac-tital{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.dates{
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin: .6rem;
+}
+
+h2{
+    color: blueviolet;
+    margin: 2rem;
+}
+
+label{
+    text-align: start;
+    font-size: 1.6rem;
+    color: blueviolet;
+}
+
+input{
+    padding: 1rem 1.6rem;
+    margin: .5rem;
+    font-size: 1.6rem;
+}
+
+input:focus{
+    outline: 2px solid blueviolet;
+}
+
+select{
+    padding: 1rem 1.6rem;
+    margin: .5rem;
+    font-size: 1.6rem;
+}
+
+select:focus{
+    outline: 2px solid blueviolet;
+} */
+
+/* #select-div{
+    width: 22rem;
+    border: 1px solid black;
+    background-color: white;
+    margin: 2rem auto;
+    padding: 0 1.4rem;
+}
+
+select{
+    padding: 1rem 1.6rem;
+    margin: .5rem;
+    font-size: 1.6rem;
+    border: none;
+    background: none;
+}
+
+select:focus{
+    border: none;
+    outline: none;
+} */
+
+/* button{
+    font-size: 1.6rem;
+    color: lavenderblush;
+    background-color: blueviolet;
+    padding: 1rem 1.6rem;
+    margin: .5rem;
+    outline: none;
+    border: none; 
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: indigo;
+}
+
+button:active{
+    font-size: 1.4rem;
+    background-color: indigo;
+    padding: .6rem 1rem;
+    margin: 1rem;
+}
+
+table{
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: rgb(230, 220, 250);
+    
+    
+}
+
+tr:nth-child(even){
+    background-color: rgb(200, 200, 355);
+}
+
+th{
+    color: lavenderblush;
+    background-color: blueviolet;
+    border-right: 1px solid lavenderblush;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+td{
+    padding: 1rem;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+}
+
+.warning-text{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: brown;
+} */
+
+/* .btn-success {
+    background-color: chartreuse;
+} */
