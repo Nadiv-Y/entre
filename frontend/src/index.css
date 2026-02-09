@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --primary: #007AFF;
+  --surface: rgba(255, 255, 255, 0.85); 
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+  --bubbly-radius: 28px;
+  --pill-radius: 50px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif; 
+  background: radial-gradient(circle at 0% 0%, #e0f2fe 0%, #f3f4f6 50%, #e0e7ff 100%);
+  background-attachment: fixed;
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-card {
+  background: var(--surface);
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--glass-border);
+  border-radius: var(--bubbly-radius);
+  box-shadow: var(--shadow);
+}

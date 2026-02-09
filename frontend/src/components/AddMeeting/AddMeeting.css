@@ -1,0 +1,88 @@
+.AddMeeting {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--bubbly-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    
+    width: 90%;          
+    max-width: 500px;   
+    margin: 0 auto;      
+    box-sizing: border-box; 
+}
+
+.AddMeeting h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #1d1d1f;
+    margin-bottom: 30px;
+}
+
+.AddMeeting label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px; 
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #86868b;
+    margin-left: 10px; 
+}
+
+.AddMeeting input, .AddMeeting select {
+    width: 100%;
+    border-radius: 50px;
+    padding: 12px 20px; 
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
+    box-sizing: border-box; 
+}
+
+.AddMeeting input:focus, .AddMeeting select:focus {
+    outline: none;
+    transform: scale(1.02);
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+}
+
+.AddMeeting button {
+    width: 100%;
+    margin-top: 35px;
+    border-radius: 50px;
+    
+    padding: 14px 20px; 
+    font-size: 1.1rem;
+    font-weight: 800; 
+    letter-spacing: 0.5px;
+    
+    background: linear-gradient(135deg, #007AFF, #0055ff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.AddMeeting button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 122, 255, 0.4);
+}
+
+.AddMeeting button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    .AddMeeting {
+        padding: 25px; 
+        width: 95%;
+    }
+    
+    .AddMeeting h3 {
+        margin-bottom: 20px;
+    }
+}

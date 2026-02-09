@@ -1,0 +1,42 @@
+.MeetingList {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border-radius: var(--bubbly-radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  overflow: hidden;
+}
+
+.MeetingList table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0 10px; 
+}
+
+.MeetingList th {
+  text-align: left;
+  color: #86868b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 20px;
+}
+
+.MeetingList tbody tr {
+  background: rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s;
+}
+
+.MeetingList tbody tr:hover {
+  transform: scale(1.01);
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.MeetingList td {
+  padding: 20px;
+  border: none;
+}
+
+.MeetingList td:first-child { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+.MeetingList td:last-child { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }

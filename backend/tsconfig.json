@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "es2016",
+    "module": "commonjs",             /* Use standard Node.js modules */
+    "moduleResolution": "node",       /* Allows importing without .js extension */
+    "esModuleInterop": true,          /* FIXES 'import express from express' */
+    "skipLibCheck": true,             /* Ignore errors in library files */
+    "strict": true,                   /* Keep your code safe */
+    
+    /* File Output */
+    "rootDir": "./src",
+    "outDir": "./dist",
+    
+    /* Strictness adjustments */
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
