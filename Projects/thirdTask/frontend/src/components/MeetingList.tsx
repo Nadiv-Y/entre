@@ -1,33 +1,21 @@
 import React from 'react';
 import type { Meeting } from '../types';
 
+import { calculateDuration, formatDate } from '../utils/dateUtils';
+
 interface MeetingListProps {
   meetings: Meeting[];
 }
 
 const MeetingList: React.FC<MeetingListProps> = ({ meetings }) => {
   if (meetings.length === 0) {
-    return <div className="text-muted text-center mt-8">No meetings scheduled for this group.</div>;
+    return (
+      <div className="text-center py-12 border border-dashed border-[var(--border)] rounded-xl bg-[var(--bg-card)]/50">
+        <p className="text-muted text-lg">No meetings scheduled for this group.</p>
+        <p className="text-sm text-gray-500 mt-2">Click "New Meeting" to schedule one.</p>
+      </div>
+    );
   }
-
-  const calculateDuration = (start: string, end: string) => {
-    const startTime = new Date(start).getTime();
-    const endTime = new Date(end).getTime();
-    const durationMinutes = (endTime - startTime) / (1000 * 60);
-    const hours = Math.floor(durationMinutes / 60);
-    const minutes = durationMinutes % 60;
-    return `${hours > 0 ? `${hours}h ` : ''}${minutes}m`;
-  };
-
-  const formatDate = (dateStr: string) => {
-    return new Date(dateStr).toLocaleString('en-US', {
-      weekday: 'short',
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-    });
-  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-in">

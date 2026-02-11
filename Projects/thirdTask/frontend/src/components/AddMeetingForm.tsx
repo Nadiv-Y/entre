@@ -45,11 +45,10 @@ const AddMeetingForm: React.FC<AddMeetingFormProps> = ({ groupId, onSuccess, onC
   };
 
   return (
-    <form onSubmit={handleSubmit} className="animate-fade-in card">
-      <h2 className="text-2xl mb-6">Schedule New Meeting</h2>
+    <form onSubmit={handleSubmit}>
 
       {error && (
-        <div className="bg-red-500/10 border border-red-500/20 text-red-500 p-4 rounded mb-6 text-sm">
+        <div className="error-alert">
           {error}
         </div>
       )}

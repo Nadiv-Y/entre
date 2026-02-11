@@ -4,16 +4,20 @@ import type { Group, Meeting } from './types';
 import MeetingList from './components/MeetingList';
 import AddMeetingForm from './components/AddMeetingForm';
 
+
 function App() {
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<number | ''>('');
   const [meetings, setMeetings] = useState<Meeting[]>([]);
-  const [showAddForm, setShowAddForm] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
+
 
   useEffect(() => {
     getGroups().then(setGroups).catch(console.error);
   }, []);
+
 
   useEffect(() => {
     if (selectedGroupId) {
@@ -27,79 +31,108 @@ function App() {
     }
   }, [selectedGroupId]);
 
+
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => setNotification(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
+
   const handleAdded = () => {
-    setShowAddForm(false);
+    setIsFormOpen(false);
+    setNotification('Meeting scheduled successfully!');
     if (selectedGroupId) {
-      getMeetings(Number(selectedGroupId)).then(setMeetings);
+      setLoading(true);
+      getMeetings(Number(selectedGroupId))
+        .then(setMeetings)
+        .finally(() => setLoading(false));
     }
   };
 
   return (
-    <div className="container">
-      <header className="mb-8 flex justify-between items-center">
-        <div>
-          <h1>Development Hub</h1>
-          <p className="text-muted">Manage team schedules and meeting rooms</p>
+    <div className="container min-h-screen flex flex-col">
+      <header className="py-8 mb-8 border-b border-[var(--border)]">
+        <div className="flex justify-between items-center">
+          <div>
+            <h1>Development Hub</h1>
+            <p className="text-muted">Manage team schedules and meeting rooms</p>
+          </div>
+          {selectedGroupId && (
+            <button
+              onClick={() => setIsFormOpen(true)}
+              className="btn flex items-center gap-2 transform hover:scale-105 active:scale-95"
+            >
+              <span>+</span> New Meeting
+            </button>
+          )}
         </div>
-        {selectedGroupId && !showAddForm && (
-          <button onClick={() => setShowAddForm(true)} className="btn">
-            + New Meeting
-          </button>
-        )}
       </header>
 
-      <main>
-        {!showAddForm ? (
-          <>
-            <div className="card mb-8">
-              <label className="label">Select Development Group</label>
-              <select
-                value={selectedGroupId}
-                onChange={(e) => {
-                  const val = e.target.value;
-                  setSelectedGroupId(val === "" ? "" : Number(val));
-                }}
-                className="select"
-              >
-                <option value="">-- Choose a Team --</option>
-                {groups.map(g => (
-                  <option key={g.id} value={g.id}>{g.name}</option>
-                ))}
-              </select>
+      <main className="flex-1">
+        {notification && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-xl animate-fade-in z-50">
+            {notification}
+          </div>
+        )}
+        <div className="card mb-8 max-w-xl">
+          <label className="label">Select Development Group</label>
+          <select
+            value={selectedGroupId}
+            onChange={(e) => {
+              const val = e.target.value;
+              setSelectedGroupId(val === "" ? "" : Number(val));
+            }}
+            className="select"
+          >
+            <option value="">-- Choose a Team --</option>
+            {groups.map(g => (
+              <option key={g.id} value={g.id}>{g.name}</option>
+            ))}
+          </select>
+        </div>
+        {selectedGroupId ? (
+          <div className="space-y-6">
+
+
+
+            <div className="flex justify-between items-end">
+              <h2 className="text-2xl">
+                Scheduled Meetings
+                <span className="ml-3 text-base font-normal text-muted bg-[var(--bg-card)] px-2 py-1 rounded-full border border-[var(--border)]">
+                  {meetings.length}
+                </span>
+              </h2>
             </div>
 
-            {selectedGroupId ? (
-              <>
-                <div className="flex justify-between items-end mb-4">
-                  <h2 className="text-2xl">
-                    Scheduled Meetings-
-                    <span className="text-base font-normal text-muted">
-                      {meetings.length} upcoming
-                    </span>
-                  </h2>
-                </div>
-                {loading ? (
-                  <div className="text-center py-12 text-muted">Loading schedule...</div>
-                ) : (
-                  <MeetingList meetings={meetings} />
-                )}
-              </>
-            ) : (
-              <div className="text-center py-20 border border-dashed border-gray-700 rounded-xl">
-                <p className="text-xl text-muted">Please select a development group to view their schedule</p>
+            {loading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[1, 2, 3].map(i => (
+                  <div key={i} className="card h-48 animate-pulse bg-[var(--bg-card)]/50"></div>
+                ))}
               </div>
+            ) : (
+              <MeetingList meetings={meetings} />
             )}
-          </>
+          </div>
         ) : (
-          <div className="max-w-2xl mx-auto">
-            <AddMeetingForm
-              groupId={Number(selectedGroupId)}
-              onSuccess={handleAdded}
-              onCancel={() => setShowAddForm(false)}
-            />
+          <div className="text-center py-20 border border-dashed border-[var(--border)] rounded-xl bg-[var(--bg-card)]/30">
+            <p className="text-xl text-muted font-light">Please select a development group to view their schedule</p>
           </div>
         )}
       </main>
+      {isFormOpen && (
+        <div className="fixed inset-0 z-50 flex-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
+          <div className="modal-box w-full max-w-lg shadow-2xl">
+            <h2 className="text-xl font-bold mb-6">Schedule New Meeting</h2>
+            <AddMeetingForm
+              groupId={Number(selectedGroupId)}
+              onSuccess={handleAdded}
+              onCancel={() => setIsFormOpen(false)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

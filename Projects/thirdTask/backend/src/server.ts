@@ -1,42 +1,23 @@
 import express from "express"
 import cors from "cors"
-import * as mysql from "mysql2/promise"
+import connection from "./db.js"
 import 'dotenv/config'
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-const host = process.env.HOST;
-const user = process.env.DBUSER;
-const password = process.env.DBPASSWORD;
-const database = process.env.DBNAME;
 
-let connection: mysql.Connection | null = null;
+connection.getConnection()
+  .then(conn => {
+    console.log("DB connected");
+    conn.release();
+  })
+  .catch(err => console.error("DB connection failed:", err.message));
 
-async function connectToDB() {
-  try {
-    connection = await mysql.createConnection({
-      host: String(host),
-      user: String(user),
-      password: String(password),
-      database: String(database)
-    })
-    console.log("DB connected")
-  } catch (err: any) {
-    console.error("DB connection failed:", err.message)
-  }
-}
 
-connectToDB()
-
-// Routes
-
-// Get all production teams
 app.get("/api/teams", async (req, res) => {
   try {
-    if (!connection)
-      return res.status(500).send("DB not connected")
     const [rows] = await connection.query("SELECT * FROM production_team")
     res.json(rows)
   } catch (err) {
@@ -44,11 +25,8 @@ app.get("/api/teams", async (req, res) => {
   }
 })
 
-// Get meetings for a specific group
 app.get("/api/meetings/:groupId", async (req, res) => {
   try {
-    if (!connection)
-      return res.status(500).send("DB not connected")
     const groupId = req.params.groupId
     const [rows] = await connection.query(
       "SELECT * FROM meetings WHERE production_group = ? ORDER BY starting_time ASC",
@@ -60,14 +38,10 @@ app.get("/api/meetings/:groupId", async (req, res) => {
   }
 })
 
-// Add a new meeting
 app.post("/api/meetings", async (req, res) => {
   try {
-    if (!connection)
-      return res.status(500).send("DB not connected")
     const { production_group, starting_time, ending_time, description, meeting_room } = req.body
 
-    // Validation
     if (!production_group || !starting_time || !ending_time || !description || !meeting_room) {
       return res.status(400).send("All fields are required")
     }
@@ -79,7 +53,6 @@ app.post("/api/meetings", async (req, res) => {
       return res.status(400).send("Ending time must be after starting time")
     }
 
-    // Overlap Check (Bonus)
     const [existingMeetings]: any = await connection.query(
       "SELECT starting_time, ending_time FROM meetings WHERE production_group = ?",
       [production_group]
@@ -95,7 +68,6 @@ app.post("/api/meetings", async (req, res) => {
       return res.status(409).send("Meeting overlaps with an existing meeting for this group")
     }
 
-    // Insert
     const [result] = await connection.query(
       "INSERT INTO meetings (production_group, starting_time, ending_time, description, meeting_room) VALUES (?, ?, ?, ?, ?)",
       [production_group, starting_time, ending_time, description, meeting_room]
@@ -109,7 +81,7 @@ app.post("/api/meetings", async (req, res) => {
   }
 })
 
-const PORT = 3001
+const PORT = 3000
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
