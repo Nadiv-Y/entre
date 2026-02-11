@@ -1,0 +1,22 @@
+.page{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.logo{
+    width: 150px;
+}
+
+.actionsWrapper{
+    display: flex;
+    gap: 20px;
+}

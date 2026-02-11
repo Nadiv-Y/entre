@@ -1,0 +1,96 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000
+}
+
+.modal {
+    background: white;
+    border-radius: 32px;
+    width: 600px;
+    max-width: 90%;
+    animation: fadeIn 0.2s ease-in-out;
+    box-shadow: 0 0 12px 3px #00000029;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 28px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.closeBtn {
+    border: none;
+    background: transparent;
+}
+
+.closeBtn:hover {
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 28px 28px;
+}
+
+.footer {
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+.Wrapper {
+    display: flex;
+    gap: 12px;
+    justify-content: stretch;
+}
+
+.WrapperDate {
+    display: flex;
+    gap: 20px;
+    justify-content: stretch;
+}
+
+.teamWrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: stretch;
+}
+
+.dropdownWrapper {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+}
+
+.drowdownMargin{
+    margin-top: 8px;
+}
+
+.dropdownBtn {
+    background: transparent;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    cursor: pointer;
+    height: 52px;
+    padding: 0 16px;
+}
+
+.dropdownLabel {
+    font-size: 14px;
+    font-weight: 500;
+}
