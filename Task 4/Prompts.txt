@@ -1,0 +1,19 @@
+Link for the lovable UI: https://sleek-account-flow.lovable.app/
+
+
+Prompts
+First part: I need to build a React SPA for my full-stack course assignment to manage bank account operations. The grading evaluates not just the result, but also "best practice," code organization, and presentation. I want the UI to look incredibly professional, modern, and clean, drawing heavy inspiration from the components on 21st.dev.
+
+Please set up the main layout with React Router and build the necessary components. For the default main page, create an input field for an account number and a button. When an account is entered, it should display all the operations for that account, preferably using a beautifully styled Card layout. Use a sleek monochromatic color palette with subtle shadows.
+
+Second part: Next, let's build the second route for performing operations on an account. I need a form component that includes an input for the account number and a DropDownList to choose the operation type: Withdrawal, Deposit, or Loan.
+
+The assignment strictly requires this UI to be dynamic: - If I choose Withdrawal or Deposit, only show an input for the amount and a save button. - If I choose Loan, it must dynamically reveal two additional inputs for "payments" and "interest" alongside the amount and save button. Ensure the form validation is clean and the transitions between the dynamic fields are smooth to match the 21st.dev aesthetic.
+
+Third part: Now I need to connect this to a Service layer, which my instructor explicitly advised to write. Can you create a mock service that simulates my future Node.js and MongoDB backend?.
+
+First, define a TypeScript interface for the AccountOperations collection that matches my database schema: it must include objectId, accountNumber, type, amount, and date. If the type is a loan, it also needs interest and payments.
+
+Next, create mock service methods for a GET request to return all operations for a specific account , and a POST request to add an operation. Make sure the POST object payload looks exactly like this example: { accountNumber:"889273", type:"deposit" , amount: 100 }.
+
+Finally, make sure the current account number is saved in the service so it remembers the account when I navigate to the operations page.
