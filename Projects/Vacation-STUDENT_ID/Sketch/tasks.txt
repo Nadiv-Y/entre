@@ -39,13 +39,5 @@ client/src/
 │   ├── authSlice.ts
 │   └── vacationsSlice.ts
 │
-├── services/
-│   ├── api.ts
-│   └── socket.ts
-│
-├── models/
-│   ├── User.ts
-│   └── Vacation.ts
-│
 ├── App.tsx
 └── index.tsx
